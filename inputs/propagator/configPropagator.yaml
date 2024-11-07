@@ -12,3 +12,7 @@ parametersManagerConfig: "./inputs/propagator/parameters/configParametersManager
 fitSampleSetConfig:      "./inputs/propagator/samples/configSamples.yaml"
 #plotGeneratorConfig:     ""
 
+# legacy config reader
+dataSetList:             "/inputs/datasets/configDatasets.yaml"
+
+

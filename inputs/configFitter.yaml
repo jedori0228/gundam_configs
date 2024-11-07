@@ -17,6 +17,3 @@ likelihoodInterfaceConfig:
   # jointProbability
   jointProbabilityConfig:
     type: "PoissonLLH"
-
-  # dataSetManager
-  dataSetManagerConfig: "/inputs/datasets/configDatasets.yaml"

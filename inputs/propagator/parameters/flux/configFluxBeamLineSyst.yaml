@@ -1,0 +1,16 @@
+
+
+name: Flux Systematics Beamline
+isEnabled: true
+
+printDialSetsSummary: true
+
+releaseFixedParametersOnHesse: true # true by default
+covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/gundaminput_numibeamlinesyst.root"
+covarianceMatrixTMatrixD: numibeamlinesyst_cov
+parameterPriorTVectorD: numibeamlinesyst_param_prior
+parameterNameTObjArray: numibeamlinesyst_param_names
+parameterLowerBoundsTVectorD: numibeamlinesyst_param_lb
+parameterUpperBoundsTVectorD: numibeamlinesyst_param_ub
+
+parameterDefinitions: "./Configs_ParameterSet/Flux/NuMIBeamlineDialsDef.yaml"
