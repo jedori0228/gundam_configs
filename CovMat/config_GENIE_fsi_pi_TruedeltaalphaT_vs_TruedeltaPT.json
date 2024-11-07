@@ -1,0 +1,17 @@
+{
+  "MainTree": {
+    "FilePath": "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/CovMat/inputfiles/dfs_MakeFSICovTree.pkl",
+    "TreeKey": "df"
+  },
+  "BinningFile": "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/binnings/Make2DBinning/binning_TruedeltaalphaT_vs_TruedeltaPT.txt",
+  
+  "JobName": "GENIE_fsi_pi_TruedeltaalphaT_vs_TruedeltaPT",
+  "DialName": "FSI_pi_VariationResponse",
+  "NUniv": 100,
+
+  "SelectionCutExpr": "CutType>=0",
+  "SampleSelectionExpr": "CutType>=0",
+  "SampleWeightExpr": "FluxWeightWithG3Chase * SPPCVCorrection",
+  
+  "OutputFileName": "output_CovMat_GENIE_fsi_pi_TruedeltaalphaT_vs_TruedeltaPT.root"
+}
