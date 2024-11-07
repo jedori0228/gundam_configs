@@ -1,0 +1,15 @@
+parametersManagerConfig:
+  parameterSetList: "./Configs_ParameterSetList/parameterSetList_MuonProtonCos.yaml"
+
+showEventBreakdown: true
+
+enableStatThrowInToys: false
+
+enableEventMcThrow: false
+
+debugPrintLoadedEvents: true
+
+fitSampleSetConfig: "./Configs_FitSampleSet/fitSamples_RecoMuonProtonCos.yaml"
+
+plotGeneratorConfig: "./Configs_PlotGenerator/plotConfigs_RecoMuonProtonCos.yaml"
+

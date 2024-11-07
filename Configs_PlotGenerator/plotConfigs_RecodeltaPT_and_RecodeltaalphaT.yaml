@@ -1,0 +1,31 @@
+varDictionnaries:
+  - name: "IsSignal"
+    dictionary:
+      - { value: 5, title: "Cosmic", color: 805 } # kMagenta
+      - { value: 4, title: "NuNC", color: 866 } # kRed
+      - { value: 3, title: "NuCCOther", color: 842 } # kGreen+2
+      - { value: 2, title: "OOPS", color: 800 } # kOrange
+      - { value: 1, title: "signal", color: 855 } # kOrange
+
+histogramsDefinition:
+  - varToPlot: "Raw"
+    splitVars: ["", "IsSignal"]
+  - varToPlot: "RecodeltaPT"
+    splitVars: ["", "IsSignal"]
+    useSampleBinning: true
+    rescaleAsBinWidth: false
+    xTitle: "#delta p_{T}"
+    yTitle: "Slices"
+    # xMax: 0.81
+  - varToPlot: "RecodeltaalphaT"
+    splitVars: ["", "IsSignal"]
+    useSampleBinning: true
+    rescaleAsBinWidth: false
+    xTitle: "#delta #alpha_{T}"
+    yTitle: "Slices"
+
+canvasParameters:
+  height: 800
+  width: 1000
+  nbXplots: 1
+  nbYplots: 1

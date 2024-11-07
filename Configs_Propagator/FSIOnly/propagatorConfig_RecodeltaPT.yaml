@@ -1,0 +1,15 @@
+parametersManagerConfig:
+  parameterSetList: "./Configs_ParameterSetList/FSIOnly/parameterSetList_deltaPT.yaml"
+
+showEventBreakdown: true
+
+enableStatThrowInToys: false
+
+enableEventMcThrow: false
+
+debugPrintLoadedEvents: true
+
+fitSampleSetConfig: "./Configs_FitSampleSet/fitSamples_RecodeltaPT.yaml"
+
+plotGeneratorConfig: "./Configs_PlotGenerator/plotConfigs_RecodeltaPT.yaml"
+

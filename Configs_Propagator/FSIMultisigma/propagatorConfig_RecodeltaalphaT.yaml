@@ -1,0 +1,15 @@
+parametersManagerConfig:
+  parameterSetList: "./Configs_ParameterSetList/FSIMultisigma/parameterSetList_deltaalphaT.yaml"
+
+showEventBreakdown: true
+
+enableStatThrowInToys: false
+
+enableEventMcThrow: false
+
+debugPrintLoadedEvents: true
+
+fitSampleSetConfig: "./Configs_FitSampleSet/fitSamples_RecodeltaalphaT.yaml"
+
+plotGeneratorConfig: "./Configs_PlotGenerator/plotConfigs_RecodeltaalphaT.yaml"
+

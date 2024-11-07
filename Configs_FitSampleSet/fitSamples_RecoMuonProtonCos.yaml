@@ -1,0 +1,11 @@
+fitSampleList:
+  - name: "SignalSelection_RecoMuonProtonCos"
+    isEnabled: true
+    binning: "./binnings/binning_RecoMuonProtonCos.txt"
+    selectionCuts: "CutType==1"
+    dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0"]
+  - name: "Sideband_RecoMuonProtonCos"
+    isEnabled: true
+    binning: "./binnings/binning_RecoMuonProtonCos.txt"
+    selectionCuts: "CutType==2 && LeadingChargedPionCandidateLength>=10."
+    dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0"]

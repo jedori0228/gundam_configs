@@ -1,0 +1,24 @@
+varDictionnaries:
+  - name: "TrueMode"
+    dictionary:
+      - { value: 0, title: "QE", color: 855 } # Blue
+      - { value: 1, title: "RES", color: 800 } # Orange
+      - { value: 2, title: "DIS", color: 842 } # Greenish
+      - { value: 3, title: "COH", color: 866 } # Sky Blue
+      - { value: 10, title: "MEC", color: 805 } # Vermillion
+      - { value: -1, title: "Cosmic", color: 617 } # Purplish
+
+histogramsDefinition:
+  - varToPlot: "TruedeltaPT"
+    splitVars: ["", "TrueMode"]
+    useSampleBinning: true
+    xMax: 10000.
+    xTitle: "True #delta p_{T} (GeV/c)"
+    yTitle: "#frac{d #sigma}{d #delta p_{T}} cm^{2} / (GeV/c)"
+
+canvasParameters:
+  height: 700
+  width: 700
+  nbXplots: 1
+  nbYplots: 1
+
