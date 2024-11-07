@@ -1,0 +1,192 @@
+
+
+parameterSetList:
+
+  - "inputs/propagator/parameters/template/configTemplateParameters.yaml"
+  - "inputs/propagator/parameters/cross-section/configCrossSectionParameters.yaml"
+  - "inputs/propagator/parameters/detector/configDetectorParameters.yaml"
+
+  # Flux Hadron Production
+
+  - name: Flux Systematics HP
+    isEnabled: true
+
+    printDialSetsSummary: true
+
+    allowPca: true
+
+    useEigenDecompInFit: false
+
+    # covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/2023-07-31_out_450.37_7991.98_79512.66_QEL11.root" # with empty bins
+    covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/2023-08-17_out_450.37_7991.98_79512.66_QEL11.root" # empty bins removed
+    covarianceMatrixTMatrixD: "covariance_matrices/hadron/total/cov_total"
+
+    parameterLimits:
+      minValue: 0
+      maxValue: 30
+
+    useOnlyOneParameterPerEvent: true
+
+    dialSetDefinitions:
+      - name: Flux Systematics HP dialSetDefinitions
+        applyOnDataSets: [ "*" ]
+        #parametersBinningPath: "./binnings/binning_fluxCovMtx.txt" # with empty bins
+        parametersBinningPath: "./binnings/binning_fluxCovMtx_removeHE_jk.txt" # empty bins removed
+        printDialsSummary: true
+        applyCondition: "[IsData]==0"
+
+
+  # Flux Beamline
+
+  - name: Flux Systematics Beamline
+    isEnabled: true
+
+    printDialSetsSummary: true
+
+    releaseFixedParametersOnHesse: true # true by default
+    covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/gundaminput_numibeamlinesyst.root"
+    covarianceMatrixTMatrixD: numibeamlinesyst_cov
+    parameterPriorTVectorD: numibeamlinesyst_param_prior
+    parameterNameTObjArray: numibeamlinesyst_param_names
+    parameterLowerBoundsTVectorD: numibeamlinesyst_param_lb
+    parameterUpperBoundsTVectorD: numibeamlinesyst_param_ub
+
+    parameterDefinitions: "./Configs_ParameterSet/Flux/NuMIBeamlineDialsDef.yaml"
+
+  # G4 Proton
+
+  - name: G4 Proton Fate
+    isEnabled: true
+
+    printDialSetsSummary: true
+
+    allowPca: true
+
+    useEigenDecompInFit: true
+
+    covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_G4ProtonFate.root"
+    covarianceMatrixTMatrixD: "G4ProtonFate/G4ProtonFate_covariance"
+
+    parameterLimits:
+      minValue: 0
+      maxValue: 30
+
+    useOnlyOneParameterPerEvent: true
+
+    dialSetDefinitions:
+      - name: G4 Proton Fate dialSetDefinitions
+        applyOnDataSets: [ "*" ]
+        parametersBinningPath: "./binnings/binning_G4ProtonFate.txt"
+        printDialsSummary: true
+        applyCondition: "[IsData]==0"
+
+  # G4 Piplus
+
+  - name: G4 Piplus Fate
+    isEnabled: true
+
+    printDialSetsSummary: true
+
+    allowPca: true
+
+    useEigenDecompInFit: true
+
+    covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_G4PipFate.root"
+    covarianceMatrixTMatrixD: "G4PipFate/G4PipFate_covariance"
+
+    parameterLimits:
+      minValue: 0
+      maxValue: 30
+
+    useOnlyOneParameterPerEvent: true
+
+    dialSetDefinitions:
+      - name: G4 Piplus Fate dialSetDefinitions
+        applyOnDataSets: [ "*" ]
+        parametersBinningPath: "./binnings/binning_G4PipFate.txt"
+        printDialsSummary: true
+        applyCondition: "[IsData]==0"
+
+
+  # G4 Piminus
+
+  - name: G4 Piminus Fate
+    isEnabled: true
+
+    printDialSetsSummary: true
+
+    allowPca: true
+
+    useEigenDecompInFit: true
+
+    covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_G4PimFate.root"
+    covarianceMatrixTMatrixD: "G4PimFate/G4PimFate_covariance"
+
+    parameterLimits:
+      minValue: 0
+      maxValue: 30
+
+    useOnlyOneParameterPerEvent: true
+
+    dialSetDefinitions:
+      - name: G4 Piminus Fate dialSetDefinitions
+        applyOnDataSets: [ "*" ]
+        parametersBinningPath: "binnings/binning_G4PimFate.txt"
+        printDialsSummary: true
+        applyCondition: "[IsData]==0"
+
+  # fsi_pi
+
+  - name: FSI pi TruedeltaPT
+    isEnabled: true
+
+    printDialSetsSummary: true
+
+    allowPca: true
+
+    useEigenDecompInFit: true
+
+    covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_GENIE_fsi_pi_TruedeltaPT.root"
+    covarianceMatrixTMatrixD: "GENIE_fsi_pi_TruedeltaPT/GENIE_fsi_pi_TruedeltaPT_covariance"
+
+    parameterLimits:
+      minValue: 0
+      maxValue: 30
+
+    useOnlyOneParameterPerEvent: true
+
+    dialSetDefinitions:
+      - name: FSI pi TruedeltaPT dialSetDefinitions
+        applyOnDataSets: [ "*" ]
+        parametersBinningPath: "./binnings/binning_TruedeltaPT.txt"
+        printDialsSummary: true
+        applyCondition: "[IsData]==0"
+
+
+  # fsi_N
+
+  - name: FSI N TruedeltaPT
+    isEnabled: true
+
+    printDialSetsSummary: true
+
+    allowPca: true
+
+    useEigenDecompInFit: true
+
+    covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_GENIE_fsi_N_TruedeltaPT.root"
+    covarianceMatrixTMatrixD: "GENIE_fsi_N_TruedeltaPT/GENIE_fsi_N_TruedeltaPT_covariance"
+
+    parameterLimits:
+      minValue: 0
+      maxValue: 30
+
+    useOnlyOneParameterPerEvent: true
+
+    dialSetDefinitions:
+      - name: FSI N TruedeltaPT dialSetDefinitions
+        applyOnDataSets: [ "*" ]
+        parametersBinningPath: "./binnings/binning_TruedeltaPT.txt"
+        printDialsSummary: true
+        applyCondition: "[IsData]==0"
+
