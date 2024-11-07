@@ -1,4 +1,3 @@
-import os
 import NuMIBeamlineSystKnobList
 
 knobNames = NuMIBeamlineSystKnobList.NuMIBeamlineFluxSYstKnobNames
