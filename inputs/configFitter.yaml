@@ -1,0 +1,31 @@
+# FitterEngine config
+
+# listing local configs
+
+# when using --pca option
+pcaDeltaChi2Threshold: 1E-4
+
+# minimizer
+minimizerConfig: "./inputs/fit/configMinimizer.yaml"
+
+# legacy propagator definition in the fitterEngine config
+propagatorConfig: "./Configs_Propagator/propagatorConfig_RecodeltaPT.yaml"
+
+
+# likelihoodInterface
+likelihoodInterfaceConfig:
+
+  # jointProbability
+  jointProbabilityConfig:
+    type: "PoissonLLH"
+    # type: "StatCovariance"
+
+  propagatorConfig: "./Configs_Propagator/propagatorConfig_RecodeltaPT.yaml"
+
+  # dataSetManager
+  dataSetManagerConfig:
+
+
+    dataSetList: "./Configs_DataSetList/dataSetListConfig_FakeData.yaml"
+
+
