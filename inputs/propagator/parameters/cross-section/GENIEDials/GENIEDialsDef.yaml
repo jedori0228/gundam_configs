@@ -1,0 +1,436 @@
+- parameterName: "ZExpPCAB1"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "ZExpPCAB1"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "ZExpPCAB2"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "ZExpPCAB2"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "ZExpPCAB3"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "ZExpPCAB3"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "ZExpPCAB4"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "ZExpPCAB4"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "RPA_CCQE"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "RPA_CCQE"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "CoulombCCQE"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "CoulombCCQE"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NormCCMEC"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NormCCMEC"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NormNCMEC"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NormNCMEC"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "MaNCEL"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "MaNCEL"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "EtaNCEL"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "EtaNCEL"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "MaCCRES"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "MaCCRES"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "MvCCRES"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "MvCCRES"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "MaNCRES"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "MaNCRES"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "MvNCRES"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "MvNCRES"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvpCC1pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvpCC1pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvpCC2pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvpCC2pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvpNC1pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvpNC1pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvpNC2pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvpNC2pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvnCC1pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvnCC1pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvnCC2pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvnCC2pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvnNC1pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvnNC1pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvnNC2pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvnNC2pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvbarpCC1pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvbarpCC1pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvbarpCC2pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvbarpCC2pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvbarpNC1pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvbarpNC1pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvbarpNC2pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvbarpNC2pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvbarnCC1pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvbarnCC1pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvbarnCC2pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvbarnCC2pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvbarnNC1pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvbarnNC1pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NonRESBGvbarnNC2pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NonRESBGvbarnNC2pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "RDecBR1gamma"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "RDecBR1gamma"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "RDecBR1eta"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "RDecBR1eta"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NormCCCOH"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NormCCCOH"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NormNCCOH"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NormNCCOH"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "AhtBY"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "AhtBY"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "BhtBY"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "BhtBY"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "CV1uBY"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "CV1uBY"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "CV2uBY"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "CV2uBY"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "MFP_pi"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "MFP_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrCEx_pi"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "FrCEx_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrInel_pi"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "FrInel_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrAbs_pi"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "FrAbs_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrPiProd_pi"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "FrPiProd_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "MFP_N"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "MFP_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrCEx_N"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "FrCEx_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrInel_N"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "FrInel_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrAbs_N"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "FrAbs_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrPiProd_N"
+  isEnabled: false
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "FrPiProd_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "CC1piTPi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "CC1piTPi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "VecFFCCQEshape"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "VecFFCCQEshape"
+      useMirrorDial: true
+      mirrorLowEdge: -1
+      mirrorHighEdge: 1
+      applyCondition: "[IsData]==0"
+
+- parameterName: "DecayAngMEC"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "DecayAngMEC"
+      useMirrorDial: true
+      mirrorLowEdge: -1
+      mirrorHighEdge: 1
+      applyCondition: "[IsData]==0"
+
+- parameterName: "Theta_Delta2Npi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "Theta_Delta2Npi"
+      useMirrorDial: true
+      mirrorLowEdge: -1
+      mirrorHighEdge: 1
+      applyCondition: "[IsData]==0"
+
+- parameterName: "ThetaDelta2NRad"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "ThetaDelta2NRad"
+      useMirrorDial: true
+      mirrorLowEdge: -1
+      mirrorHighEdge: 1
+      applyCondition: "[IsData]==0"
+

@@ -1,7 +1,7 @@
 import os
-import NuMIBeamlineSystKnobList
+import kDetSystKnobList
 
-knobNames = NuMIBeamlineSystKnobList.NuMIBeamlineFluxSYstKnobNames
+knobNames = kDetSystKnobList.DetSystMultisigmaKnobNames
 
 for name in knobNames:
   output = '''- parameterName: "%s"

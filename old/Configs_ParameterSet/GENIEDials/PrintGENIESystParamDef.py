@@ -1,4 +1,3 @@
-import os
 import GENIESystKnobList
 
 knobNames = GENIESystKnobList.GENIEMultisigmaKnobNames

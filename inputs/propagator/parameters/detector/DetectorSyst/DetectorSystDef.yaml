@@ -1,0 +1,32 @@
+- parameterName: "NuMIXSecFrontIndPlaneGainSyst"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NuMIXSecFrontIndPlaneGainSyst"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NuMIXSecFrontIndPlaneNoiseSyst"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NuMIXSecFrontIndPlaneNoiseSyst"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NuMIXSecFrontIndPlaneSignalShapeSyst"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NuMIXSecFrontIndPlaneSignalShapeSyst"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NuMIXSecMiddleIndPlaneTransparencySyst"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NuMIXSecMiddleIndPlaneTransparencySyst"
+      applyCondition: "[IsData]==0"
+

@@ -1,0 +1,17 @@
+
+
+name: Cross section Systematics
+isEnabled: true
+
+printDialSetsSummary: true
+
+releaseFixedParametersOnHesse: true
+covarianceMatrixFilePath: "./inputs/propagator/parameters/cross-section/GENIEDials/gundaminput_geniesyst.root"
+covarianceMatrixTMatrixD: xsec_cov
+parameterPriorTVectorD: xsec_param_prior
+parameterNameTObjArray: xsec_param_names
+parameterLowerBoundsTVectorD: xsec_param_lb
+parameterUpperBoundsTVectorD: xsec_param_ub
+
+parameterDefinitions: "./inputs/propagator/parameters/cross-section/GENIEDials/GENIEDialsDef.yaml"
+
