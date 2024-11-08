@@ -13,6 +13,6 @@ fitSampleSetConfig:      "./inputs/propagator/samples/configSamples.yaml"
 #plotGeneratorConfig:     ""
 
 # legacy config reader
-dataSetList:             "/inputs/datasets/configDatasets.yaml"
+dataSetList:             "./inputs/datasets/configDatasets.yaml"
 
 
