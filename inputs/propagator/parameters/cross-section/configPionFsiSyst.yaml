@@ -9,7 +9,7 @@ allowPca: true
 
 useEigenDecompInFit: true
 
-covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_GENIE_fsi_pi_TruedeltaPT.root"
+covarianceMatrixFilePath: "./inputs/propagator/parameters/cross-section/matrices/output_CovMat_GENIE_fsi_pi_TruedeltaPT.root"
 covarianceMatrixTMatrixD: "GENIE_fsi_pi_TruedeltaPT/GENIE_fsi_pi_TruedeltaPT_covariance"
 
 parameterLimits:
@@ -21,7 +21,7 @@ useOnlyOneParameterPerEvent: true
 dialSetDefinitions:
   - name: FSI pi TruedeltaPT dialSetDefinitions
     applyOnDataSets: [ "*" ]
-    parametersBinningPath: "./binnings/binning_TruedeltaPT.txt"
+    parametersBinningPath: "./inputs/binnings/binning_TruedeltaPT.txt"
     printDialsSummary: true
     applyCondition: "[IsData]==0"
 

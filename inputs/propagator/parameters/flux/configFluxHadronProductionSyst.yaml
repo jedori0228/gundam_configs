@@ -22,8 +22,8 @@ useOnlyOneParameterPerEvent: true
 dialSetDefinitions:
   - name: Flux Systematics HP dialSetDefinitions
     applyOnDataSets: [ "*" ]
-    #parametersBinningPath: "./binnings/binning_fluxCovMtx.txt" # with empty bins
-    parametersBinningPath: "./binnings/binning_fluxCovMtx_removeHE_jk.txt" # empty bins removed
+    #parametersBinningPath: "./inputs/binnings/binning_fluxCovMtx.txt" # with empty bins
+    parametersBinningPath: "./inputs/binnings/binning_fluxCovMtx_removeHE_jk.txt" # empty bins removed
     printDialsSummary: true
     applyCondition: "[IsData]==0"
 
