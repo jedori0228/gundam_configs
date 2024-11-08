@@ -9,8 +9,8 @@ allowPca: true
 
 useEigenDecompInFit: false
 
-# covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/2023-07-31_out_450.37_7991.98_79512.66_QEL11.root" # with empty bins
-covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/2023-08-17_out_450.37_7991.98_79512.66_QEL11.root" # empty bins removed
+# covarianceMatrixFilePath: "./Configs_ParameterSet/dials/2023-07-31_out_450.37_7991.98_79512.66_QEL11.root" # with empty bins
+covarianceMatrixFilePath: "./Configs_ParameterSet/dials/2023-08-17_out_450.37_7991.98_79512.66_QEL11.root" # empty bins removed
 covarianceMatrixTMatrixD: "covariance_matrices/hadron/total/cov_total"
 
 parameterLimits:
@@ -20,7 +20,7 @@ parameterLimits:
 useOnlyOneParameterPerEvent: true
 
 dialSetDefinitions:
-  - name: Flux Systematics HP dialSetDefinitions
+  - name: dials Systematics HP dialSetDefinitions
     applyOnDataSets: [ "*" ]
     #parametersBinningPath: "./inputs/binnings/binning_fluxCovMtx.txt" # with empty bins
     parametersBinningPath: "./inputs/binnings/binning_fluxCovMtx_removeHE_jk.txt" # empty bins removed
