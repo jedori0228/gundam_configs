@@ -39,4 +39,4 @@ monitorRefreshRateInMs: 5000
 showParametersOnFitMonitor: false
 maxNbParametersPerLineOnMonitor: 15
 
-monitorGradientDescent: true
+monitorGradientDescent: false

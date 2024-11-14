@@ -1,0 +1,5 @@
+fitterEngineConfig:
+  propagatorConfig:
+    parametersManagerConfig: "./inputs/propagator/parameters/configParametersManager_TruedeltaalphaT.yaml"
+    fitSampleSetConfig:      "./inputs/propagator/samples/configSamples_RecodeltaalphaT.yaml"
+    dataSetList:             "./inputs/datasets/configDatasets.yaml"

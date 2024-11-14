@@ -8,8 +8,8 @@ enableEventMcThrow: false
 showEventBreakdown: true
 debugPrintLoadedEvents: true
 
-parametersManagerConfig: "./inputs/propagator/parameters/configParametersManager.yaml"
-fitSampleSetConfig:      "./inputs/propagator/samples/configSamples.yaml"
+parametersManagerConfig: "./inputs/propagator/parameters/configParametersManager_TruedeltaPT.yaml"
+fitSampleSetConfig:      "./inputs/propagator/samples/configSamples_RecodeltaPT.yaml"
 #plotGeneratorConfig:     ""
 
 # legacy config reader
