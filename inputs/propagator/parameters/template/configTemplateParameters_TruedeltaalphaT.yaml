@@ -1,5 +1,5 @@
 
-name: Template Parameter deltaPT
+name: Template Parameter TruedeltaalphaT
 isEnabled: true
 
 printDialSetsSummary: true
@@ -8,9 +8,9 @@ nominalStepSize: 0.1
 useOnlyOneParameterPerEvent: true
 
 dialSetDefinitions:
-  - name: Template Parameter deltaPT dialSetDefinitions
+  - name: Template Parameter TruedeltaalphaT dialSetDefinitions
     applyOnDataSets: [ "ICARUSNuMI_1muNp0pi_Reco_Dataset0", "ICARUSNuMI_1muNp0pi_True_Dataset0" ]
-    parametersBinningPath: "./inputs/binnings/binning_TruedeltaPT.txt"
+    parametersBinningPath: "./inputs/binnings/binning_TruedeltaalphaT.txt"
     applyCondition: "[IsSignal] == 1"
     printDialsSummary: true
 

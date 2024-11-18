@@ -11,9 +11,9 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
+      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/inputs/rootfiles/241111_PreparingSignalUnboxing/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
+      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/inputs/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
+      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/inputs/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
     nominalWeightFormula: "( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight) ) )"
 
   data:
@@ -35,9 +35,9 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
+      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/inputs/rootfiles/241111_PreparingSignalUnboxing/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
+      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/inputs/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
+      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/inputs/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
     nominalWeightFormula: "( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight) ) )"
 
   data:

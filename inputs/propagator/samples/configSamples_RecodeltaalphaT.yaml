@@ -3,15 +3,15 @@
 
 fitSampleList:
 
-  - name: "SignalSelection_RecodeltaPT"
+  - name: "SignalSelection_RecodeltaalphaT"
     isEnabled: true
-    binning: "./inputs/binnings/binning_RecodeltaPT.txt"
+    binning: "./inputs/binnings/binning_RecodeltaalphaT.txt"
     selectionCuts: "CutType==1 && MuonTrackType==1"
     dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0"]
 
-  - name: "Sideband_RecodeltaPT"
+  - name: "Sideband_RecodeltaalphaT"
     isEnabled: true
-    binning: "./inputs/binnings/binning_RecodeltaPT.txt"
+    binning: "./inputs/binnings/binning_RecodeltaalphaT.txt"
     selectionCuts: "CutType==2 && LeadingChargedPionCandidateLength>=10."
     dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0"]
 
