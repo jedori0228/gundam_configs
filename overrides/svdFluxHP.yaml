@@ -1,0 +1,11 @@
+
+
+fitterEngineConfig:
+  propagatorConfig:
+    parametersManagerConfig:
+      parameterSetList:
+        - name: "Flux Systematics HP"
+
+          useEigenDecompInFit: true
+          allowEigenDecompWithBounds: true
+          eigenSvdThreshold: 1E-14
