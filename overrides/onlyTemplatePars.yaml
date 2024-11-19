@@ -1,0 +1,11 @@
+
+
+fitterEngineConfig:
+  propagatorConfig:
+    parametersManagerConfig:
+      parameterSetList:
+        - __INDEX__: "*"
+          isEnabled: false # all off
+
+        - name: "Template Parameter TruedeltaPT"
+          isEnabled: true
