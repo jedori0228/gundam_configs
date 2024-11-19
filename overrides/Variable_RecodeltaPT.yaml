@@ -1,5 +1,5 @@
 fitterEngineConfig:
   propagatorConfig:
-    parametersManagerConfig: "./inputs/propagator/parameters/configParametersManager_TruedeltaPT.yaml"
+    parametersManagerConfig: "./inputs/propagator/parameters/configParameters.yaml"
     fitSampleSetConfig:      "./inputs/propagator/samples/configSamples_RecodeltaPT.yaml"
     dataSetList:             "./inputs/datasets/configDatasets.yaml"

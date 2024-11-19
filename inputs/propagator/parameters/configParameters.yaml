@@ -3,12 +3,12 @@
 parameterSetList:
 
   # Template parameters
-  - "inputs/propagator/parameters/template/configTemplateParameters_TruedeltaPT.yaml"
+  - "inputs/propagator/parameters/template/configTemplateParameters.yaml"
 
   # Cross-section models systematics
   - "inputs/propagator/parameters/cross-section/configCrossSectionParameters.yaml"
-  - "inputs/propagator/parameters/cross-section/configNucleonFsiSyst_TruedeltaPT.yaml"
-  - "inputs/propagator/parameters/cross-section/configPionFsiSyst_TruedeltaPT.yaml"
+  - "inputs/propagator/parameters/cross-section/configNucleonFsiSyst.yaml"
+  - "inputs/propagator/parameters/cross-section/configPionFsiSyst.yaml"
 
   # Reconstruction systematics
   - "inputs/propagator/parameters/detector/configDetectorParameters.yaml"

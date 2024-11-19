@@ -8,6 +8,7 @@ printDialSetsSummary: true
 allowPca: true
 
 useEigenDecompInFit: true
+allowEigenDecompWithBounds: true
 
 covarianceMatrixFilePath: "./inputs/propagator/parameters/cross-section/matrices/output_CovMat_GENIE_fsi_N_TruedeltaPT.root"
 covarianceMatrixTMatrixD: "GENIE_fsi_N_TruedeltaPT/GENIE_fsi_N_TruedeltaPT_covariance"

@@ -7,6 +7,7 @@ printDialSetsSummary: true
 allowPca: true
 
 useEigenDecompInFit: true
+allowEigenDecompWithBounds: true
 
 covarianceMatrixFilePath: "./inputs/propagator/parameters/simulation/matrices/output_CovMat_G4PipFate.root"
 covarianceMatrixTMatrixD: "G4PipFate/G4PipFate_covariance"
