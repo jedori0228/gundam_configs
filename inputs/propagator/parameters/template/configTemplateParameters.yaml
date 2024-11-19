@@ -4,7 +4,7 @@ isEnabled: true
 
 printDialSetsSummary: true
 
-nominalStepSize: 0.1
+nominalStepSize: 1
 useOnlyOneParameterPerEvent: true
 
 dialSetDefinitions:
