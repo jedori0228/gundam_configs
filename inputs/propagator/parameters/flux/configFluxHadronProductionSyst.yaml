@@ -9,7 +9,7 @@ allowPca: true
 
 useEigenDecompInFit: true
 allowEigenDecompWithBounds: true
-#eigenSvdThreshold: 1E-14
+eigenSvdThreshold: 1E-14
 
 # covarianceMatrixFilePath: "./inputs/propagator/parameters/flux/dials/dials/2023-07-31_out_450.37_7991.98_79512.66_QEL11.root" # with empty bins
 covarianceMatrixFilePath: "./inputs/propagator/parameters/flux/dials/2023-08-17_out_450.37_7991.98_79512.66_QEL11.root" # empty bins removed
