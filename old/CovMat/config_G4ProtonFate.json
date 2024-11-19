@@ -3,7 +3,7 @@
     "FilePath": "/Users/jskim/Documents/Neutrino/ICARUS/NuMINumuXSec/NuMIPyAna/EventSelectionPlots/inputfiles/240729_NuMIReproc_TrackSplitShift/RecoTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Aug24.pkl",
     "TreeKey": "RecoTree"
   },
-  "BinningFile": "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/binnings/binning_G4ProtonFate.txt",
+  "BinningFile": "${GUNDAM_INPUTS_DIR}/binnings/binning_G4ProtonFate.txt",
   
   "JobName": "G4ProtonFate",
   "DialName": "reinteractions_proton_Geant4",

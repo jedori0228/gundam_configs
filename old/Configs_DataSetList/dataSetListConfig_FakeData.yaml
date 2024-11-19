@@ -9,7 +9,7 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst02Oct24.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst02Oct24.root"
     nominalWeightFormula: "(2.5006160e+20/1.0879799e+21) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
 
   data:
@@ -20,63 +20,63 @@
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataFromDoubledMC"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? 2.0 : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataTruedeltaPTLinearScale"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? (5./8.)*TruedeltaPT+1. : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataTruedeltaPTTruedeltaalphaTLinearScale"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? ( (5./8.)*TruedeltaPT+1. ) * ( (0.4/180.)*TruedeltaalphaT+0.8 ) : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     # LowQ2 study
     - name: "FakeDataLowQ2Suppression"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataBruceTest1"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight * (IsMuonPionFlipped||IsPionPionSelected ? 0. : 1.) * (IsMuonPionCorrect ? 1.3 : 1.) )"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataBruceTest2"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight * (IsMuonPionFlipped||IsPionPionSelected ? 0.15 : 1.) * (IsMuonPionCorrect ? 1.7 : 1.) * Reweight_AhtBY_m3sigma * Reweight_BhtBY_p3sigma * Reweight_CV1uBY_p3sigma * Reweight_CV2uBY_m3sigma * Reweight_NonRESBGvpCC2pi_m3sigma * Reweight_NonRESBGvpNC2pi_m3sigma * Reweight_NonRESBGvnCC2pi_m3sigma * Reweight_NonRESBGvnNC2pi_m3sigma * Reweight_NonRESBGvbarpCC2pi_m3sigma * Reweight_NonRESBGvbarpNC2pi_m3sigma * Reweight_NonRESBGvbarnCC2pi_m3sigma * Reweight_NonRESBGvbarnNC2pi_m3sigma )"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataSidebandPiRW"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * SidebandPiRW)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataFSIhN"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * Reweight_FSI_hN)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataFSIINCL"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * (Reweight_FSI_INCL>20 ? 1. : Reweight_FSI_INCL))"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataFSIG4BC"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * (Reweight_FSI_G4BC>20 ? 1. : Reweight_FSI_G4BC))"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataLQCDZExpFit"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * Reweight_LQCDZExpFit)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
 
 
 
@@ -91,7 +91,7 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst02Oct24.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst02Oct24.root"
     nominalWeightFormula: "(2.5006160e+20/1.0879799e+21) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
 
   data:
@@ -102,60 +102,60 @@
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataFromDoubledMC"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? 2.0 : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataTruedeltaPTLinearScale"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? (5./8.)*TruedeltaPT+1. : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataTruedeltaPTTruedeltaalphaTLinearScale"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? ( (5./8.)*TruedeltaPT+1. ) * ( (0.4/180.)*TruedeltaalphaT+0.8 ) : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     # LowQ2 study
     - name: "FakeDataLowQ2Suppression"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataBruceTest1"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight * (IsMuonPionFlipped||IsPionPionSelected ? 0. : 1.) * (IsMuonPionCorrect ? 1.3 : 1.) )"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataBruceTest2"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight * (IsMuonPionFlipped||IsPionPionSelected ? 0.15 : 1.) * (IsMuonPionCorrect ? 1.7 : 1.) * Reweight_AhtBY_m3sigma * Reweight_BhtBY_p3sigma * Reweight_CV1uBY_p3sigma * Reweight_CV2uBY_m3sigma * Reweight_NonRESBGvpCC2pi_m3sigma * Reweight_NonRESBGvpNC2pi_m3sigma * Reweight_NonRESBGvnCC2pi_m3sigma * Reweight_NonRESBGvnNC2pi_m3sigma * Reweight_NonRESBGvbarpCC2pi_m3sigma * Reweight_NonRESBGvbarpNC2pi_m3sigma * Reweight_NonRESBGvbarnCC2pi_m3sigma * Reweight_NonRESBGvbarnNC2pi_m3sigma )"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataSidebandPiRW"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * SidebandPiRW)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataFSIhN"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * Reweight_FSI_hN)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataFSIINCL"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * (Reweight_FSI_INCL>20 ? 1. : Reweight_FSI_INCL))"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataFSIG4BC"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * (Reweight_FSI_G4BC>20 ? 1. : Reweight_FSI_G4BC))"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
     - name: "FakeDataLQCDZExpFit"
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * Reweight_LQCDZExpFit)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"

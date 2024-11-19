@@ -1,9 +1,9 @@
 {
   "MainTree": {
-    "FilePath": "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/CovMat/inputfiles/dfs_MakeFSICovTree.pkl",
+    "FilePath": "${GUNDAM_INPUTS_DIR}/CovMat/inputfiles/dfs_MakeFSICovTree.pkl",
     "TreeKey": "df"
   },
-  "BinningFile": "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/binnings/binning_TrueMuonCos.txt",
+  "BinningFile": "${GUNDAM_INPUTS_DIR}/binnings/binning_TrueMuonCos.txt",
 
   "JobName": "GENIE_fsi_pi_TrueMuonCos",
   "DialName": "FSI_pi_VariationResponse",

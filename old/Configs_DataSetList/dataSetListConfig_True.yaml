@@ -3,7 +3,7 @@
   mc:
     tree: "AllSamples_FillTree/trueEvents_NSigmas"
     filePathList:
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
     nominalWeightFormula: "(FluxWeightWithG3Chase)"
 
 - name: "ICARUSNuMI_1muNp0pi_True_Dataset1"
@@ -11,6 +11,6 @@
   mc:
     tree: "AllSamples_FillTree/trueEvents_NSigmas"
     filePathList:
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
     nominalWeightFormula: "(FluxWeightWithG3Chase)"
 
