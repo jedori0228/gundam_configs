@@ -1,0 +1,7 @@
+
+fitterEngineConfig:
+  minimizerConfig:
+
+    # EDM as printed out during the fit is 0.001*[tolerance]*UP
+    # UP should be 0.5 (llh)
+    tolerance: 1
