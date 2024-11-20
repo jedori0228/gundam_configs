@@ -12,8 +12,8 @@
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
       - "${GUNDAM_INPUTS_DIR}/gundamICARUSNuMICC1muNp0pi/rootfiles/241111_PreparingSignalUnboxing/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
-      - "${GUNDAM_INPUTS_DIR}/gundamICARUSNuMICC1muNp0pi/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
-      - "${GUNDAM_INPUTS_DIR}/gundamICARUSNuMICC1muNp0pi/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
+#      - "${GUNDAM_INPUTS_DIR}/gundamICARUSNuMICC1muNp0pi/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
+#      - "${GUNDAM_INPUTS_DIR}/gundamICARUSNuMICC1muNp0pi/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
     nominalWeightFormula: "( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight) ) )"
 
   data:
