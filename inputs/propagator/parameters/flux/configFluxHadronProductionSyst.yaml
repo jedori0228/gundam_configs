@@ -5,8 +5,6 @@ isEnabled: true
 
 printDialSetsSummary: true
 
-allowPca: true
-
 useEigenDecompInFit: false
 allowEigenDecompWithBounds: true
 

@@ -2,9 +2,6 @@
 
 # listing local configs
 
-# when using --pca option
-pcaDeltaChi2Threshold: 1E-4
-
 # minimizer
 minimizerConfig: "./inputs/fit/configMinimizer.yaml"
 
