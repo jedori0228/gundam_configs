@@ -1,0 +1,28 @@
+
+
+fitterEngineConfig:
+  propagatorConfig:
+    parametersManagerConfig:
+      parameterSetList:
+        - name: "Flux Systematics HP"
+          useEigenDecompInFit: true # fitter will play with the eigen parameters
+          allowEigenDecompWithBounds: true # ignore bounds in real parameter space
+          eigenSvdThreshold: 1E-14 # numerical noise of matrix inversion with double precision
+          useEigenDecompForThrows: true # throwing from the diagonal covariance matrix
+
+        - name: "G4 Piplus Fate"
+          useEigenDecompInFit: true
+          allowEigenDecompWithBounds: true
+          useEigenDecompForThrows: true
+
+        - name: "G4 Piminus Fate"
+          useEigenDecompInFit: true
+          allowEigenDecompWithBounds: true
+          useEigenDecompForThrows: true
+
+        - name: "G4 Proton Fate"
+          useEigenDecompInFit: true
+          allowEigenDecompWithBounds: true
+          useEigenDecompForThrows: true
+
+

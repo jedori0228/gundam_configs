@@ -4,9 +4,9 @@ isEnabled: true
 
 printDialSetsSummary: true
 
-allowPca: true
+allowPca: false
 
-useEigenDecompInFit: true
+useEigenDecompInFit: false
 allowEigenDecompWithBounds: true
 
 covarianceMatrixFilePath: "./inputs/propagator/parameters/simulation/matrices/output_CovMat_G4PipFate.root"
