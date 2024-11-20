@@ -9,3 +9,6 @@ fitterEngineConfig:
           useEigenDecompInFit: true
           allowEigenDecompWithBounds: true
           eigenSvdThreshold: 1E-14
+          useEigenDecompForThrows: true
+
+
