@@ -15,6 +15,12 @@ fitterEngineConfig:
           eigenSvdThreshold: 1E-14 # numerical noise of matrix inversion with double precision
           useEigenDecompForThrows: true # throwing from the diagonal covariance matrix
 
+        - name: "Flux Systematics Beamline"
+          allowPca: true
+          useEigenDecompInFit: true # fitter will play with the eigen parameters
+          allowEigenDecompWithBounds: true # ignore bounds in real parameter space
+          useEigenDecompForThrows: true # throwing from the diagonal covariance matrix
+
         - name: "G4 Piplus Fate"
           useEigenDecompInFit: true
           allowEigenDecompWithBounds: true
