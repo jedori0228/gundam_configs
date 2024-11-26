@@ -1,0 +1,24 @@
+
+
+histogramsDefinition:
+  - varToPlot: "Raw"
+
+  - varToPlot: "RecodeltaPT"
+    splitVars: ["", "TruePDG", "IsData", "TrueNProtonG4", "TrueNUANCECode"]
+    useSampleBinning: true # if not possible, error
+    rescaleAsBinWidth: true # default true -> to look like a PDF
+    xMax: 0.8000 # last bin
+    xTitle: "#deltap_{T} (GeV)"
+    yTitle: "Counts / GeV"
+
+varDictionnaries:
+  - name: "TruePDG"
+    dictionary:
+      - { value: 0, title: "UNDEFINED", color: 1 } # kBlack
+
+
+canvasParameters:
+  width: 1200
+  height: 600
+  nbXplots: 2
+  nbYplots: 1

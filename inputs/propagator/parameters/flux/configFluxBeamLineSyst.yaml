@@ -6,7 +6,7 @@ isEnabled: true
 printDialSetsSummary: true
 
 releaseFixedParametersOnHesse: true # true by default
-covarianceMatrixFilePath: "./inputs/propagator/parameters/flux/dials/gundaminput_numibeamlinesyst.root"
+covarianceMatrixFilePath: "./inputs/propagator/parameters/flux/dials/2024-10-03_out_450.37_7991.98_79512.66.root"
 covarianceMatrixTMatrixD: numibeamlinesyst_cov
 parameterPriorTVectorD: numibeamlinesyst_param_prior
 parameterNameTObjArray: numibeamlinesyst_param_names
