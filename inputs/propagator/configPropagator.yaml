@@ -10,7 +10,7 @@ debugPrintLoadedEvents: true
 
 parametersManagerConfig: "./inputs/propagator/parameters/configParameters.yaml"
 fitSampleSetConfig:      "./inputs/propagator/samples/configSamples.yaml"
-#plotGeneratorConfig:     ""
+plotGeneratorConfig:     "./inputs/propagator/plots/configPlots.yaml"
 
 # legacy config reader
 dataSetList:             "./inputs/datasets/configDatasets.yaml"
