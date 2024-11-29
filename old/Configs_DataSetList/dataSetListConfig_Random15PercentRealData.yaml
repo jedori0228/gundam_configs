@@ -1,0 +1,47 @@
+- name: "ICARUSNuMI_1muNp0pi_Reco_Dataset0"
+
+  isEnabled: true
+
+  selectedDataEntry: "Random15PercentRealData"
+
+  showSelectedEventCount: true
+
+  mc:
+    tree: "AllSamples_FillTree/selectedEvents_NSigmas"
+    filePathList:
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
+    nominalWeightFormula: "( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight) ) )"
+
+  data:
+    - name: "Random15PercentRealData"
+      tree: "AllSamples_FillTree/selectedEvents"
+      nominalWeightFormula: "(1.)"
+      filePathList:
+        - "/Users/jskim/Documents/Neutrino/ICARUS/NuMINumuXSec/NuMIPyAna/EventSelectionPlots/inputfiles/240729_NuMIReproc_TrackSplitShift/rootfiles/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Overlapping15Percent_Run1.root"
+        - "/Users/jskim/Documents/Neutrino/ICARUS/NuMINumuXSec/NuMIPyAna/EventSelectionPlots/inputfiles/240729_NuMIReproc_TrackSplitShift/rootfiles/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Overlapping15Percent_Run2.root"
+
+- name: "ICARUSNuMI_1muNp0pi_Reco_Dataset1"
+
+  isEnabled: true
+
+  selectedDataEntry: "Random15PercentRealData"
+
+  showSelectedEventCount: true
+
+  mc:
+    tree: "AllSamples_FillTree/selectedEvents_NSigmas"
+    filePathList:
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
+    nominalWeightFormula: "( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight) ) )"
+
+  data:
+    - name: "Random15PercentRealData"
+      tree: "AllSamples_FillTree/selectedEvents"
+      nominalWeightFormula: "(1.)"
+      filePathList:
+        - "/Users/jskim/Documents/Neutrino/ICARUS/NuMINumuXSec/NuMIPyAna/EventSelectionPlots/inputfiles/240729_NuMIReproc_TrackSplitShift/rootfiles/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Overlapping15Percent_Run1.root"
+        - "/Users/jskim/Documents/Neutrino/ICARUS/NuMINumuXSec/NuMIPyAna/EventSelectionPlots/inputfiles/240729_NuMIReproc_TrackSplitShift/rootfiles/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Overlapping15Percent_Run2.root"

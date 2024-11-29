@@ -1,0 +1,166 @@
+
+fitterEngineConfig:
+  propagatorConfig:
+    dataSetList:
+
+      - name: "ICARUSNuMI_1muNp0pi_Reco_Dataset0"
+
+        isEnabled: true
+
+        selectedDataEntry: "FakeDataFromMCSubset"
+
+        showSelectedEventCount: true
+
+        mc:
+          tree: "AllSamples_FillTree/selectedEvents_NSigmas"
+          filePathList:
+            - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst02Oct24.root"
+          nominalWeightFormula: "(2.5006160e+20/1.0879799e+21) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+
+        data:
+          # 115 files has
+          # - 19Aug: POT=2.4783646e+20 POT
+          # - 02Oct: POT=2.4993316e+20 POT
+          - name: "FakeDataFromMCSubset"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataFromDoubledMC"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? 2.0 : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataTruedeltaPTLinearScale"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? (5./8.)*TruedeltaPT+1. : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataTruedeltaPTTruedeltaalphaTLinearScale"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? ( (5./8.)*TruedeltaPT+1. ) * ( (0.4/180.)*TruedeltaalphaT+0.8 ) : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          # LowQ2 study
+          - name: "FakeDataLowQ2Suppression"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataBruceTest1"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight * (IsMuonPionFlipped||IsPionPionSelected ? 0. : 1.) * (IsMuonPionCorrect ? 1.3 : 1.) )"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataBruceTest2"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight * (IsMuonPionFlipped||IsPionPionSelected ? 0.15 : 1.) * (IsMuonPionCorrect ? 1.7 : 1.) * Reweight_AhtBY_m3sigma * Reweight_BhtBY_p3sigma * Reweight_CV1uBY_p3sigma * Reweight_CV2uBY_m3sigma * Reweight_NonRESBGvpCC2pi_m3sigma * Reweight_NonRESBGvpNC2pi_m3sigma * Reweight_NonRESBGvnCC2pi_m3sigma * Reweight_NonRESBGvnNC2pi_m3sigma * Reweight_NonRESBGvbarpCC2pi_m3sigma * Reweight_NonRESBGvbarpNC2pi_m3sigma * Reweight_NonRESBGvbarnCC2pi_m3sigma * Reweight_NonRESBGvbarnNC2pi_m3sigma )"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataSidebandPiRW"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * SidebandPiRW)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataFSIhN"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * Reweight_FSI_hN)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataFSIINCL"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * (Reweight_FSI_INCL>20 ? 1. : Reweight_FSI_INCL))"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataFSIG4BC"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * (Reweight_FSI_G4BC>20 ? 1. : Reweight_FSI_G4BC))"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataLQCDZExpFit"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * Reweight_LQCDZExpFit)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+
+
+
+      - name: "ICARUSNuMI_1muNp0pi_Reco_Dataset1"
+
+        isEnabled: true
+
+        selectedDataEntry: "FakeDataFromMCSubset"
+
+        showSelectedEventCount: true
+
+        mc:
+          tree: "AllSamples_FillTree/selectedEvents_NSigmas"
+          filePathList:
+            - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst02Oct24.root"
+          nominalWeightFormula: "(2.5006160e+20/1.0879799e+21) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+
+        data:
+          # 115 files has
+          # - 19Aug: POT=2.4783646e+20 POT
+          # - 02Oct: POT=2.4993316e+20 POT
+          - name: "FakeDataFromMCSubset"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataFromDoubledMC"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? 2.0 : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataTruedeltaPTLinearScale"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? (5./8.)*TruedeltaPT+1. : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataTruedeltaPTTruedeltaalphaTLinearScale"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==1 ? ( (5./8.)*TruedeltaPT+1. ) * ( (0.4/180.)*TruedeltaalphaT+0.8 ) : 1.) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          # LowQ2 study
+          - name: "FakeDataLowQ2Suppression"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataBruceTest1"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight * (IsMuonPionFlipped||IsPionPionSelected ? 0. : 1.) * (IsMuonPionCorrect ? 1.3 : 1.) )"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataBruceTest2"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPLowQ2Suppression * SPPTpiMINERvAFittedReweight * (IsMuonPionFlipped||IsPionPionSelected ? 0.15 : 1.) * (IsMuonPionCorrect ? 1.7 : 1.) * Reweight_AhtBY_m3sigma * Reweight_BhtBY_p3sigma * Reweight_CV1uBY_p3sigma * Reweight_CV2uBY_m3sigma * Reweight_NonRESBGvpCC2pi_m3sigma * Reweight_NonRESBGvpNC2pi_m3sigma * Reweight_NonRESBGvnCC2pi_m3sigma * Reweight_NonRESBGvnNC2pi_m3sigma * Reweight_NonRESBGvbarpCC2pi_m3sigma * Reweight_NonRESBGvbarpNC2pi_m3sigma * Reweight_NonRESBGvbarnCC2pi_m3sigma * Reweight_NonRESBGvbarnNC2pi_m3sigma )"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataSidebandPiRW"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * SidebandPiRW)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataFSIhN"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * Reweight_FSI_hN)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataFSIINCL"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * (Reweight_FSI_INCL>20 ? 1. : Reweight_FSI_INCL))"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataFSIG4BC"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * (Reweight_FSI_G4BC>20 ? 1. : Reweight_FSI_G4BC))"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"
+          - name: "FakeDataLQCDZExpFit"
+            tree: "AllSamples_FillTree/selectedEvents"
+            nominalWeightFormula: "(2.5006160e+20/2.4993316e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG3Chase * SPPQ2RW * SPPTpiMINERvAFittedReweight * Reweight_LQCDZExpFit)"
+            filePathList:
+              - "${GUNDAM_INPUTS_DIR}/rootfiles/240729_NuMIReproc_TrackSplitShift/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24_115Files.root"

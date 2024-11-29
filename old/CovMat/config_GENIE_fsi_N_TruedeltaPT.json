@@ -1,0 +1,17 @@
+{
+  "MainTree": {
+    "FilePath": "${GUNDAM_INPUTS_DIR}/CovMat/inputfiles/dfs_MakeFSICovTree.pkl",
+    "TreeKey": "df"
+  },
+  "BinningFile": "${GUNDAM_INPUTS_DIR}/binnings/binning_TruedeltaPT.txt",
+  
+  "JobName": "GENIE_fsi_N_TruedeltaPT",
+  "DialName": "FSI_N_VariationResponse",
+  "NUniv": 100,
+
+  "SelectionCutExpr": "CutType>=0",
+  "SampleSelectionExpr": "CutType>=0",
+  "SampleWeightExpr": "FluxWeightWithG3Chase * SPPCVCorrection",
+  
+  "OutputFileName": "output_CovMat_GENIE_fsi_N_TruedeltaPT.root"
+}

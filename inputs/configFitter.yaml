@@ -1,0 +1,16 @@
+# FitterEngine config
+
+# listing local configs
+
+# minimizer
+minimizerConfig: "./inputs/fit/configMinimizer.yaml"
+
+# legacy propagator definition in the fitterEngine config
+propagatorConfig: "./inputs/propagator/configPropagator.yaml"
+
+# likelihoodInterface
+likelihoodInterfaceConfig:
+
+  # jointProbability
+  jointProbabilityConfig:
+    type: "PoissonLLH"

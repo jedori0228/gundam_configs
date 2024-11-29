@@ -1,0 +1,17 @@
+
+
+name: Detector Systematics
+isEnabled: true
+
+printDialSetsSummary: true
+
+releaseFixedParametersOnHesse: true
+covarianceMatrixFilePath: "./inputs/propagator/parameters/detector/DetectorSyst/gundaminput_detsyst.root"
+covarianceMatrixTMatrixD: detsyst_cov
+parameterPriorTVectorD: detsyst_param_prior
+parameterNameTObjArray: detsyst_param_names
+parameterLowerBoundsTVectorD: detsyst_param_lb
+parameterUpperBoundsTVectorD: detsyst_param_ub
+
+parameterDefinitions: "./inputs/propagator/parameters/detector/DetectorSyst/DetectorSystDef.yaml"
+

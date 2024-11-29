@@ -1,0 +1,42 @@
+type: "RootMinimizer"
+
+minimizer: "Minuit2"
+algorithm: "Migrad"
+
+errors: "Hesse"
+enablePostFitErrorFit: true
+
+# https://root.cern.ch/download/minuit.pdf
+print_level: 1 # 2 will print the giant gradient matrix...
+
+# Migrad: The default tolerance is 0.1, and the minimization will stop
+# when the estimated vertical distance to the minimum (EDM) is less
+# than 0.001*[tolerance]*UP (see SET ERR).
+# UP:
+# Minuit defines parameter errors as the change in parameter value required
+# to change the function value by UP. Normally, for chisquared fits
+# UP=1, and for negative log likelihood, UP=0.5
+tolerance: 1E-2
+strategy: 1
+max_iter: 100000
+max_fcn: 1E9
+
+# useNormalizedFitSpace: when true, every parameter is rescaled such as the
+# prior mean value is set to 0 and the prior sigma is set to 1. This option
+# can help Minuit to converge while some parameter may have very different scales.
+# default: true
+useNormalizedFitSpace: true
+
+# for a faster convergence
+enableSimplexBeforeMinimize: true # help Migrad to find the right spot
+simplexMaxFcnCalls: 20000 # end SIMPLEX algo after this amount regardless of EDM
+simplexToleranceLoose: 10000 # using EDM from fitter times this number -> less precise but should converge faster
+simplexStrategy: 1
+
+# Fit monitor
+monitorRefreshRateInMs: 5000
+
+showParametersOnFitMonitor: false
+maxNbParametersPerLineOnMonitor: 15
+
+monitorGradientDescent: false

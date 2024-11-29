@@ -1,0 +1,26 @@
+
+name: G4 Piplus Fate
+isEnabled: true
+
+printDialSetsSummary: true
+
+allowPca: false
+
+useEigenDecompInFit: false
+allowEigenDecompWithBounds: true
+
+covarianceMatrixFilePath: "./inputs/propagator/parameters/simulation/matrices/output_CovMat_G4PipFate.root"
+covarianceMatrixTMatrixD: "G4PipFate/G4PipFate_covariance"
+
+parameterLimits:
+  minValue: 0
+  maxValue: 30
+
+useOnlyOneParameterPerEvent: true
+
+dialSetDefinitions:
+  - name: G4 Piplus Fate dialSetDefinitions
+    applyOnDataSets: [ "*" ]
+    parametersBinningPath: "./inputs/binnings/binning_G4PipFate.txt"
+    printDialsSummary: true
+    applyCondition: "[IsData]==0"

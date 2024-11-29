@@ -1,0 +1,18 @@
+# Propagator config
+
+
+enableStatThrowInToys: true # running with --toy option
+enableEventMcThrow: false
+
+# printouts
+showEventBreakdown: true
+debugPrintLoadedEvents: true
+
+parametersManagerConfig: "./inputs/propagator/parameters/configParameters.yaml"
+fitSampleSetConfig:      "./inputs/propagator/samples/configSamples.yaml"
+plotGeneratorConfig:     "./inputs/propagator/plots/configPlots.yaml"
+
+# legacy config reader
+dataSetList:             "./inputs/datasets/configDatasets.yaml"
+
+

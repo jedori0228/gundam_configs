@@ -1,0 +1,12 @@
+
+
+fitterEngineConfig:
+  propagatorConfig:
+    parametersManagerConfig:
+      parameterSetList:
+        - __INDEX__: "*"
+          isEnabled: false # all off
+
+        # then, put this one back ON
+        - name: "Template Parameter TruedeltaPT"
+          isEnabled: true

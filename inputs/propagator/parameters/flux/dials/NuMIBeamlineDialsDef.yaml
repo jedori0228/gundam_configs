@@ -1,0 +1,80 @@
+- parameterName: "numi_beam_div"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_beam_div"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_beam_power"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_beam_power"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_beam_shift_y"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_beam_shift_y"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_beam_shift_x"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_beam_shift_x"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_beam_spot"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_beam_spot"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_beam_G3Chase"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_beam_G3Chase"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_horn1_x"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_horn1_x"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_horn1_y"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_horn1_y"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_horn_current_plus"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_horn_current_plus"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_water_layer"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialsType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_water_layer"
+      applyCondition: "[IsData]==0"
+

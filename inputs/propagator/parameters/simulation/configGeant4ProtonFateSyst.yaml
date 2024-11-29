@@ -1,0 +1,28 @@
+
+
+
+name: G4 Proton Fate
+isEnabled: true
+
+printDialSetsSummary: true
+
+allowPca: false
+
+useEigenDecompInFit: false
+allowEigenDecompWithBounds: true
+
+covarianceMatrixFilePath: "./inputs/propagator/parameters/simulation/matrices/output_CovMat_G4ProtonFate.root"
+covarianceMatrixTMatrixD: "G4ProtonFate/G4ProtonFate_covariance"
+
+parameterLimits:
+  minValue: 0
+  maxValue: 30
+
+useOnlyOneParameterPerEvent: true
+
+dialSetDefinitions:
+  - name: G4 Proton Fate dialSetDefinitions
+    applyOnDataSets: [ "*" ]
+    parametersBinningPath: "./inputs/binnings/binning_G4ProtonFate.txt"
+    printDialsSummary: true
+    applyCondition: "[IsData]==0"

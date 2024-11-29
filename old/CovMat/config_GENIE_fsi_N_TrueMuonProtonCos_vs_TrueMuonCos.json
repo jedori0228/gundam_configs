@@ -1,0 +1,17 @@
+{
+  "MainTree": {
+    "FilePath": "${GUNDAM_INPUTS_DIR}/CovMat/inputfiles/dfs_MakeFSICovTree.pkl",
+    "TreeKey": "df"
+  },
+  "BinningFile": "${GUNDAM_INPUTS_DIR}/binnings/Make2DBinning/binning_TrueMuonProtonCos_vs_TrueMuonCos.txt",
+  
+  "JobName": "GENIE_fsi_N_TrueMuonProtonCos_vs_TrueMuonCos",
+  "DialName": "FSI_N_VariationResponse",
+  "NUniv": 100,
+
+  "SelectionCutExpr": "CutType>=0",
+  "SampleSelectionExpr": "CutType>=0",
+  "SampleWeightExpr": "FluxWeightWithG3Chase * SPPCVCorrection",
+  
+  "OutputFileName": "output_CovMat_GENIE_fsi_N_TrueMuonProtonCos_vs_TrueMuonCos.root"
+}

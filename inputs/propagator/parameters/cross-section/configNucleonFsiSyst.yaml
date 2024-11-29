@@ -1,0 +1,25 @@
+
+
+name: FSI N TruedeltaPT
+isEnabled: true
+
+printDialSetsSummary: true
+
+useEigenDecompInFit: false
+allowEigenDecompWithBounds: true
+
+covarianceMatrixFilePath: "./inputs/propagator/parameters/cross-section/matrices/output_CovMat_GENIE_fsi_N_TruedeltaPT.root"
+covarianceMatrixTMatrixD: "GENIE_fsi_N_TruedeltaPT/GENIE_fsi_N_TruedeltaPT_covariance"
+
+parameterLimits:
+  minValue: 0
+  maxValue: 30
+
+useOnlyOneParameterPerEvent: true
+
+dialSetDefinitions:
+  - name: FSI N TruedeltaPT dialSetDefinitions
+    applyOnDataSets: [ "*" ]
+    parametersBinningPath: "./inputs/binnings/binning_TruedeltaPT.txt"
+    printDialsSummary: true
+    applyCondition: "[IsData]==0"
