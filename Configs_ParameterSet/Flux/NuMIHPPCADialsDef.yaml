@@ -1,0 +1,120 @@
+- parameterName: "numi_pc_0"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_0"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_1"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_1"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_2"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_2"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_3"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_3"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_4"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_4"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_5"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_5"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_6"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_6"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_7"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_7"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_8"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_8"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_9"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_9"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_10"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_10"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_11"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_11"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_12"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_12"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_13"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_13"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "numi_pc_14"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "numi_pc_14"
+      applyCondition: "[IsData]==0"
+

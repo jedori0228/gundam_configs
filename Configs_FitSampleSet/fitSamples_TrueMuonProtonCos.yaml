@@ -1,21 +1,27 @@
 fitSampleList:
   - name: "TrueSignal_TrueMuonProtonCos"
     isEnabled: true
-    binning: "./binnings/binning_TrueMuonProtonCos.txt"
+    binning: "${GUNDAM_INPUTS_DIR}/binnings/binning_TrueMuonProtonCos.txt"
 
     selectionCuts: "" # (numu+numubar)
     #selectionCuts: "TrueE>0.3" # (numu+numubar) but Enu>0.3 GeV
     #selectionCuts: "TrueE>0.3 && TruePDG>0." # (numu) but Enu>0.3 GeV
 
-    dataSets: ["ICARUSNuMI_1muNp0pi_True_Dataset0"]
+    dataSets: ["ICARUSNuMI_1muNp0pi_True_Dataset1"]
     parameterSetName: "Template Parameter MuonProtonCos"
     yAxis: "#frac{d #sigma}{d #delta p_{T}} #frac{cm^{2}}{(GeV/c) Ar}"
     normaliseParameterList:
       - name: "Constant flux"
         isEnabled: true
 
-        meanValue: 8.4726301e+11 # (numu+numubar)/cm^2, g3chase applied, POT = 1.0900766e+21
-        stdDev: 1.0667041e+11 # sqrt(9.2^2 + 8.6^2) = 12.59%
+        # USED FOR 240729_NuMIReproc_TrackSplitShift
+        # meanValue: 8.4726301e+11 # (numu+numubar)/cm^2, g3chase applied, POT = 1.0900766e+21
+        # stdDev: 1.0667041e+11 # sqrt(9.2^2 + 8.6^2) = 12.59%
+
+        # FOR 241111_PreparingSignalUnboxing
+        # - G4Updated ppfx is now used
+        meanValue: 8.3525537e+11 # (numu+numubar)/cm^2, g3chase applied, POT = 1.0900766e+21
+        stdDev: 1.0515865e+11 # sqrt(9.2^2 + 8.6^2) = 12.59%
 
       - name: "Number of targets"
         ### Using MC value assumed from sbn-doc-33224, converted to N NUCLEONS instead of N Nuclei

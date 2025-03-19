@@ -15,7 +15,6 @@
       applyCondition: "[IsSignal] == 1"
       printDialsSummary: true
 
-
 # x-sec
 
 - name: Cross section Systematics

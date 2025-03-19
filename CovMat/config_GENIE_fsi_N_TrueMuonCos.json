@@ -11,7 +11,7 @@
 
   "SelectionCutExpr": "CutType>=0",
   "SampleSelectionExpr": "CutType>=0",
-  "SampleWeightExpr": "FluxWeightWithG3Chase * SPPCVCorrection",
+  "SampleWeightExpr": "FluxWeightWithG4Update * SPPCVCorrection",
   
   "OutputFileName": "output_CovMat_GENIE_fsi_N_TrueMuonCos.root"
 }

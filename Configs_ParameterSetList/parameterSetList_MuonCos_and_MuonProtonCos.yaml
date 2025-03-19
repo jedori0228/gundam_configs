@@ -75,23 +75,39 @@
 
   allowPca: true
 
-  useEigenDecompInFit: false
+  useEigenDecompInFit: true # fitter will play with the eigen parameters
+  allowEigenDecompWithBounds: true # ignore bounds in real parameter space
+  eigenSvdThreshold: 1E-14 # numerical noise of matrix inversion with double precision
+  useEigenDecompForThrows: true # throwing from the diagonal covariance matrix
 
+  # USED FOR 240729_NuMIReproc_TrackSplitShift
   # covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/2023-07-31_out_450.37_7991.98_79512.66_QEL11.root" # with empty bins
-  covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/2023-08-17_out_450.37_7991.98_79512.66_QEL11.root" # empty bins removed
-  covarianceMatrixTMatrixD: "covariance_matrices/hadron/total/cov_total"
+  # covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/2023-08-17_out_450.37_7991.98_79512.66_QEL11.root" # empty bins removed
+  # covarianceMatrixTMatrixD: "covariance_matrices/hadron/total/cov_total"
 
-  parameterLimits:
-    minValue: 0
-    maxValue: 30
+  # FOR 241111_PreparingSignalUnboxing
+  # - G4Updated ppfx is now used
+  covarianceMatrixFilePath: "./Configs_ParameterSet/Flux/2024-10-03_out_450.37_7991.98_79512.66.root"
+  covarianceMatrixTMatrixD: "covariance_matrices/hadron/total/cov_total"
+  
+
+  # parameterLimits:
+  #   minValue: 0
+  #   maxValue: 30
 
   useOnlyOneParameterPerEvent: true
 
   dialSetDefinitions:
     - name: Flux Systematics HP dialSetDefinitions
       applyOnDataSets: ["*"]
-      #parametersBinningPath: "./binnings/binning_fluxCovMtx.txt" # with empty bins
-      parametersBinningPath: "./binnings/binning_fluxCovMtx_removeHE_jk.txt" # empty bins removed
+
+      # USED FOR 240729_NuMIReproc_TrackSplitShift
+      # parametersBinningPath: "./binnings/binning_fluxCovMtx.txt" # with empty bins
+      # parametersBinningPath: "./binnings/binning_fluxCovMtx_removeHE_jk.txt" # empty bins removed
+
+      # FOR 241111_PreparingSignalUnboxing
+      parametersBinningPath: "./binnings/binning_fluxCovMtx_G4Update.txt"
+
       printDialsSummary: true
       applyCondition: "[IsData]==0"
 
@@ -123,13 +139,14 @@
   allowPca: true
   
   useEigenDecompInFit: true
+  allowEigenDecompWithBounds: true # ignore bounds in real parameter space
 
   covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_G4ProtonFate.root"
   covarianceMatrixTMatrixD: "G4ProtonFate/G4ProtonFate_covariance"
 
-  parameterLimits:
-    minValue: 0
-    maxValue: 30
+  # parameterLimits:
+  #   minValue: 0
+  #   maxValue: 30
 
   useOnlyOneParameterPerEvent: true
 
@@ -150,13 +167,14 @@
   allowPca: true
 
   useEigenDecompInFit: true
+  allowEigenDecompWithBounds: true # ignore bounds in real parameter space
 
   covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_G4PipFate.root"
   covarianceMatrixTMatrixD: "G4PipFate/G4PipFate_covariance"
 
-  parameterLimits:
-    minValue: 0
-    maxValue: 30
+  # parameterLimits:
+  #   minValue: 0
+  #   maxValue: 30
 
   useOnlyOneParameterPerEvent: true
 
@@ -178,13 +196,14 @@
   allowPca: true
 
   useEigenDecompInFit: true
+  allowEigenDecompWithBounds: true # ignore bounds in real parameter space
 
   covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_G4PimFate.root"
   covarianceMatrixTMatrixD: "G4PimFate/G4PimFate_covariance"
 
-  parameterLimits:
-    minValue: 0
-    maxValue: 30
+  # parameterLimits:
+  #   minValue: 0
+  #   maxValue: 30
 
   useOnlyOneParameterPerEvent: true
 
@@ -209,13 +228,14 @@
   allowPca: true
 
   useEigenDecompInFit: true
+  allowEigenDecompWithBounds: true # ignore bounds in real parameter space
 
   covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_GENIE_fsi_pi_TrueMuonProtonCos_vs_TrueMuonCos.root"
   covarianceMatrixTMatrixD: "GENIE_fsi_pi_TrueMuonProtonCos_vs_TrueMuonCos/GENIE_fsi_pi_TrueMuonProtonCos_vs_TrueMuonCos_covariance"
 
-  parameterLimits:
-    minValue: 0
-    maxValue: 30
+  # parameterLimits:
+  #   minValue: 0
+  #   maxValue: 30
 
   useOnlyOneParameterPerEvent: true
 
@@ -239,13 +259,14 @@
   allowPca: true
 
   useEigenDecompInFit: true
+  allowEigenDecompWithBounds: true # ignore bounds in real parameter space
 
   covarianceMatrixFilePath: "./CovMat/outputs/output_CovMat_GENIE_fsi_N_TrueMuonProtonCos_vs_TrueMuonCos.root"
   covarianceMatrixTMatrixD: "GENIE_fsi_N_TrueMuonProtonCos_vs_TrueMuonCos/GENIE_fsi_N_TrueMuonProtonCos_vs_TrueMuonCos_covariance"
 
-  parameterLimits:
-    minValue: 0
-    maxValue: 30
+  # parameterLimits:
+  #   minValue: 0
+  #   maxValue: 30
 
   useOnlyOneParameterPerEvent: true
 

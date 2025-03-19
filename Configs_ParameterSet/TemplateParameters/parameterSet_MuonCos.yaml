@@ -1,0 +1,18 @@
+name: Template Parameter MuonCos
+isEnabled: true
+
+printDialSetsSummary: true
+
+nominalStepSize: 0.1
+useOnlyOneParameterPerEvent: true
+
+dialSetDefinitions:
+  - name: Template Parameter MuonCos dialSetDefinitions
+    applyOnDataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0", "ICARUSNuMI_1muNp0pi_True_Dataset0"]
+    parametersBinningPath: "${GUNDAM_INPUTS_DIR}/binnings/binning_TrueMuonCos.txt"
+    applyCondition: "[IsSignal] == 1"
+    printDialsSummary: true
+
+parameterLimits:
+  minValue: 0.
+  maxValue: 3.0

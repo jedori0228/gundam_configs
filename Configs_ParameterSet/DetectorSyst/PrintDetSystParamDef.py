@@ -1,7 +1,7 @@
 import os
-import kDetSystKnobList
+import DetSystKnobList
 
-knobNames = kDetSystKnobList.DetSystMultisigmaKnobNames
+knobNames = DetSystKnobList.DetSystMultisigmaKnobNames
 
 for name in knobNames:
   output = '''- parameterName: "%s"

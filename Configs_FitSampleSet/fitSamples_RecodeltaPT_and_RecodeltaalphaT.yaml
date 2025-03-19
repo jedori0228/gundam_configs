@@ -2,22 +2,22 @@ fitSampleList:
 
   - name: "SignalSelection_Contained_RecodeltaPT"
     isEnabled: true
-    binning: "./binnings/binning_RecodeltaPT.txt"
+    binning: "${GUNDAM_INPUTS_DIR}/binnings/binning_RecodeltaPT.txt"
     selectionCuts: "CutType==1 && MuonTrackType==1"
     dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0"]
   - name: "Sideband_Contained_RecodeltaPT"
     isEnabled: true
-    binning: "./binnings/binning_RecodeltaPT.txt"
+    binning: "${GUNDAM_INPUTS_DIR}/binnings/binning_RecodeltaPT.txt"
     selectionCuts: "CutType==2 && MuonTrackType==1 && LeadingChargedPionCandidateLength>=10."
     dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0"]
 
   - name: "SignalSelection_Contained_RecodeltaalphaT"
     isEnabled: true
-    binning: "./binnings/binning_RecodeltaalphaT.txt"
+    binning: "${GUNDAM_INPUTS_DIR}/binnings/binning_RecodeltaalphaT.txt"
     selectionCuts: "CutType==1 && MuonTrackType==1"
     dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset1"]
   - name: "Sideband_Contained_RecodeltaalphaT"
     isEnabled: true
-    binning: "./binnings/binning_RecodeltaalphaT.txt"
+    binning: "${GUNDAM_INPUTS_DIR}/binnings/binning_RecodeltaalphaT.txt"
     selectionCuts: "CutType==2 && MuonTrackType==1 && LeadingChargedPionCandidateLength>=10."
     dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset1"]

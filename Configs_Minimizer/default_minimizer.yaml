@@ -1,61 +1,42 @@
-# Minimizer settings
+type: "RootMinimizer"
 
-## "_minimizerType_" is set by "minimizer"
-## - default: "Minuit2"
 minimizer: "Minuit2"
-
-## "_minimizerAlgo_" is set by "algorithm"
-## - default: "Migrad"
 algorithm: "Migrad"
 
-## "_strategy_" is set by "strategy"
-## - default: 1
+errors: "Hesse"
+enablePostFitErrorFit: true
+
+# https://root.cern.ch/download/minuit.pdf
+print_level: 0 # 2 will print the giant gradient matrix...
+
+# Migrad: The default tolerance is 0.1, and the minimization will stop
+# when the estimated vertical distance to the minimum (EDM) is less
+# than 0.001*[tolerance]*UP (see SET ERR).
+# UP:
+# Minuit defines parameter errors as the change in parameter value required
+# to change the function value by UP. Normally, for chisquared fits
+# UP=1, and for negative log likelihood, UP=0.5
+tolerance: 1E-2
 strategy: 1
-
-## "_printLevel_" is set by "print_level"
-## - default: 2
-print_level: 0
-
-## "_tolerance_" is set by "tolerance"
-## - default: 1E-4
-tolerance: 1E-4
-
-## "_maxIterations_" is set by {"maxIterations"}, {"max_iter"}
-## - default: 500
-max_iter: 1E6
-
-## "_maxFcnCalls_" is set by {"maxFcnCalls"}, {"max_fcn"}
-## - default: 1000000000 (=1E9)
+max_iter: 100000
 max_fcn: 1E9
 
-## Simplex configs
-## "_preFitWithSimplex_" is set by "enableSimplexBeforeMinimize"
-## - default: false
+# useNormalizedFitSpace: when true, every parameter is rescaled such as the
+# prior mean value is set to 0 and the prior sigma is set to 1. This option
+# can help Minuit to converge while some parameter may have very different scales.
+# default: true
+useNormalizedFitSpace: true
 
-## "_simplexMaxFcnCalls_" is set by "simplexMaxFcnCalls"
-## - default: 1000
+# for a faster convergence
+enableSimplexBeforeMinimize: true # help Migrad to find the right spot
+simplexMaxFcnCalls: 20000 # end SIMPLEX algo after this amount regardless of EDM
+simplexToleranceLoose: 10000 # using EDM from fitter times this number -> less precise but should converge faster
+simplexStrategy: 1
 
-## "_simplexToleranceLoose_ " is set by "simplexToleranceLoose"
-## - default: 1000.
+# Fit monitor
+monitorRefreshRateInMs: 5000
 
-## "_simplexStrategy_" is set by "simplexStrategy"
-## - default: 1
+showParametersOnFitMonitor: false
+maxNbParametersPerLineOnMonitor: 15
 
-## "_errorAlgo_" is set by {"errorsAlgo"}, {"errors"}
-## - default: "Hesse"
-errors: "Hesse"
-#errors: "Minos"
-
-## "_restoreStepSizeBeforeHesse_" is set by "restoreStepSizeBeforeHesse"
-## - default: false
-
-## "_generatedPostFitParBreakdown_" is set by "generatedPostFitParBreakdown"
-## - default: false
-
-## "_generatedPostFitEigenBreakdown_ " is set by "generatedPostFitEigenBreakdown"
-## - default: false
-
-## "_stepSizeScaling_" is set by "stepSizeScaling"
-## - default: 1
-
-
+monitorGradientDescent: false

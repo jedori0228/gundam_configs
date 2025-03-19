@@ -3,6 +3,9 @@ import os
 DetSystMultisigmaKnobNames = [
 "NuMIXSecFrontIndPlaneGainSyst",
 "NuMIXSecFrontIndPlaneNoiseSyst",
-"NuMIXSecFrontIndPlaneSignalShapeSyst",
+#"NuMIXSecFrontIndPlaneSignalShapeSyst",
+"NuMIXSecFrontIndPlaneSignalShapeFittedSyst",
 "NuMIXSecMiddleIndPlaneTransparencySyst",
+"NuMIXSecCaloGainSyst",
+"NuMIXSecLifetimeSyst",
 ]

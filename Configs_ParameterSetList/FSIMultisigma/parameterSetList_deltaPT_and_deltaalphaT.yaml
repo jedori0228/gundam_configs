@@ -8,6 +8,7 @@
   printDialSetsSummary: true
 
   nominalStepSize: 0.1
+  useOnlyOneParameterPerEvent: true
 
   dialSetDefinitions:
     - name: Template Parameter deltaPT dialSetDefinitions
@@ -24,6 +25,7 @@
   printDialSetsSummary: true
 
   nominalStepSize: 0.1
+  useOnlyOneParameterPerEvent: true
 
   dialSetDefinitions:
     - name: Template Parameter deltaalphaT dialSetDefinitions

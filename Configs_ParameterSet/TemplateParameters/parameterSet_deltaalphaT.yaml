@@ -1,0 +1,22 @@
+name: Template Parameter deltaalphaT
+isEnabled: true
+
+printDialSetsSummary: true
+
+nominalStepSize: 0.1
+useOnlyOneParameterPerEvent: true
+
+dialSetDefinitions:
+  - name: Template Parameter deltaalphaT dialSetDefinitions
+    applyOnDataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset1", "ICARUSNuMI_1muNp0pi_True_Dataset1"]
+    parametersBinningPath: "${GUNDAM_INPUTS_DIR}/binnings/binning_TruedeltaalphaT.txt"
+    applyCondition: "[IsSignal] == 1"
+    printDialsSummary: true
+
+
+covarianceMatrixFilePath: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/TemplateParameters/RegCovs/RegCov_Bins3Plus3_StrengthTenToThe0.53_Prior1.0.root"
+covarianceMatrixTMatrixD: "RegCov_Bins3Plus3_StrengthTenToThe0.53_Prior1.0"
+
+# parameterLimits:
+#   minValue: 0.
+#   maxValue: 3.0
