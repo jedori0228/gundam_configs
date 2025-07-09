@@ -3,14 +3,14 @@
   mc:
     tree: "AllSamples_FillTree/trueEvents_NSigmas"
     filePathList:
-      - "${GUNDAM_INPUTS_DIR}/rootfiles/241111_PreparingSignalUnboxing/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
-    nominalWeightFormula: "(FluxWeightWithG4Update)"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
+    nominalWeightFormula: "(FluxWeightWithBeamWidthCorrection)"
 
 - name: "ICARUSNuMI_1muNp0pi_True_Dataset1"
 
   mc:
     tree: "AllSamples_FillTree/trueEvents_NSigmas"
     filePathList:
-      - "${GUNDAM_INPUTS_DIR}/rootfiles/241111_PreparingSignalUnboxing/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
-    nominalWeightFormula: "(FluxWeightWithG4Update)"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
+    nominalWeightFormula: "(FluxWeightWithBeamWidthCorrection)"
 

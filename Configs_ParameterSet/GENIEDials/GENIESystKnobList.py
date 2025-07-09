@@ -1,10 +1,6 @@
 import os
 
 GENIEMultisigmaKnobNames = [
-#"ZExpA1CCQE",
-#"ZExpA2CCQE",
-#"ZExpA3CCQE",
-#"ZExpA4CCQE",
 
 "ZExpPCAB1",
 "ZExpPCAB2",
@@ -13,14 +9,18 @@ GENIEMultisigmaKnobNames = [
 
 "RPA_CCQE",
 "CoulombCCQE",
+
 "NormCCMEC",
 "NormNCMEC",
+
 "MaNCEL",
 "EtaNCEL",
+
 "MaCCRES",
 "MvCCRES",
 "MaNCRES",
 "MvNCRES",
+
 "NonRESBGvpCC1pi",
 "NonRESBGvpCC2pi",
 "NonRESBGvpNC1pi",
@@ -37,10 +37,13 @@ GENIEMultisigmaKnobNames = [
 "NonRESBGvbarnCC2pi",
 "NonRESBGvbarnNC1pi",
 "NonRESBGvbarnNC2pi",
+
 "RDecBR1gamma",
 "RDecBR1eta",
+
 "NormCCCOH",
 "NormNCCOH",
+
 "AhtBY",
 "BhtBY",
 "CV1uBY",
@@ -57,7 +60,10 @@ GENIEMultisigmaKnobNames = [
 "FrAbs_N",
 "FrPiProd_N",
 
-"CC1piTPi",
+#"CC1piTPi",
+"CC1piTPi_Q2Only",
+"CC1piTPi_TpiOnly",
+
 ]
 
 GENIEMorphKnobNames = [

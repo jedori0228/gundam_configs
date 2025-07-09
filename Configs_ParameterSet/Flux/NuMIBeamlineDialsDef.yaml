@@ -1,80 +1,80 @@
-- parameterName: "numi_beam_div"
+- parameterName: "numi_HornCurr"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_beam_div"
+      dialLeafName: "numi_HornCurr"
       applyCondition: "[IsData]==0"
 
-- parameterName: "numi_beam_power"
+- parameterName: "numi_Horn1_x"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_beam_power"
+      dialLeafName: "numi_Horn1_x"
       applyCondition: "[IsData]==0"
 
-- parameterName: "numi_beam_shift_y"
+- parameterName: "numi_Horn1_y"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_beam_shift_y"
+      dialLeafName: "numi_Horn1_y"
       applyCondition: "[IsData]==0"
 
-- parameterName: "numi_beam_shift_x"
+- parameterName: "numi_Beam_spot"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_beam_shift_x"
+      dialLeafName: "numi_Beam_spot"
       applyCondition: "[IsData]==0"
 
-- parameterName: "numi_beam_spot"
+- parameterName: "numi_Horn2_x"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_beam_spot"
+      dialLeafName: "numi_Horn2_x"
       applyCondition: "[IsData]==0"
 
-- parameterName: "numi_beam_G3Chase"
+- parameterName: "numi_Horn2_y"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_beam_G3Chase"
+      dialLeafName: "numi_Horn2_y"
       applyCondition: "[IsData]==0"
 
-- parameterName: "numi_horn1_x"
+- parameterName: "numi_Horns_water"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_horn1_x"
+      dialLeafName: "numi_Horns_water"
       applyCondition: "[IsData]==0"
 
-- parameterName: "numi_horn1_y"
+- parameterName: "numi_Beam_shift_x"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_horn1_y"
+      dialLeafName: "numi_Beam_shift_x"
       applyCondition: "[IsData]==0"
 
-- parameterName: "numi_horn_current_plus"
+- parameterName: "numi_Beam_shift_y"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_horn_current_plus"
+      dialLeafName: "numi_Beam_shift_y"
       applyCondition: "[IsData]==0"
 
-- parameterName: "numi_water_layer"
+- parameterName: "numi_Target_z"
   isEnabled: true
   dialSetDefinitions:
-    - dialsType: Spline
+    - dialType: Spline
       minimumSplineResponse: 0
-      dialLeafName: "numi_water_layer"
+      dialLeafName: "numi_Target_z"
       applyCondition: "[IsData]==0"
 

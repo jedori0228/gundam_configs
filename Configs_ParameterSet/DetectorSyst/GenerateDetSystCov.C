@@ -45,11 +45,13 @@ std::vector<std::string> GetDetSystMultisigmaKnobNames(){
   return {
 "NuMIXSecFrontIndPlaneGainSyst",
 "NuMIXSecFrontIndPlaneNoiseSyst",
-//"NuMIXSecFrontIndPlaneSignalShapeSyst",
 "NuMIXSecFrontIndPlaneSignalShapeFittedSyst",
 "NuMIXSecMiddleIndPlaneTransparencySyst",
 "NuMIXSecCaloGainSyst",
 "NuMIXSecLifetimeSyst",
+//NEW
+"NuMIXSecTrackSplitSyst",
+"NuMIXSecProtonEffSyst",
   };
 
 

@@ -9,18 +9,18 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/241111_PreparingSignalUnboxing/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
-    nominalWeightFormula: "( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG4Update * SPPQ2RW * SPPTpiMINERvAFittedReweight) ) )"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Random15Percent/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
+    nominalWeightFormula: "( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight ) )"
 
   data:
     - name: "Random15PercentRealData"
       tree: "AllSamples_FillTree/selectedEvents"
-      nominalWeightFormula: "(1.)"
+      nominalWeightFormula: "(IsRandom15Percent ? 1.0 : 0.0)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/NuMINumuXSec/NuMIPyAna/EventSelectionPlots/inputfiles/241111_PreparingSignalUnboxing/rootfiles/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Overlapping15Percent_Run1.root"
-        - "/Users/jskim/Documents/Neutrino/ICARUS/NuMINumuXSec/NuMIPyAna/EventSelectionPlots/inputfiles/241111_PreparingSignalUnboxing/rootfiles/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Overlapping15Percent_Run2.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run1.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run2.root"
 
 - name: "ICARUSNuMI_1muNp0pi_Reco_Dataset1"
 
@@ -33,15 +33,15 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/241111_PreparingSignalUnboxing/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst11Oct24.root"
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
-      - "/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work/rootfiles/241111_PreparingSignalUnboxing/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
-    nominalWeightFormula: "( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithG4Update * SPPQ2RW * SPPTpiMINERvAFittedReweight) ) )"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Random15Percent/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
+      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
+    nominalWeightFormula: "( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight ) )"
 
   data:
     - name: "Random15PercentRealData"
       tree: "AllSamples_FillTree/selectedEvents"
-      nominalWeightFormula: "(1.)"
+      nominalWeightFormula: "(IsRandom15Percent ? 1.0 : 0.0)"
       filePathList:
-        - "/Users/jskim/Documents/Neutrino/ICARUS/NuMINumuXSec/NuMIPyAna/EventSelectionPlots/inputfiles/241111_PreparingSignalUnboxing/rootfiles/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Overlapping15Percent_Run1.root"
-        - "/Users/jskim/Documents/Neutrino/ICARUS/NuMINumuXSec/NuMIPyAna/EventSelectionPlots/inputfiles/241111_PreparingSignalUnboxing/rootfiles/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Overlapping15Percent_Run2.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run1.root"
+        - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run2.root"

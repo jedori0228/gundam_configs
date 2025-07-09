@@ -6,8 +6,8 @@ knobNames = GENIESystKnobList.GENIEMultisigmaKnobNames
 for name in knobNames:
 
   IsEnabled = 'true'
-  if 'MFP' in name or 'Fr' in name:
-    IsEnabled = 'false'
+  #if 'MFP' in name or 'Fr' in name:
+  #  IsEnabled = 'false'
 
   output = '''- parameterName: "%s"
   isEnabled: %s

@@ -168,7 +168,9 @@ std::vector<std::string> GetGENIEMultisigmaKnobNames(){
 "FrAbs_N",
 "FrPiProd_N",
 
-"CC1piTPi",
+//"CC1piTPi",
+"CC1piTPi_Q2Only",
+"CC1piTPi_TpiOnly",
   };
 
 }

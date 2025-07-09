@@ -1,0 +1,39 @@
+name: BackgroundFit
+
+isEnabled: true
+
+printDialSetsSummary: true
+
+nominalStepSize: 0.1
+useOnlyOneParameterPerEvent: true
+
+# parameterLimits:
+#   minValue: 0.1
+#   maxValue: 1.5
+
+# - Binned
+
+dialSetDefinitions:
+  - name: BackgroundFit dialSetDefinitions
+    applyOnDataSets: ["*"]
+
+    # Using (W,Q2)
+    parametersBinningPath: "${GUNDAM_INPUTS_DIR}/binnings/binning_BackgroundFit_TrueQ2_0p1.txt"
+    applyCondition: "[IsSignal] == 3"
+
+    printDialsSummary: true
+
+# Prior from NuWro vs GENIE
+# - Prior = 1.0
+# covarianceMatrixFilePath: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/BackgroundFit/RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW1.0_PriorHiW1.0_NSet2.root"
+# covarianceMatrixTMatrixD: "RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW1.0_PriorHiW1.0_NSet2"
+# - Prior = (40, 40) for (LoW,HiW)
+# covarianceMatrixFilePath: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/BackgroundFit/RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.4_NSet2.root"
+# covarianceMatrixTMatrixD: "RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.4_NSet2"
+# - Prior = (40, 60) for (LoW,HiW)
+covarianceMatrixFilePath: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/BackgroundFit/RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.6_NSet2.root"
+covarianceMatrixTMatrixD: "RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.6_NSet2"
+# - Prior = bin-by-bin
+# covarianceMatrixFilePath: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/BackgroundFit/Cov_PriorLoWHiWBinByBin.root"
+# covarianceMatrixTMatrixD: "Cov_PriorLoWHiWBinByBin"
+

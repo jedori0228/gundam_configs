@@ -45,3 +45,20 @@
       minimumSplineResponse: 0
       dialLeafName: "NuMIXSecLifetimeSyst"
       applyCondition: "[IsData]==0"
+
+- parameterName: "NuMIXSecTrackSplitSyst"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NuMIXSecTrackSplitSyst"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NuMIXSecProtonEffSyst"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minimumSplineResponse: 0
+      dialLeafName: "NuMIXSecProtonEffSyst"
+      applyCondition: "[IsData]==0"
+

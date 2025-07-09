@@ -1,0 +1,26 @@
+name: Cosmic Slice
+
+isEnabled: true
+
+printDialSetsSummary: true
+
+nominalStepSize: 0.1
+useOnlyOneParameterPerEvent: true
+
+# parameterLimits:
+#   minValue: 0
+#   maxValue: 30
+
+dialSetDefinitions:
+  - name: Cosmic Slice dialSetDefinitions
+    applyOnDataSets: ["*"]
+
+    dialType: "Norm"
+
+    applyCondition: "[IsData]==0 && [IsSignal]==5"
+    printDialsSummary: true
+
+
+
+covarianceMatrixFilePath: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/Flux/gundaminput_cosmicslicesyst.root"
+covarianceMatrixTMatrixD: "cosmicslicesyst_cov"
