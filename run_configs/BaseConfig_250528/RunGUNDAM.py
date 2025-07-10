@@ -66,11 +66,11 @@ LLH_METHOD_ForSimFit = 'StatCovariance'
 # Datasets
 
 # - Fake data
-# DatasetType = 'FakeData'
-# DataEntries = [
-#     'Asimov',
-#     # 'FakeDataFromMCSubset',
-# ]
+DatasetType = 'FakeData'
+DataEntries = [
+    'Asimov',
+    # 'FakeDataFromMCSubset',
+]
 
 # - Real data, 15%
 # DatasetType = 'Random15PercentRealData'
@@ -85,10 +85,10 @@ LLH_METHOD_ForSimFit = 'StatCovariance'
 # ]
 
 # - Real data, 100% for the sideband + 15% data for the signal
-DatasetType = 'RealDataForSideband_Random15PercentRealDataForSignal'
-DataEntries = [
-    'RealDataForSideband_Random15PercentRealDataForSignal',
-]
+# DatasetType = 'RealDataForSideband_Random15PercentRealDataForSignal'
+# DataEntries = [
+#     'RealDataForSideband_Random15PercentRealDataForSignal',
+# ]
 
 # - Real data, 100%
 # DatasetType = 'RealData'

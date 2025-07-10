@@ -9,9 +9,9 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
-      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
-      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
+      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
+      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
+      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
     nominalWeightFormula: "(CutType==1 ? (( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight ) )) : (( IsData ? (Run<9300 ? 1.26862061947009 : 0.984613145608233) : (2.500616E+20/1.0900766e+21) *  ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight ) )))"
 
   data:
@@ -19,8 +19,8 @@
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(CutType==1 ? ( IsRandom15Percent ? 1.0 : 0.0 ) : ( 1.0 ))"
       filePathList:
-        - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run1.root"
-        - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run2.root"
+        - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run1.root"
+        - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run2.root"
 
 - name: "ICARUSNuMI_1muNp0pi_Reco_Dataset1"
 
@@ -33,9 +33,9 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
-      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
-      - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
+      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
+      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root"
+      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root"
     nominalWeightFormula: "(CutType==1 ? (( IsData ? (Run<9300 ? 0.17351986877866 : 0.141261182170497) : (3.5670840e+19/1.0900766e+21) * ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight ) )) : (( IsData ? (Run<9300 ? 1.26862061947009 : 0.984613145608233) : (2.500616E+20/1.0900766e+21) *  ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight ) )))"
 
   data:
@@ -43,5 +43,5 @@
       tree: "AllSamples_FillTree/selectedEvents"
       nominalWeightFormula: "(CutType==1 ? ( IsRandom15Percent ? 1.0 : 0.0 ) : ( 1.0 ))"
       filePathList:
-        - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run1.root"
-        - "${GUNDAM_INPUTS_DIR}/rootfiles/250627_BadRegionRejection/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run2.root"
+        - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run1.root"
+        - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run2.root"

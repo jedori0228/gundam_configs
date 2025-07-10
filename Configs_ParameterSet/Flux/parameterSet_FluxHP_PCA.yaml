@@ -4,11 +4,11 @@ isEnabled: true
 printDialSetsSummary: true
 
 releaseFixedParametersOnHesse: true # true by default
-covarianceMatrixFilePath: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/Flux/gundaminput_numihppcasyst.root"
+covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/gundaminput_numihppcasyst.root"
 covarianceMatrixTMatrixD: numihppcasyst_cov
 parameterPriorTVectorD: numihppcasyst_param_prior
 parameterNameTObjArray: numihppcasyst_param_names
 parameterLowerBoundsTVectorD: numihppcasyst_param_lb
 parameterUpperBoundsTVectorD: numihppcasyst_param_ub
 
-parameterDefinitions: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/Flux/NuMIHPPCADialsDef.yaml"
+parameterDefinitions: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/NuMIHPPCADialsDef.yaml"

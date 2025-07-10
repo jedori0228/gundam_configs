@@ -1,11 +1,11 @@
 fitSampleList:
   - name: "SignalSelection_RecoMuonCos"
     isEnabled: true
-    binning: "${GUNDAM_INPUTS_DIR}/binnings/binning_RecoMuonCos.txt"
+    binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_RecoMuonCos.txt"
     selectionCuts: "CutType==1"
     dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0"]
   - name: "Sideband_RecoMuonCos"
     isEnabled: true
-    binning: "${GUNDAM_INPUTS_DIR}/binnings/binning_RecoMuonCos.txt"
+    binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_RecoMuonCos.txt"
     selectionCuts: "CutType==2 && LeadingChargedPionCandidateLength>=10."
     dataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0"]

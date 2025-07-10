@@ -1,7 +1,7 @@
 fitSampleList:
   - name: "TrueSignal_TruedeltaPT"
     isEnabled: true
-    binning: "${GUNDAM_INPUTS_DIR}/binnings/binning_TruedeltaPT.txt"
+    binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaPT.txt"
 
     selectionCuts: "" # (numu+numubar)
     #selectionCuts: "TrueE>0.3" # (numu+numubar) but Enu>0.3 GeV

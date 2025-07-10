@@ -22,5 +22,5 @@ dialSetDefinitions:
 
 
 
-covarianceMatrixFilePath: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/Flux/gundaminput_cosmicslicesyst.root"
+covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/gundaminput_cosmicslicesyst.root"
 covarianceMatrixTMatrixD: "cosmicslicesyst_cov"

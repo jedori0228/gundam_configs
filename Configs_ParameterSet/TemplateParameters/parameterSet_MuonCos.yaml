@@ -9,7 +9,7 @@ useOnlyOneParameterPerEvent: true
 dialSetDefinitions:
   - name: Template Parameter MuonCos dialSetDefinitions
     applyOnDataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0", "ICARUSNuMI_1muNp0pi_True_Dataset0"]
-    parametersBinningPath: "${GUNDAM_INPUTS_DIR}/binnings/binning_TrueMuonCos.txt"
+    parametersBinningPath: "${GUNDAM_CONFIG_DIR}/binnings/binning_TrueMuonCos.txt"
     applyCondition: "[IsSignal] == 1"
     printDialsSummary: true
 

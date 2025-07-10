@@ -4,11 +4,11 @@ isEnabled: true
 printDialSetsSummary: true
 
 releaseFixedParametersOnHesse: true # true by default
-covarianceMatrixFilePath: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/Flux/gundaminput_numibeamlinesyst.root"
+covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/gundaminput_numibeamlinesyst.root"
 covarianceMatrixTMatrixD: numibeamlinesyst_cov
 parameterPriorTVectorD: numibeamlinesyst_param_prior
 parameterNameTObjArray: numibeamlinesyst_param_names
 parameterLowerBoundsTVectorD: numibeamlinesyst_param_lb
 parameterUpperBoundsTVectorD: numibeamlinesyst_param_ub
 
-parameterDefinitions: "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/Flux/NuMIBeamlineDialsDef.yaml"
+parameterDefinitions: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/NuMIBeamlineDialsDef.yaml"

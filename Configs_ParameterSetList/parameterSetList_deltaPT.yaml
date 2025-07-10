@@ -1,31 +1,31 @@
 # Template
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/TemplateParameters/parameterSet_deltaPT.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/parameterSet_deltaPT.yaml"
 
 # x-sec
 # - FSI included here
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/GENIEDials/parameterSet_GENIEDials.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GENIEDials/parameterSet_GENIEDials.yaml"
 
 # detector syst
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/DetectorSyst/parameterSet_DetectorSyst.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/DetectorSyst/parameterSet_DetectorSyst.yaml"
 
 # Flux Hadron Production
 # - Using Splines from PCs
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/Flux/parameterSet_FluxHP_PCA.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/parameterSet_FluxHP_PCA.yaml"
 
 # Flux Beamline
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/Flux/parameterSet_Beamline.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/parameterSet_Beamline.yaml"
 
 # G4 Proton
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Proton.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Proton.yaml"
 
 # G4 Piplus
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Piplus.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Piplus.yaml"
 
 # G4 Piminus
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Piminus.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Piminus.yaml"
 
 # Background fit
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/BackgroundFit/parameterSet_BackgroundFit.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/parameterSet_BackgroundFit.yaml"
 
 # Cosmic Slice
-- "${GUNDAM_INPUTS_DIR}/Configs_ParameterSet/Flux/parameterSet_CosmicSlice.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/parameterSet_CosmicSlice.yaml"
