@@ -1,6 +1,6 @@
 # Config for gundamFitter: starting based on screenshots on sbn-doc-32028... let's see
 
-outputFolder: "${GUNDAM_INPUTS_DIR}/output_CalcXsec/"
+outputFolder: "${GUNDAM_CONFIG_DIR}/output_CalcXsec/"
 minGundamVersion: 1.9.0
 
 xsecCalcConfig:
@@ -10,7 +10,7 @@ xsecCalcConfig:
 fitterEngineConfig:
 
   # minimizer
-  minimizerConfig: "${GUNDAM_INPUTS_DIR}/Configs_Minimizer/default_minimizer.yaml"
+  minimizerConfig: "${GUNDAM_CONFIG_DIR}/Configs_Minimizer/default_minimizer.yaml"
 
   # likelihoodInterface
   likelihoodInterfaceConfig:
@@ -26,7 +26,7 @@ fitterEngineConfig:
       parametersManagerConfig:
         parameterSetList: <PARAMETERSETLIST_CONFIG>
 
-    dataSetList: "${GUNDAM_INPUTS_DIR}/Configs_DataSetList/dataSetListConfig_True.yaml"
+    dataSetList: "${GUNDAM_CONFIG_DIR}/Configs_DataSetList/dataSetListConfig_True.yaml"
 
     # use --plot-config to update
     plotGeneratorConfig: <PLOTGENERATOR_CONFIG>

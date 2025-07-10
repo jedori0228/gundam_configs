@@ -1,12 +1,12 @@
 # Config for gundamFitter: starting based on screenshots on sbn-doc-32028... let's see
 
-outputFolder: "${GUNDAM_INPUTS_DIR}/output/"
+outputFolder: "${GUNDAM_CONFIG_DIR}/output/"
 minGundamVersion: 1.9.0
 
 fitterEngineConfig:
 
   # minimizer
-  minimizerConfig: "${GUNDAM_INPUTS_DIR}/Configs_Minimizer/default_minimizer.yaml"
+  minimizerConfig: "${GUNDAM_CONFIG_DIR}/Configs_Minimizer/default_minimizer.yaml"
 
   # likelihoodInterface
   likelihoodInterfaceConfig:
