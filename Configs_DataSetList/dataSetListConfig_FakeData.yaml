@@ -9,7 +9,7 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Random15Percent/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
+      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
     nominalWeightFormula: "(2.5006160e+20/1.0900766e+21) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight"
 
   data:
@@ -31,7 +31,7 @@
   mc:
     tree: "AllSamples_FillTree/selectedEvents_NSigmas"
     filePathList:
-      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Random15Percent/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
+      - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root"
     nominalWeightFormula: "(2.5006160e+20/1.0900766e+21) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight"
 
   data:
