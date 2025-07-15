@@ -13,7 +13,8 @@ for name in knobNames:
   isEnabled: %s
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "%s"
       applyCondition: "[IsData]==0"
 '''%(name, IsEnabled, name)
@@ -27,7 +28,8 @@ for name in knobNames:
   isEnabled: %s
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "%s"
       useMirrorDial: true
       mirrorLowEdge: -1

@@ -45,8 +45,8 @@ os.system(f'mkdir -p {RunScriptDir}')
 # Do Indv fit?
 DoIndvFit = True
 IndvFit_XsecVariables = [
-    'MuonCos',
-    # 'MuonProtonCos'
+    # 'MuonCos',
+    'MuonProtonCos',
     # 'deltaPT',
     # 'deltaalphaT',
 ]
@@ -56,8 +56,8 @@ LLH_METHOD_ForIndvFit = 'BarlowLLH'
 # Do Sim fit?
 DoSimFit = False
 SimFit_XsecVariablePairs = [
-    ['deltaPT', 'deltaalphaT'],
     ['MuonCos', 'MuonProtonCos'],
+    # ['deltaPT', 'deltaalphaT'],
 ]
 LLH_METHOD_ForSimFit = 'StatCovariance'
 # LLH_METHOD_ForSimFit = 'PoissonLLH'
@@ -66,11 +66,11 @@ LLH_METHOD_ForSimFit = 'StatCovariance'
 # Datasets
 
 # - Fake data
-DatasetType = 'FakeData'
-DataEntries = [
-    'Asimov',
-    # 'FakeDataFromMCSubset',
-]
+# DatasetType = 'FakeData'
+# DataEntries = [
+#     'Asimov',
+#     # 'FakeDataFromMCSubset',
+# ]
 
 # - Real data, 15%
 # DatasetType = 'Random15PercentRealData'
@@ -91,10 +91,10 @@ DataEntries = [
 # ]
 
 # - Real data, 100%
-# DatasetType = 'RealData'
-# DataEntries = [
-#     'RealData',
-# ]
+DatasetType = 'RealData'
+DataEntries = [
+    'RealData',
+]
 
 DatasetListConfig = ConfigHelper.GetDatasetList(DatasetType) 
 

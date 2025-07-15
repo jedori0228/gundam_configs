@@ -2,7 +2,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "ZExpPCAB1"
       applyCondition: "[IsData]==0"
 
@@ -10,7 +11,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "ZExpPCAB2"
       applyCondition: "[IsData]==0"
 
@@ -18,7 +20,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "ZExpPCAB3"
       applyCondition: "[IsData]==0"
 
@@ -26,7 +29,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "ZExpPCAB4"
       applyCondition: "[IsData]==0"
 
@@ -34,7 +38,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "RPA_CCQE"
       applyCondition: "[IsData]==0"
 
@@ -42,7 +47,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "CoulombCCQE"
       applyCondition: "[IsData]==0"
 
@@ -50,7 +56,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NormCCMEC"
       applyCondition: "[IsData]==0"
 
@@ -58,7 +65,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NormNCMEC"
       applyCondition: "[IsData]==0"
 
@@ -66,7 +74,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "MaNCEL"
       applyCondition: "[IsData]==0"
 
@@ -74,7 +83,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "EtaNCEL"
       applyCondition: "[IsData]==0"
 
@@ -82,7 +92,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "MaCCRES"
       applyCondition: "[IsData]==0"
 
@@ -90,7 +101,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "MvCCRES"
       applyCondition: "[IsData]==0"
 
@@ -98,7 +110,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "MaNCRES"
       applyCondition: "[IsData]==0"
 
@@ -106,7 +119,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "MvNCRES"
       applyCondition: "[IsData]==0"
 
@@ -114,7 +128,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvpCC1pi"
       applyCondition: "[IsData]==0"
 
@@ -122,7 +137,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvpCC2pi"
       applyCondition: "[IsData]==0"
 
@@ -130,7 +146,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvpNC1pi"
       applyCondition: "[IsData]==0"
 
@@ -138,7 +155,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvpNC2pi"
       applyCondition: "[IsData]==0"
 
@@ -146,7 +164,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvnCC1pi"
       applyCondition: "[IsData]==0"
 
@@ -154,7 +173,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvnCC2pi"
       applyCondition: "[IsData]==0"
 
@@ -162,7 +182,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvnNC1pi"
       applyCondition: "[IsData]==0"
 
@@ -170,7 +191,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvnNC2pi"
       applyCondition: "[IsData]==0"
 
@@ -178,7 +200,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvbarpCC1pi"
       applyCondition: "[IsData]==0"
 
@@ -186,7 +209,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvbarpCC2pi"
       applyCondition: "[IsData]==0"
 
@@ -194,7 +218,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvbarpNC1pi"
       applyCondition: "[IsData]==0"
 
@@ -202,7 +227,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvbarpNC2pi"
       applyCondition: "[IsData]==0"
 
@@ -210,7 +236,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvbarnCC1pi"
       applyCondition: "[IsData]==0"
 
@@ -218,7 +245,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvbarnCC2pi"
       applyCondition: "[IsData]==0"
 
@@ -226,7 +254,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvbarnNC1pi"
       applyCondition: "[IsData]==0"
 
@@ -234,7 +263,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NonRESBGvbarnNC2pi"
       applyCondition: "[IsData]==0"
 
@@ -242,7 +272,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "RDecBR1gamma"
       applyCondition: "[IsData]==0"
 
@@ -250,7 +281,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "RDecBR1eta"
       applyCondition: "[IsData]==0"
 
@@ -258,7 +290,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NormCCCOH"
       applyCondition: "[IsData]==0"
 
@@ -266,7 +299,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "NormNCCOH"
       applyCondition: "[IsData]==0"
 
@@ -274,7 +308,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "AhtBY"
       applyCondition: "[IsData]==0"
 
@@ -282,7 +317,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "BhtBY"
       applyCondition: "[IsData]==0"
 
@@ -290,7 +326,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "CV1uBY"
       applyCondition: "[IsData]==0"
 
@@ -298,7 +335,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "CV2uBY"
       applyCondition: "[IsData]==0"
 
@@ -306,7 +344,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "MFP_pi"
       applyCondition: "[IsData]==0"
 
@@ -314,7 +353,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "FrCEx_pi"
       applyCondition: "[IsData]==0"
 
@@ -322,7 +362,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "FrInel_pi"
       applyCondition: "[IsData]==0"
 
@@ -330,7 +371,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "FrAbs_pi"
       applyCondition: "[IsData]==0"
 
@@ -338,7 +380,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "FrPiProd_pi"
       applyCondition: "[IsData]==0"
 
@@ -346,7 +389,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "MFP_N"
       applyCondition: "[IsData]==0"
 
@@ -354,7 +398,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "FrCEx_N"
       applyCondition: "[IsData]==0"
 
@@ -362,7 +407,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "FrInel_N"
       applyCondition: "[IsData]==0"
 
@@ -370,7 +416,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "FrAbs_N"
       applyCondition: "[IsData]==0"
 
@@ -378,7 +425,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "FrPiProd_N"
       applyCondition: "[IsData]==0"
 
@@ -386,7 +434,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "CC1piTPi_Q2Only"
       applyCondition: "[IsData]==0"
 
@@ -394,7 +443,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "CC1piTPi_TpiOnly"
       applyCondition: "[IsData]==0"
 
@@ -402,7 +452,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "VecFFCCQEshape"
       useMirrorDial: true
       mirrorLowEdge: -1
@@ -413,7 +464,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "DecayAngMEC"
       useMirrorDial: true
       mirrorLowEdge: -1
@@ -424,7 +476,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "Theta_Delta2Npi"
       useMirrorDial: true
       mirrorLowEdge: -1
@@ -435,7 +488,8 @@
   isEnabled: true
   dialSetDefinitions:
     - dialType: Spline
-      minimumSplineResponse: 0
+      minDialResponse: 0
+      maxDialResponse: 10
       dialLeafName: "ThetaDelta2NRad"
       useMirrorDial: true
       mirrorLowEdge: -1
