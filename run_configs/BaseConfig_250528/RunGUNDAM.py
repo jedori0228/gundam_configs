@@ -9,7 +9,7 @@ JobName = '250627_BadRegionRejection'
 ConfigType = 'BaseConfig_250528'
 
 # Base directories
-GUNDAMDIR = '/Users/jskim/Documents/Neutrino/ICARUS/GUNDAM-1.9.X/work'
+GUNDAMDIR = os.environ['GUNDAM_CONFIG_DIR']
 WD = f'{GUNDAMDIR}/run_configs/{ConfigType}'
 
 # Number of toys
@@ -45,10 +45,10 @@ os.system(f'mkdir -p {RunScriptDir}')
 # Do Indv fit?
 DoIndvFit = True
 IndvFit_XsecVariables = [
-    # 'MuonCos',
+    'MuonCos',
     'MuonProtonCos',
-    # 'deltaPT',
-    # 'deltaalphaT',
+    'deltaPT',
+    'deltaalphaT',
 ]
 # LLH_METHOD_ForIndvFit = 'PoissonLLH'
 LLH_METHOD_ForIndvFit = 'BarlowLLH'
@@ -57,7 +57,7 @@ LLH_METHOD_ForIndvFit = 'BarlowLLH'
 DoSimFit = False
 SimFit_XsecVariablePairs = [
     ['MuonCos', 'MuonProtonCos'],
-    # ['deltaPT', 'deltaalphaT'],
+    ['deltaPT', 'deltaalphaT'],
 ]
 LLH_METHOD_ForSimFit = 'StatCovariance'
 # LLH_METHOD_ForSimFit = 'PoissonLLH'
