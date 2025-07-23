@@ -103,8 +103,8 @@ if DoIndvFit:
     RecoDatasetListConfig = ConfigHelper.GetRecoDatasetList(DatasetType)
     TrueDatasetListConfig = ConfigHelper.GetTrueDatasetList()
 
-    BaseConfig_Fitter = f'{WD}/base_configs/config_Fitter_FluxHPPCA_FSIMultisigma_BackgroundFit.yaml'
-    BaseConfig_CalcXsec = f'{WD}/base_configs/config_CalcXsec_FluxHPPCA_FSIMultisigma_BackgroundFit.yaml'
+    BaseConfig_Fitter = f'{WD}/base_configs/config_Fitter.yaml'
+    BaseConfig_CalcXsec = f'{WD}/base_configs/config_CalcXsec.yaml'
 
     LLH_METHOD = LLH_METHOD_ForIndvFit
 
@@ -292,8 +292,8 @@ if DoSimFit:
     RecoDatasetListConfig = ConfigHelper.GetRecoDatasetList(DatasetType)
     TrueDatasetListConfig = ConfigHelper.GetTrueDatasetList()
 
-    BaseConfig_Fitter = f'{WD}/base_configs/config_Fitter_FluxHPPCA_FSIMultisigma_BackgroundFit.yaml'
-    BaseConfig_CalcXsec = f'{WD}/base_configs/config_CalcXsec_FluxHPPCA_FSIMultisigma_BackgroundFit.yaml'
+    BaseConfig_Fitter = f'{WD}/base_configs/config_Fitter.yaml'
+    BaseConfig_CalcXsec = f'{WD}/base_configs/config_CalcXsec.yaml'
 
     LLH_METHOD = LLH_METHOD_ForSimFit
 

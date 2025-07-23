@@ -22,8 +22,8 @@ fitterEngineConfig:
       fitSampleSetConfig: <FITSAMPLESET_CONFIG>
 
       showEventBreakdown: true
-      enableStatThrowInToys: false
-      enableEventMcThrow: false
+      enableStatThrowInToys: true
+      enableEventMcThrow: true
       debugPrintLoadedEvents: true
 
     dataSetList: <DATASETLIST_CONFIG>
