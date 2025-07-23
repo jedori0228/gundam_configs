@@ -1,0 +1,33 @@
+# Config for gundamFitter: starting based on screenshots on sbn-doc-32028... let's see
+
+outputFolder: "${GUNDAM_CONFIG_DIR}/output_CalcXsec/"
+minGundamVersion: 1.9.0
+
+xsecCalcConfig:
+  enableStatThrowInToys: true
+  enableEventMcThrow: true
+
+fitterEngineConfig:
+
+  # minimizer
+  minimizerConfig: "${GUNDAM_CONFIG_DIR}/Configs_Minimizer/default_minimizer.yaml"
+
+  # likelihoodInterface
+  likelihoodInterfaceConfig:
+
+    # jointProbability
+    jointProbabilityConfig:
+      type: "<LLH_METHOD>"
+
+    # dataSetManager
+    propagatorConfig:
+      # use --fitsample-config to update
+      fitSampleSetConfig: <FITSAMPLESET_CONFIG>
+      parametersManagerConfig:
+        parameterSetList: <PARAMETERSETLIST_CONFIG>
+
+    dataSetList: "${GUNDAM_CONFIG_DIR}/Configs_DataSetList/dataSetListConfig_True.yaml"
+
+    # use --plot-config to update
+    plotGeneratorConfig: <PLOTGENERATOR_CONFIG>
+
