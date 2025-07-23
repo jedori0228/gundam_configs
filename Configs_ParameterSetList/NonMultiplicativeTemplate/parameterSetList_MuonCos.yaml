@@ -1,6 +1,5 @@
 # Template
-- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/MultiplicativeTemplate/parameterSet_deltaPT.yaml"
-- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/MultiplicativeTemplate/parameterSet_deltaalphaT.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/parameterSet_MuonCos.yaml"
 
 # x-sec
 # - FSI included here

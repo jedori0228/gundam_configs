@@ -8,7 +8,7 @@ useOnlyOneParameterPerEvent: true
 
 dialSetDefinitions:
   - name: Template Parameter deltaPT dialSetDefinitions
-    applyOnDataSets: ["*"]
+    applyOnDataSets: ["ICARUSNuMI_1muNp0pi_Reco_Dataset0", "ICARUSNuMI_1muNp0pi_True_Dataset0"]
     parametersBinningPath: "${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaPT.txt"
     applyCondition: "[IsSignal] == 1"
     printDialsSummary: true

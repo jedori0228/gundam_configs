@@ -18,7 +18,11 @@
       nominalWeightFormula: "(2.5006160e+20/2.5029729e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight"
       filePathList:
         - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb_115Files.root"
-  
+    - name: "FakeDataLQCDZExpFit"
+      tree: "AllSamples_FillTree/selectedEvents"
+      nominalWeightFormula: "(2.5006160e+20/2.5029729e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight * (Reweight_LQCDZExpFit<0 ? 1. : Reweight_LQCDZExpFit)"
+      filePathList:
+        - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb_115Files.root"
 
 - name: "ICARUSNuMI_1muNp0pi_Reco_Dataset1"
 
@@ -40,4 +44,8 @@
       nominalWeightFormula: "(2.5006160e+20/2.5029729e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight"
       filePathList:
         - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb_115Files.root"
-  
+    - name: "FakeDataLQCDZExpFit"
+      tree: "AllSamples_FillTree/selectedEvents"
+      nominalWeightFormula: "(2.5006160e+20/2.5029729e+20) * (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight * (Reweight_LQCDZExpFit<0 ? 1. : Reweight_LQCDZExpFit)"
+      filePathList:
+        - "${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb_115Files.root"
