@@ -43,7 +43,7 @@ os.system(f'mkdir -p {ToyFitOutputDir}')
 os.system(f'mkdir -p {RunScriptDir}')
 
 # Do Indv fit?
-DoIndvFit = True
+DoIndvFit = False
 IndvFit_XsecVariables = [
     'MuonCos',
     'MuonProtonCos',
@@ -54,10 +54,10 @@ IndvFit_XsecVariables = [
 LLH_METHOD_ForIndvFit = 'BarlowLLH'
 
 # Do Sim fit?
-DoSimFit = False
+DoSimFit = True
 SimFit_XsecVariablePairs = [
     ['MuonCos', 'MuonProtonCos'],
-    ['deltaPT', 'deltaalphaT'],
+    # ['deltaPT', 'deltaalphaT'],
 ]
 LLH_METHOD_ForSimFit = 'StatCovariance'
 # LLH_METHOD_ForSimFit = 'PoissonLLH'
@@ -68,15 +68,16 @@ LLH_METHOD_ForSimFit = 'StatCovariance'
 # - Fake data
 # DatasetType = 'FakeData'
 # DataEntries = [
-#     'Asimov',
+#     # 'Asimov',
 #     # 'FakeDataFromMCSubset',
+#     'FakeDataLQCDZExpFit',
 # ]
 
 # - Real data, 15%
-# DatasetType = 'Random15PercentRealData'
-# DataEntries = [
-#     'Random15PercentRealData',
-# ]
+DatasetType = 'Random15PercentRealData'
+DataEntries = [
+    'Random15PercentRealData',
+]
 
 # - Real data, 100% for the sideband + fake data for the signal
 # DatasetType = 'RealDataForSideband_FakeDataForSignal'
@@ -91,10 +92,10 @@ LLH_METHOD_ForSimFit = 'StatCovariance'
 # ]
 
 # - Real data, 100%
-DatasetType = 'RealData'
-DataEntries = [
-    'RealData',
-]
+# DatasetType = 'RealData'
+# DataEntries = [
+#     'RealData',
+# ]
 
 DatasetListConfig = ConfigHelper.GetDatasetList(DatasetType) 
 

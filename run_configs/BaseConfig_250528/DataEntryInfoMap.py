@@ -16,6 +16,13 @@ DataEntryInfoMap['FakeDataFromMCSubset'] = DataEntryInfo(
     POT = 2.5006160e+20,
 )
 
+# Fake data from 30% MC + LQCD fit
+DataEntryInfoMap['FakeDataLQCDZExpFit'] = DataEntryInfo(
+    Name = 'FakeDataLQCDZExpFit',
+    Latex = 'Subset of MC, LQCD Z-exp fit',
+    POT = 2.5006160e+20,
+)
+
 # - Sideband: 15% data
 # - Signal: Fake data from 30% MC
 DataEntryInfoMap['Random15PercentRealDataForSideband_FakeDataForSignal'] = DataEntryInfo(

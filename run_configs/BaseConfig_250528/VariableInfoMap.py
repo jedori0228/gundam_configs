@@ -84,3 +84,17 @@ VariableInfos['TruedeltaalphaT'] = VariableInfo(
     # BinNormWidth = 1.,
     # ytitle = 'Events/degree',
 )
+
+# Propagation
+
+VariableInfos['RecoProtonCos'] = VariableInfo(
+    Name = 'RecoProtonCos',
+    Expr = 'RecoProtonCos',
+    Latex = r'$\cos{\theta_{p}}$',
+    xMin = -1.,
+    xMax = 1.,
+    dx = 0.10,
+    BinNormWidth=0.1,
+    ytitle='Events/(0.1)',
+    Unit = '',
+)
