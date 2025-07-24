@@ -1,6 +1,6 @@
 # Template
-- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/MultiplicativeTemplate/parameterSet_MuonCos.yaml"
-- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/MultiplicativeTemplate/parameterSet_MuonProtonCos.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/parameterSet_MuonCos.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/parameterSet_MuonProtonCos.yaml"
 
 # x-sec
 # - FSI included here
