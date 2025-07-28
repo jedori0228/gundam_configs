@@ -56,7 +56,7 @@ LLH_METHOD_ForIndvFit = 'BarlowLLH'
 DoSimFit = True
 SimFit_XsecVariablePairs = [
     ['MuonCos', 'MuonProtonCos'],
-    ['deltaPT', 'deltaalphaT'],
+    # ['deltaPT', 'deltaalphaT'],
 ]
 LLH_METHOD_ForSimFit = 'StatCovariance'
 # LLH_METHOD_ForSimFit = 'PoissonLLH'
@@ -73,10 +73,10 @@ LLH_METHOD_ForSimFit = 'StatCovariance'
 # ]
 
 # - Real data, 15%
-DatasetType = 'Random15PercentRealData'
-DataEntries = [
-    'Random15PercentRealData',
-]
+# DatasetType = 'Random15PercentRealData'
+# DataEntries = [
+#     'Random15PercentRealData',
+# ]
 
 # - Real data, 100% for the sideband + fake data for the signal
 # DatasetType = 'RealDataForSideband_FakeDataForSignal'
@@ -91,10 +91,10 @@ DataEntries = [
 # ]
 
 # - Real data, 100%
-# DatasetType = 'RealData'
-# DataEntries = [
-#     'RealData',
-# ]
+DatasetType = 'RealData'
+DataEntries = [
+    'RealData',
+]
 
 RunScripts = []
 
@@ -335,6 +335,12 @@ if DoSimFit:
                 this_line = l.replace('<FITSAMPLESET_CONFIG>', FitSampleSetConfig_Reco)
             elif '<PLOTGENERATOR_CONFIG>' in l:
                 this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_Reco)
+            elif '<TOY_THWOR_CONFIG>' in l:
+                this_line = '''    enableStatThrowInToys: true
+    enableEventMcThrow: false
+    throwAsimovFitParameters: true
+    IsSimFitToy: true
+'''
             else:
                 this_line = l
             

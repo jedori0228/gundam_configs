@@ -11,6 +11,8 @@ fitterEngineConfig:
   # likelihoodInterface
   likelihoodInterfaceConfig:
 
+    #<TOY_THWOR_CONFIG>
+
     # jointProbability
     jointProbabilityConfig:
       type: "<LLH_METHOD>"
@@ -22,8 +24,6 @@ fitterEngineConfig:
       fitSampleSetConfig: <FITSAMPLESET_CONFIG>
 
       showEventBreakdown: true
-      enableStatThrowInToys: true
-      enableEventMcThrow: true
       debugPrintLoadedEvents: true
 
     dataSetList: <DATASETLIST_CONFIG>
