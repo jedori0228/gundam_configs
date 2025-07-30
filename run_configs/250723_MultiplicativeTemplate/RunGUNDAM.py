@@ -11,8 +11,11 @@ ConfigType = '250723_MultiplicativeTemplate'
 GUNDAMDIR = os.environ['GUNDAM_CONFIG_DIR']
 WD = f'{GUNDAMDIR}/run_configs/{ConfigType}'
 
+# CalcXsec use best-fit vs use mean
+UseBestFit = False
+
 # Number of toys
-NToys = 1000
+NToys = 10000
 NToyFits = 1000
 
 # Config directory
@@ -41,6 +44,15 @@ os.system(f'mkdir -p {CalcXsecOutputDir}')
 os.system(f'mkdir -p {ToyFitOutputDir}')
 os.system(f'mkdir -p {RunScriptDir}')
 
+######################
+NoSyst = True
+######################
+
+######################
+ForSimFitToy = False
+######################
+
+
 # Do Indv fit?
 DoIndvFit = False
 IndvFit_XsecVariables = [
@@ -56,7 +68,7 @@ LLH_METHOD_ForIndvFit = 'BarlowLLH'
 DoSimFit = True
 SimFit_XsecVariablePairs = [
     ['MuonCos', 'MuonProtonCos'],
-    # ['deltaPT', 'deltaalphaT'],
+    ['deltaPT', 'deltaalphaT'],
 ]
 LLH_METHOD_ForSimFit = 'StatCovariance'
 # LLH_METHOD_ForSimFit = 'PoissonLLH'
@@ -93,7 +105,8 @@ LLH_METHOD_ForSimFit = 'StatCovariance'
 # - Real data, 100%
 DatasetType = 'RealData'
 DataEntries = [
-    'RealData',
+    # 'RealData',
+    'Asimov',
 ]
 
 RunScripts = []
@@ -108,19 +121,21 @@ if DoIndvFit:
 
     LLH_METHOD = LLH_METHOD_ForIndvFit
 
+    FitConfigName = 'IndvFit'
+
     # Run scripts
     print('# Now writing run scripts to:')
 
-    RunScript_Fitter = f'{RunScriptDir}/run_Fitter_{DatasetType}_IndvFit_{LLH_METHOD}.sh'
+    RunScript_Fitter = f'{RunScriptDir}/run_Fitter_{DatasetType}_{FitConfigName}_{LLH_METHOD}.sh'
     out_RunScript_Fitter = open(RunScript_Fitter, 'w')
 
-    RunScript_ToyGenerator = f'{RunScriptDir}/run_ToyGenerator_{DatasetType}_IndvFit_{LLH_METHOD}.sh'
+    RunScript_ToyGenerator = f'{RunScriptDir}/run_ToyGenerator_{DatasetType}_{FitConfigName}_{LLH_METHOD}.sh'
     out_RunScript_ToyGenerator = open(RunScript_ToyGenerator, 'w')
 
-    RunScript_CalcXsec = f'{RunScriptDir}/run_CalcXsec_{DatasetType}_IndvFit_{LLH_METHOD}.sh'
+    RunScript_CalcXsec = f'{RunScriptDir}/run_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}.sh'
     out_RunScript_CalcXsec = open(RunScript_CalcXsec, 'w')
 
-    RunScript_ToyFit = f'{RunScriptDir}/run_ToyFit_{DatasetType}_IndvFit_{LLH_METHOD}.sh'
+    RunScript_ToyFit = f'{RunScriptDir}/run_ToyFit_{DatasetType}_{FitConfigName}_{LLH_METHOD}.sh'
     out_RunScript_ToyFit = open(RunScript_ToyFit, 'w')
     out_RunScript_ToyFit.write(f'NToyFits={NToyFits}\n')
 
@@ -129,9 +144,9 @@ if DoIndvFit:
         # Writting config yamls
 
         # - Fitter
-        outname_Fitter = f'{FitterConfigDir}/config_Fitter_{DatasetType}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
+        outname_Fitter = f'{FitterConfigDir}/config_Fitter_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
         out_Fitter = open(outname_Fitter, 'w')
-        ParameterSetListConfig = ConfigHelper.GetParametersetList_IndvFit(IndvFit_XsecVariable)
+        ParameterSetListConfig = ConfigHelper.GetParametersetList_IndvFit(IndvFit_XsecVariable, NoSyst)
         FitSampleSetConfig_Reco = ConfigHelper.GetFitSampleSet_IndvFit(IndvFit_XsecVariable, IsReco=True)
         PlotGeneratorConfig_Reco = ConfigHelper.GetPlotGenerator_IndvFit(IndvFit_XsecVariable, IsReco=True)
         for l in open(BaseConfig_Fitter):
@@ -155,20 +170,20 @@ if DoIndvFit:
 
         # - ToyGenerator
         #   - same as the Fitter config but with some additional lines
-        outname_ToyGenerator = f'{ToyGeneratorConfigDir}/config_ToyGenerator_{DatasetType}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
+        outname_ToyGenerator = f'{ToyGeneratorConfigDir}/config_ToyGenerator_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
         out_ToyGenerator = open(outname_ToyGenerator, 'w')
         for line in open(outname_Fitter).readlines():
             out_ToyGenerator.write(line)
         out_ToyGenerator.write('''\n
 statThrowConfig:
-  enableStatThrowInToys: true
+  enableStatThrowINToys: true
   enableEventMcThrow: true
 ''')
         out_ToyGenerator.close()
         print(f'# ToyGenerator config wrote:\n{outname_ToyGenerator}')
 
         # - CalcXsec
-        outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
+        outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
         out_CalcXsec = open(outname_CalcXsec, 'w')
         FitSampleSetConfig_True = ConfigHelper.GetFitSampleSet_IndvFit(IndvFit_XsecVariable, IsReco=False)
         PlotGeneratorConfig_True = ConfigHelper.GetPlotGenerator_IndvFit(IndvFit_XsecVariable, IsReco=False)
@@ -185,6 +200,11 @@ statThrowConfig:
                 this_line = l.replace('<FITSAMPLESET_CONFIG>', FitSampleSetConfig_True)
             elif '<PLOTGENERATOR_CONFIG>' in l:
                 this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_True)
+            elif '<TOY_THWOR_CONFIG>' in l:
+                this_line = '''    enableStatThrowINToys: true
+    enableEventMcThrow: false
+    throwAsimovFitParameters: true
+'''
             else:
                 this_line = l
             
@@ -200,8 +220,8 @@ statThrowConfig:
             print(f'# - DataEntry = {DataEntry}')
 
             # Fitter
-            Fitter_OutputFile = f'{FitterOutputDir}/output_{DataEntry}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.root'
-            Fitter_LogFile = f'{LogBasedir}/log_Fitter_{DataEntry}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
+            Fitter_OutputFile = f'{FitterOutputDir}/output_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.root'
+            Fitter_LogFile = f'{LogBasedir}/log_Fitter_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
             cmd_Fitter = f'''gundamFitter -c {outname_Fitter} \\
 -o {Fitter_OutputFile} \\
 -t 8 --pca \\
@@ -213,8 +233,8 @@ statThrowConfig:
 
             # ToyGenerator
             # - preFit
-            ToyGenerator_OutputFile = f'{ToyGeneratorOutputDir}/output_preFit_{DataEntry}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.root'
-            ToyGenerator_LogFile = f'{LogBasedir}/log_ToyGenerator_preFit_{DataEntry}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
+            ToyGenerator_OutputFile = f'{ToyGeneratorOutputDir}/output_preFit_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.root'
+            ToyGenerator_LogFile = f'{LogBasedir}/log_ToyGenerator_preFit_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
 
             cmd_ToyGenerator = f'''gundamToyGenerator -c {outname_ToyGenerator} \\
 -f {Fitter_OutputFile} \\
@@ -229,8 +249,8 @@ statThrowConfig:
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
             # - postFit
-            ToyGenerator_OutputFile = f'{ToyGeneratorOutputDir}/output_postFit_{DataEntry}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.root'
-            ToyGenerator_LogFile = f'{LogBasedir}/log_ToyGenerator_postFit_{DataEntry}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
+            ToyGenerator_OutputFile = f'{ToyGeneratorOutputDir}/output_postFit_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.root'
+            ToyGenerator_LogFile = f'{LogBasedir}/log_ToyGenerator_postFit_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
 
             cmd_ToyGenerator = f'''gundamToyGenerator -c {outname_ToyGenerator} \\
 -f {Fitter_OutputFile} \\
@@ -245,18 +265,20 @@ statThrowConfig:
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
             # CalcXsec
-            CalcXsec_OutputFile = f'{CalcXsecOutputDir}/output_{DataEntry}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.root'
-            CalcXsec_LogFile = f'{LogBasedir}/log_CalcXsec_{DataEntry}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
+            CalcXsec_OutputFile = f'{CalcXsecOutputDir}/output_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.root'
+            CalcXsec_LogFile = f'{LogBasedir}/log_CalcXsec_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
             cmd_CalcXsec = f'''gundamCalcXsec -c {outname_CalcXsec} \\
 -f {Fitter_OutputFile} \\
 -o {CalcXsec_OutputFile} \\
 -s 1 -t 8 \\
---use-bf-as-xsec \\
 --TurnRecoOnlyOff \\
 --fitsample-config {FitSampleSetConfig_True} \\
 --plot-config {PlotGeneratorConfig_True} \\
 --use-data-entry {DataEntry} \\
 -n {NToys}'''
+            if UseBestFit:
+                cmd_CalcXsec += ' \\\n--use-bf-as-xsec'
+            
             if WriteLog:
                 cmd_CalcXsec += f''' &> {CalcXsec_LogFile}\n'''
             out_RunScript_CalcXsec.write(f'# CalcXsec, {DataEntry}, {IndvFit_XsecVariable}\n')
@@ -264,7 +286,7 @@ statThrowConfig:
 
             # ToyFit
             out_RunScript_ToyFit.write(f'# ToyFit, {DataEntry}, {IndvFit_XsecVariable}\n')
-            ThisToyFitOutputDir = f'{ToyFitOutputDir}/{DataEntry}_IndvFit_{LLH_METHOD}_{IndvFit_XsecVariable}'
+            ThisToyFitOutputDir = f'{ToyFitOutputDir}/{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}'
             os.system(f'mkdir -p {ThisToyFitOutputDir}')
             cmd_ToyFit = f'''for ((i_toy=0; i_toy<NToyFits; i_toy++))
 do
@@ -297,16 +319,20 @@ if DoSimFit:
 
     LLH_METHOD = LLH_METHOD_ForSimFit
 
+    FitConfigName = 'SimFit'
+    if NoSyst:
+        FitConfigName = 'NoSyst_SimFit'
+
     # Run scripts
     print('# Now writing run scripts to:')
 
-    RunScript_Fitter = f'{RunScriptDir}/run_Fitter_{DatasetType}_SimFit_{LLH_METHOD}.sh'
+    RunScript_Fitter = f'{RunScriptDir}/run_Fitter_{DatasetType}_{FitConfigName}_{LLH_METHOD}.sh'
     out_RunScript_Fitter = open(RunScript_Fitter, 'w')
 
-    RunScript_ToyGenerator = f'{RunScriptDir}/run_ToyGenerator_{DatasetType}_SimFit_{LLH_METHOD}.sh'
+    RunScript_ToyGenerator = f'{RunScriptDir}/run_ToyGenerator_{DatasetType}_{FitConfigName}_{LLH_METHOD}.sh'
     out_RunScript_ToyGenerator = open(RunScript_ToyGenerator, 'w')
 
-    RunScript_CalcXsec = f'{RunScriptDir}/run_CalcXsec_{DatasetType}_SimFit_{LLH_METHOD}.sh'
+    RunScript_CalcXsec = f'{RunScriptDir}/run_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}.sh'
     out_RunScript_CalcXsec = open(RunScript_CalcXsec, 'w')
 
 
@@ -318,9 +344,9 @@ if DoSimFit:
         # Writting config yamls
 
         # - Fitter
-        outname_Fitter = f'{FitterConfigDir}/config_Fitter_{DatasetType}_SimFit_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
+        outname_Fitter = f'{FitterConfigDir}/config_Fitter_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
         out_Fitter = open(outname_Fitter, 'w')
-        ParameterSetListConfig = ConfigHelper.GetParametersetList_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y)
+        ParameterSetListConfig = ConfigHelper.GetParametersetList_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, NoSyst)
         FitSampleSetConfig_Reco = ConfigHelper.GetFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=True)
         PlotGeneratorConfig_Reco = ConfigHelper.GetPlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=True)
         for l in open(BaseConfig_Fitter):
@@ -336,11 +362,14 @@ if DoSimFit:
             elif '<PLOTGENERATOR_CONFIG>' in l:
                 this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_Reco)
             elif '<TOY_THWOR_CONFIG>' in l:
-                this_line = '''    enableStatThrowInToys: true
+                if ForSimFitToy:
+                    this_line = '''    enableStatThrowInToys: true
     enableEventMcThrow: false
     throwAsimovFitParameters: true
     IsSimFitToy: true
 '''
+                else:
+                    this_line = '\n'
             else:
                 this_line = l
             
@@ -350,7 +379,7 @@ if DoSimFit:
 
         # - ToyGenerator
         #   - same as the Fitter config but with some additional lines
-        outname_ToyGenerator = f'{ToyGeneratorConfigDir}/config_ToyGenerator_{DatasetType}_SimFit_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
+        outname_ToyGenerator = f'{ToyGeneratorConfigDir}/config_ToyGenerator_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
         out_ToyGenerator = open(outname_ToyGenerator, 'w')
         for line in open(outname_Fitter).readlines():
             out_ToyGenerator.write(line)
@@ -363,39 +392,38 @@ statThrowConfig:
         print(f'# ToyGenerator config wrote:\n{outname_ToyGenerator}')
 
         # - CalcXsec
-        #   - This should be done per-variable but using sim parameter set
-        for IndvFit_XsecVariable in SimFit_XsecVariablePair:
-            outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_SimFit_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
-            out_CalcXsec = open(outname_CalcXsec, 'w')
-            FitSampleSetConfig_True = ConfigHelper.GetFitSampleSet_IndvFit(IndvFit_XsecVariable, IsReco=False)
-            PlotGeneratorConfig_True = ConfigHelper.GetPlotGenerator_IndvFit(IndvFit_XsecVariable, IsReco=False)
 
-            for l in open(BaseConfig_CalcXsec):
+        outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
+        out_CalcXsec = open(outname_CalcXsec, 'w')
+        FitSampleSetConfig_True = ConfigHelper.GetFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=False)
+        PlotGeneratorConfig_True = ConfigHelper.GetPlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=False)
+
+        for l in open(BaseConfig_CalcXsec):
+            this_line = l
+            if '<LLH_METHOD>' in l:
+                this_line = l.replace('<LLH_METHOD>', LLH_METHOD)
+            elif '<DATASETLIST_CONFIG>' in l:
+                this_line = l.replace('<DATASETLIST_CONFIG>', TrueDatasetListConfig)
+            elif '<PARAMETERSETLIST_CONFIG>' in l:
+                this_line = l.replace('<PARAMETERSETLIST_CONFIG>', ParameterSetListConfig)
+            elif '<FITSAMPLESET_CONFIG>' in l:
+                this_line = l.replace('<FITSAMPLESET_CONFIG>', FitSampleSetConfig_True)
+            elif '<PLOTGENERATOR_CONFIG>' in l:
+                this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_True)
+            else:
                 this_line = l
-                if '<LLH_METHOD>' in l:
-                    this_line = l.replace('<LLH_METHOD>', LLH_METHOD)
-                elif '<DATASETLIST_CONFIG>' in l:
-                    this_line = l.replace('<DATASETLIST_CONFIG>', TrueDatasetListConfig)
-                elif '<PARAMETERSETLIST_CONFIG>' in l:
-                    this_line = l.replace('<PARAMETERSETLIST_CONFIG>', ParameterSetListConfig)
-                elif '<FITSAMPLESET_CONFIG>' in l:
-                    this_line = l.replace('<FITSAMPLESET_CONFIG>', FitSampleSetConfig_True)
-                elif '<PLOTGENERATOR_CONFIG>' in l:
-                    this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_True)
-                else:
-                    this_line = l
-                
-                out_CalcXsec.write(this_line)
-            out_CalcXsec.close()
-            print(f'# CalcXsec config wrote:\n{outname_CalcXsec}')
+            
+            out_CalcXsec.write(this_line)
+        out_CalcXsec.close()
+        print(f'# CalcXsec config wrote:\n{outname_CalcXsec}')
 
         for DataEntry in DataEntries:
 
             print(f'# - DataEntry = {DataEntry}')
 
             # Fitter
-            Fitter_OutputFile = f'{FitterOutputDir}/output_{DataEntry}_SimFit_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.root'
-            Fitter_LogFile = f'{LogBasedir}/log_Fitter_{DataEntry}_SimFit_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.log'
+            Fitter_OutputFile = f'{FitterOutputDir}/output_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.root'
+            Fitter_LogFile = f'{LogBasedir}/log_Fitter_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.log'
             cmd_Fitter = f'''gundamFitter -c {outname_Fitter} \\
 -o {Fitter_OutputFile} \\
 -t 8 --pca \\
@@ -407,8 +435,8 @@ statThrowConfig:
 
             # ToyGenerator
             # - preFit
-            ToyGenerator_OutputFile = f'{ToyGeneratorOutputDir}/output_preFit_{DataEntry}_SimFit_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.root'
-            ToyGenerator_LogFile = f'{LogBasedir}/log_ToyGenerator_preFit_{DataEntry}_SimFit_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.log'
+            ToyGenerator_OutputFile = f'{ToyGeneratorOutputDir}/output_preFit_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.root'
+            ToyGenerator_LogFile = f'{LogBasedir}/log_ToyGenerator_preFit_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.log'
 
             cmd_ToyGenerator = f'''gundamToyGenerator -c {outname_ToyGenerator} \\
 -f {Fitter_OutputFile} \\
@@ -423,8 +451,8 @@ statThrowConfig:
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
             # - postFit
-            ToyGenerator_OutputFile = f'{ToyGeneratorOutputDir}/output_postFit_{DataEntry}_SimFit_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.root'
-            ToyGenerator_LogFile = f'{LogBasedir}/log_ToyGenerator_postFit_{DataEntry}_SimFit_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.log'
+            ToyGenerator_OutputFile = f'{ToyGeneratorOutputDir}/output_postFit_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.root'
+            ToyGenerator_LogFile = f'{LogBasedir}/log_ToyGenerator_postFit_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.log'
 
             cmd_ToyGenerator = f'''gundamToyGenerator -c {outname_ToyGenerator} \\
 -f {Fitter_OutputFile} \\
@@ -439,27 +467,26 @@ statThrowConfig:
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
             # CalcXsec
-            for IndvFit_XsecVariable in SimFit_XsecVariablePair:
-                outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_SimFit_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
-                FitSampleSetConfig_True = ConfigHelper.GetFitSampleSet_IndvFit(IndvFit_XsecVariable, IsReco=False)
-                PlotGeneratorConfig_True = ConfigHelper.GetPlotGenerator_IndvFit(IndvFit_XsecVariable, IsReco=False)
-                
-                CalcXsec_OutputFile = f'{CalcXsecOutputDir}/output_{DataEntry}_SimFit_{LLH_METHOD}_{IndvFit_XsecVariable}.root'
-                CalcXsec_LogFile = f'{LogBasedir}/log_CalcXsec_{DataEntry}_SimFit_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
-                cmd_CalcXsec = f'''gundamCalcXsec -c {outname_CalcXsec} \\
+            outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
+            
+            CalcXsec_OutputFile = f'{CalcXsecOutputDir}/output_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.root'
+            CalcXsec_LogFile = f'{LogBasedir}/log_CalcXsec_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.log'
+            cmd_CalcXsec = f'''gundamCalcXsec -c {outname_CalcXsec} \\
 -f {Fitter_OutputFile} \\
 -o {CalcXsec_OutputFile} \\
 -s 1 -t 8 \\
---use-bf-as-xsec \\
 --TurnRecoOnlyOff \\
 --fitsample-config {FitSampleSetConfig_True} \\
 --plot-config {PlotGeneratorConfig_True} \\
 --use-data-entry {DataEntry} \\
 -n {NToys}'''
-                if WriteLog:
-                    cmd_CalcXsec += f''' &> {CalcXsec_LogFile}\n'''
-                out_RunScript_CalcXsec.write(f'# CalcXsec\n')
-                out_RunScript_CalcXsec.write(cmd_CalcXsec+'\n')
+            if UseBestFit:
+                cmd_CalcXsec += ' \\\n--use-bf-as-xsec'
+
+            if WriteLog:
+                cmd_CalcXsec += f''' &> {CalcXsec_LogFile}\n'''
+            out_RunScript_CalcXsec.write(f'# CalcXsec\n')
+            out_RunScript_CalcXsec.write(cmd_CalcXsec+'\n')
 
     # Run scripts
     RunScripts.append(RunScript_Fitter)
