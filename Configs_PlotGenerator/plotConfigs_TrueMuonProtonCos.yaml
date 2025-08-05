@@ -12,6 +12,7 @@ histogramsDefinition:
   - varToPlot: "TrueMuonProtonCos"
     splitVars: ["", "TrueMode"]
     useSampleBinning: true
+    rescaleAsBinWidth: true
     xMax: 10000.
     xTitle: "True cos(#theta_{#mu,p}) (GeV/c)"
     yTitle: "#frac{d #sigma}{d cos(#theta_{#mu,p})} cm^{2} / (GeV/c)"
