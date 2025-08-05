@@ -11,12 +11,13 @@ ConfigType = '250723_MultiplicativeTemplate'
 GUNDAMDIR = os.environ['GUNDAM_CONFIG_DIR']
 WD = f'{GUNDAMDIR}/run_configs/{ConfigType}'
 
+###########################################
 # CalcXsec use best-fit vs use mean
-UseBestFit = False
+UseBestFit = True
+###########################################
 
 # Number of toys
 NToys = 10000
-NToyFits = 1000
 
 # Config directory
 FitterConfigDir = f'{WD}/configs/Fitter'
@@ -36,43 +37,35 @@ GUNDAMOutputBasedir = f'{WD}/output/{JobName}'
 FitterOutputDir = f'{GUNDAMOutputBasedir}/Fitter'
 ToyGeneratorOutputDir = f'{GUNDAMOutputBasedir}/ToyGenerator'
 CalcXsecOutputDir = f'{GUNDAMOutputBasedir}/CalcXsec'
-ToyFitOutputDir = f'{GUNDAMOutputBasedir}/ToyFit'
 RunScriptDir = f'{WD}/run_scripts'
 os.system(f'mkdir -p {FitterOutputDir}')
 os.system(f'mkdir -p {ToyGeneratorOutputDir}')
 os.system(f'mkdir -p {CalcXsecOutputDir}')
-os.system(f'mkdir -p {ToyFitOutputDir}')
 os.system(f'mkdir -p {RunScriptDir}')
 
-######################
-NoSyst = True
-######################
-
-######################
-ForSimFitToy = False
-######################
-
-
 # Do Indv fit?
-DoIndvFit = False
+DoIndvFit = True
 IndvFit_XsecVariables = [
-    'MuonCos',
-    'MuonProtonCos',
+    # 'MuonCos',
+    # 'MuonProtonCos',
     'deltaPT',
-    'deltaalphaT',
+    # 'deltaalphaT',
 ]
 # LLH_METHOD_ForIndvFit = 'PoissonLLH'
 LLH_METHOD_ForIndvFit = 'BarlowLLH'
 
 # Do Sim fit?
-DoSimFit = True
+DoSimFit = False
 SimFit_XsecVariablePairs = [
     ['MuonCos', 'MuonProtonCos'],
     ['deltaPT', 'deltaalphaT'],
 ]
 LLH_METHOD_ForSimFit = 'StatCovariance'
-# LLH_METHOD_ForSimFit = 'PoissonLLH'
-# LLH_METHOD_ForSimFit = 'BarlowLLH'
+
+######################
+ForSimFitToy = False
+StatCovDiagOnly = False
+######################
 
 # Datasets
 
@@ -105,7 +98,7 @@ LLH_METHOD_ForSimFit = 'StatCovariance'
 # - Real data, 100%
 DatasetType = 'RealData'
 DataEntries = [
-    # 'RealData',
+    'RealData',
     'Asimov',
 ]
 
@@ -135,10 +128,6 @@ if DoIndvFit:
     RunScript_CalcXsec = f'{RunScriptDir}/run_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}.sh'
     out_RunScript_CalcXsec = open(RunScript_CalcXsec, 'w')
 
-    RunScript_ToyFit = f'{RunScriptDir}/run_ToyFit_{DatasetType}_{FitConfigName}_{LLH_METHOD}.sh'
-    out_RunScript_ToyFit = open(RunScript_ToyFit, 'w')
-    out_RunScript_ToyFit.write(f'NToyFits={NToyFits}\n')
-
     for IndvFit_XsecVariable in IndvFit_XsecVariables:
 
         # Writting config yamls
@@ -146,7 +135,7 @@ if DoIndvFit:
         # - Fitter
         outname_Fitter = f'{FitterConfigDir}/config_Fitter_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
         out_Fitter = open(outname_Fitter, 'w')
-        ParameterSetListConfig = ConfigHelper.GetParametersetList_IndvFit(IndvFit_XsecVariable, NoSyst)
+        ParameterSetListConfig = ConfigHelper.GetParametersetList_IndvFit(IndvFit_XsecVariable)
         FitSampleSetConfig_Reco = ConfigHelper.GetFitSampleSet_IndvFit(IndvFit_XsecVariable, IsReco=True)
         PlotGeneratorConfig_Reco = ConfigHelper.GetPlotGenerator_IndvFit(IndvFit_XsecVariable, IsReco=True)
         for l in open(BaseConfig_Fitter):
@@ -284,29 +273,14 @@ statThrowConfig:
             out_RunScript_CalcXsec.write(f'# CalcXsec, {DataEntry}, {IndvFit_XsecVariable}\n')
             out_RunScript_CalcXsec.write(cmd_CalcXsec+'\n')
 
-            # ToyFit
-            out_RunScript_ToyFit.write(f'# ToyFit, {DataEntry}, {IndvFit_XsecVariable}\n')
-            ThisToyFitOutputDir = f'{ToyFitOutputDir}/{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}'
-            os.system(f'mkdir -p {ThisToyFitOutputDir}')
-            cmd_ToyFit = f'''for ((i_toy=0; i_toy<NToyFits; i_toy++))
-do
-  gundamFitter -c {outname_Fitter} \\
-  -o {ThisToyFitOutputDir}/output_Toy_${{i_toy}}.root \\
-  -t 8 --pca \\
-  --toy ${{i_toy}}
-done'''
-            out_RunScript_ToyFit.write(cmd_ToyFit+'\n')
-
     # Close
     out_RunScript_Fitter.close()
     out_RunScript_ToyGenerator.close()
     out_RunScript_CalcXsec.close()
-    out_RunScript_ToyFit.close()
 
     RunScripts.append(RunScript_Fitter)
     RunScripts.append(RunScript_ToyGenerator)
     RunScripts.append(RunScript_CalcXsec)
-    RunScripts.append(RunScript_ToyFit)
         
 
 if DoSimFit:
@@ -320,8 +294,8 @@ if DoSimFit:
     LLH_METHOD = LLH_METHOD_ForSimFit
 
     FitConfigName = 'SimFit'
-    if NoSyst:
-        FitConfigName = 'NoSyst_SimFit'
+    if StatCovDiagOnly:
+        FitConfigName = 'StatCovDiagOnly_'+FitConfigName
 
     # Run scripts
     print('# Now writing run scripts to:')
@@ -346,7 +320,7 @@ if DoSimFit:
         # - Fitter
         outname_Fitter = f'{FitterConfigDir}/config_Fitter_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
         out_Fitter = open(outname_Fitter, 'w')
-        ParameterSetListConfig = ConfigHelper.GetParametersetList_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, NoSyst)
+        ParameterSetListConfig = ConfigHelper.GetParametersetList_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y)
         FitSampleSetConfig_Reco = ConfigHelper.GetFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=True)
         PlotGeneratorConfig_Reco = ConfigHelper.GetPlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=True)
         for l in open(BaseConfig_Fitter):
@@ -370,6 +344,9 @@ if DoSimFit:
 '''
                 else:
                     this_line = '\n'
+
+                if StatCovDiagOnly:
+                    this_line += '\n    StatCovDiagOnly: true\n'
             else:
                 this_line = l
             
