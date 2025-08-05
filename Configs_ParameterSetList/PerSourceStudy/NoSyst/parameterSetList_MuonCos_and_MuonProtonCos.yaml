@@ -1,0 +1,3 @@
+# Template
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/parameterSet_MuonCos.yaml"
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/parameterSet_MuonProtonCos.yaml"
