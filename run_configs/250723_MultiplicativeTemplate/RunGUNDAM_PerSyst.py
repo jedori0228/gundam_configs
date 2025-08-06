@@ -192,7 +192,7 @@ for IndvFit_XsecVariable in IndvFit_XsecVariables:
         if WriteLog:
             cmd_CalcXsec += f''' &> {CalcXsec_LogFile}'''
         if RunOnBackground:
-            cmd_Fitter += ' &'
+            cmd_CalcXsec += ' &'
         out_RunScript_CalcXsec.write(f'# CalcXsec, {DataEntry}, {IndvFit_XsecVariable}\n')
         out_RunScript_CalcXsec.write(cmd_CalcXsec+'\n')
 

@@ -28,7 +28,7 @@ os.system(f'mkdir -p {ToyGeneratorConfigDir}')
 os.system(f'mkdir -p {CalcXsecConfigDir}')
 
 # Number of thread
-NThread = 8
+NThread = 1
 
 # Logging
 WriteLog = False
@@ -243,7 +243,7 @@ statThrowConfig:
             if WriteLog:
                 cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}'''
             if RunOnBackground:
-                cmd_Fitter += ' &'
+                cmd_ToyGenerator += ' &'
             out_RunScript_ToyGenerator.write(f'# ToyGenerator, {DataEntry}, {IndvFit_XsecVariable}, preFit\n')
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
@@ -261,7 +261,7 @@ statThrowConfig:
             if WriteLog:
                 cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}'''
             if RunOnBackground:
-                cmd_Fitter += ' &'
+                cmd_ToyGenerator += ' &'
             out_RunScript_ToyGenerator.write(f'# ToyGenerator, {DataEntry}, {IndvFit_XsecVariable}, postFit\n')
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
@@ -283,7 +283,7 @@ statThrowConfig:
             if WriteLog:
                 cmd_CalcXsec += f''' &> {CalcXsec_LogFile}'''
             if RunOnBackground:
-                cmd_Fitter += ' &'
+                cmd_CalcXsec += ' &'
             out_RunScript_CalcXsec.write(f'# CalcXsec, {DataEntry}, {IndvFit_XsecVariable}\n')
             out_RunScript_CalcXsec.write(cmd_CalcXsec+'\n')
 
@@ -441,7 +441,7 @@ statThrowConfig:
             if WriteLog:
                 cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}'''
             if RunOnBackground:
-                cmd_Fitter += ' &'
+                cmd_ToyGenerator += ' &'
             out_RunScript_ToyGenerator.write(f'# ToyGenerator, preFit\n')
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
@@ -459,7 +459,7 @@ statThrowConfig:
             if WriteLog:
                 cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}'''
             if RunOnBackground:
-                cmd_Fitter += ' &'
+                cmd_ToyGenerator += ' &'
             out_RunScript_ToyGenerator.write(f'# ToyGenerator, preFit\n')
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
@@ -483,7 +483,7 @@ statThrowConfig:
             if WriteLog:
                 cmd_CalcXsec += f''' &> {CalcXsec_LogFile}'''
             if RunOnBackground:
-                cmd_Fitter += ' &'
+                cmd_CalcXsec += ' &'
             out_RunScript_CalcXsec.write(f'# CalcXsec\n')
             out_RunScript_CalcXsec.write(cmd_CalcXsec+'\n')
 
