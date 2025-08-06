@@ -52,9 +52,9 @@ ParamSetNames = [
 
 IndvFit_XsecVariables = [
     'MuonCos',
-    'MuonProtonCos',
-    'deltaPT',
-    'deltaalphaT',
+    # 'MuonProtonCos',
+    # 'deltaPT',
+    # 'deltaalphaT',
 ]
 LLH_METHOD_ForIndvFit = 'BarlowLLH'
 
@@ -137,7 +137,7 @@ for IndvFit_XsecVariable in IndvFit_XsecVariables:
                 this_line = l.replace('<FITSAMPLESET_CONFIG>', FitSampleSetConfig_True)
             elif '<PLOTGENERATOR_CONFIG>' in l:
                 this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_True)
-            elif '<TOY_THWOR_CONFIG>' in l:
+            elif '<TOY_THROW_CONFIG>' in l:
                 this_line = '''    enableStatThrowINToys: true
     enableEventMcThrow: false
     throwAsimovFitParameters: true

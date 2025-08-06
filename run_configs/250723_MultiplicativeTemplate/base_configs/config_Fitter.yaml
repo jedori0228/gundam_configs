@@ -11,7 +11,7 @@ fitterEngineConfig:
   # likelihoodInterface
   likelihoodInterfaceConfig:
 
-    #<TOY_THWOR_CONFIG>
+    #<TOY_THROW_CONFIG>
 
     # jointProbability
     jointProbabilityConfig:

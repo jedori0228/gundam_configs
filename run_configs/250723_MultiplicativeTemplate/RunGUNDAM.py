@@ -46,10 +46,10 @@ os.system(f'mkdir -p {RunScriptDir}')
 # Do Indv fit?
 DoIndvFit = True
 IndvFit_XsecVariables = [
-    # 'MuonCos',
-    # 'MuonProtonCos',
+    'MuonCos',
+    'MuonProtonCos',
     'deltaPT',
-    # 'deltaalphaT',
+    'deltaalphaT',
 ]
 # LLH_METHOD_ForIndvFit = 'PoissonLLH'
 LLH_METHOD_ForIndvFit = 'BarlowLLH'
@@ -99,7 +99,7 @@ StatCovDiagOnly = False
 DatasetType = 'RealData'
 DataEntries = [
     'RealData',
-    'Asimov',
+    # 'Asimov',
 ]
 
 RunScripts = []
@@ -189,7 +189,7 @@ statThrowConfig:
                 this_line = l.replace('<FITSAMPLESET_CONFIG>', FitSampleSetConfig_True)
             elif '<PLOTGENERATOR_CONFIG>' in l:
                 this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_True)
-            elif '<TOY_THWOR_CONFIG>' in l:
+            elif '<TOY_THROW_CONFIG>' in l:
                 this_line = '''    enableStatThrowINToys: true
     enableEventMcThrow: false
     throwAsimovFitParameters: true
@@ -335,7 +335,7 @@ if DoSimFit:
                 this_line = l.replace('<FITSAMPLESET_CONFIG>', FitSampleSetConfig_Reco)
             elif '<PLOTGENERATOR_CONFIG>' in l:
                 this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_Reco)
-            elif '<TOY_THWOR_CONFIG>' in l:
+            elif '<TOY_THROW_CONFIG>' in l:
                 if ForSimFitToy:
                     this_line = '''    enableStatThrowInToys: true
     enableEventMcThrow: false
