@@ -5,8 +5,8 @@ printDialSetsSummary: true
 
 allowPca: true
 
-useEigenDecompInFit: true
-allowEigenDecompWithBounds: true # ignore bounds in real parameter space
+# useEigenDecompInFit: true
+# allowEigenDecompWithBounds: true # ignore bounds in real parameter space
 
 covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/CovMat/outputs/output_CovMat_G4ProtonFate.root"
 covarianceMatrixTMatrixD: "G4ProtonFate/G4ProtonFate_covariance"
