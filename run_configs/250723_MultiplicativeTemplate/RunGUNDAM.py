@@ -17,7 +17,7 @@ UseBestFit = True
 ###########################################
 
 # Number of toys
-NToys = 10000
+NToys = 1000
 
 # Config directory
 FitterConfigDir = f'{WD}/configs/Fitter'
@@ -27,9 +27,15 @@ os.system(f'mkdir -p {FitterConfigDir}')
 os.system(f'mkdir -p {ToyGeneratorConfigDir}')
 os.system(f'mkdir -p {CalcXsecConfigDir}')
 
+# Number of thread
+NThread = 8
+
 # Logging
 WriteLog = False
 LogBasedir = f'{WD}/logs'
+
+# Run on background
+RunOnBackground = False
 
 # Define output directories
 GUNDAMOutputBasedir = f'{WD}/output/{JobName}'
@@ -213,10 +219,12 @@ statThrowConfig:
             Fitter_LogFile = f'{LogBasedir}/log_Fitter_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
             cmd_Fitter = f'''gundamFitter -c {outname_Fitter} \\
 -o {Fitter_OutputFile} \\
--t 8 --pca \\
+-t {NThread} --pca \\
 --use-data-entry {DataEntry}'''
             if WriteLog:
-                cmd_Fitter += f''' &> {Fitter_LogFile}\n'''
+                cmd_Fitter += f''' &> {Fitter_LogFile}'''
+            if RunOnBackground:
+                cmd_Fitter += ' &'
             out_RunScript_Fitter.write(f'# Fitter, {DataEntry}, {IndvFit_XsecVariable}\n')
             out_RunScript_Fitter.write(cmd_Fitter+'\n')
 
@@ -228,12 +236,14 @@ statThrowConfig:
             cmd_ToyGenerator = f'''gundamToyGenerator -c {outname_ToyGenerator} \\
 -f {Fitter_OutputFile} \\
 -o {ToyGenerator_OutputFile} \\
--s 1  -t 8 \\
+-s 1  -t {NThread} \\
 --use-prefit \\
 --use-data-entry {DataEntry} \\
 -n {NToys}'''
             if WriteLog:
-                cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}\n'''
+                cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}'''
+            if RunOnBackground:
+                cmd_Fitter += ' &'
             out_RunScript_ToyGenerator.write(f'# ToyGenerator, {DataEntry}, {IndvFit_XsecVariable}, preFit\n')
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
@@ -244,12 +254,14 @@ statThrowConfig:
             cmd_ToyGenerator = f'''gundamToyGenerator -c {outname_ToyGenerator} \\
 -f {Fitter_OutputFile} \\
 -o {ToyGenerator_OutputFile} \\
--s 1  -t 8 \\
+-s 1  -t {NThread} \\
 --use-bf \\
 --use-data-entry {DataEntry} \\
 -n {NToys}'''
             if WriteLog:
-                cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}\n'''
+                cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}'''
+            if RunOnBackground:
+                cmd_Fitter += ' &'
             out_RunScript_ToyGenerator.write(f'# ToyGenerator, {DataEntry}, {IndvFit_XsecVariable}, postFit\n')
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
@@ -259,7 +271,7 @@ statThrowConfig:
             cmd_CalcXsec = f'''gundamCalcXsec -c {outname_CalcXsec} \\
 -f {Fitter_OutputFile} \\
 -o {CalcXsec_OutputFile} \\
--s 1 -t 8 \\
+-s 1 -t {NThread} \\
 --TurnRecoOnlyOff \\
 --fitsample-config {FitSampleSetConfig_True} \\
 --plot-config {PlotGeneratorConfig_True} \\
@@ -269,7 +281,9 @@ statThrowConfig:
                 cmd_CalcXsec += ' \\\n--use-bf-as-xsec'
             
             if WriteLog:
-                cmd_CalcXsec += f''' &> {CalcXsec_LogFile}\n'''
+                cmd_CalcXsec += f''' &> {CalcXsec_LogFile}'''
+            if RunOnBackground:
+                cmd_Fitter += ' &'
             out_RunScript_CalcXsec.write(f'# CalcXsec, {DataEntry}, {IndvFit_XsecVariable}\n')
             out_RunScript_CalcXsec.write(cmd_CalcXsec+'\n')
 
@@ -403,10 +417,12 @@ statThrowConfig:
             Fitter_LogFile = f'{LogBasedir}/log_Fitter_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.log'
             cmd_Fitter = f'''gundamFitter -c {outname_Fitter} \\
 -o {Fitter_OutputFile} \\
--t 8 --pca \\
+-t {NThread} --pca \\
 --use-data-entry {DataEntry}'''
             if WriteLog:
-                cmd_Fitter += f''' &> {Fitter_LogFile}\n'''
+                cmd_Fitter += f''' &> {Fitter_LogFile}'''
+            if RunOnBackground:
+                cmd_Fitter += ' &'
             out_RunScript_Fitter.write(f'# Fitter\n')
             out_RunScript_Fitter.write(cmd_Fitter+'\n')
 
@@ -418,12 +434,14 @@ statThrowConfig:
             cmd_ToyGenerator = f'''gundamToyGenerator -c {outname_ToyGenerator} \\
 -f {Fitter_OutputFile} \\
 -o {ToyGenerator_OutputFile} \\
--s 1  -t 8 \\
+-s 1  -t {NThread} \\
 --use-prefit \\
 --use-data-entry {DataEntry} \\
 -n {NToys}'''
             if WriteLog:
-                cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}\n'''
+                cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}'''
+            if RunOnBackground:
+                cmd_Fitter += ' &'
             out_RunScript_ToyGenerator.write(f'# ToyGenerator, preFit\n')
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
@@ -434,12 +452,14 @@ statThrowConfig:
             cmd_ToyGenerator = f'''gundamToyGenerator -c {outname_ToyGenerator} \\
 -f {Fitter_OutputFile} \\
 -o {ToyGenerator_OutputFile} \\
--s 1  -t 8 \\
+-s 1  -t {NThread} \\
 --use-bf \\
 --use-data-entry {DataEntry} \\
 -n {NToys}'''
             if WriteLog:
-                cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}\n'''
+                cmd_ToyGenerator += f''' &> {ToyGenerator_LogFile}'''
+            if RunOnBackground:
+                cmd_Fitter += ' &'
             out_RunScript_ToyGenerator.write(f'# ToyGenerator, preFit\n')
             out_RunScript_ToyGenerator.write(cmd_ToyGenerator+'\n')
 
@@ -451,7 +471,7 @@ statThrowConfig:
             cmd_CalcXsec = f'''gundamCalcXsec -c {outname_CalcXsec} \\
 -f {Fitter_OutputFile} \\
 -o {CalcXsec_OutputFile} \\
--s 1 -t 8 \\
+-s 1 -t {NThread} \\
 --TurnRecoOnlyOff \\
 --fitsample-config {FitSampleSetConfig_True} \\
 --plot-config {PlotGeneratorConfig_True} \\
@@ -461,7 +481,9 @@ statThrowConfig:
                 cmd_CalcXsec += ' \\\n--use-bf-as-xsec'
 
             if WriteLog:
-                cmd_CalcXsec += f''' &> {CalcXsec_LogFile}\n'''
+                cmd_CalcXsec += f''' &> {CalcXsec_LogFile}'''
+            if RunOnBackground:
+                cmd_Fitter += ' &'
             out_RunScript_CalcXsec.write(f'# CalcXsec\n')
             out_RunScript_CalcXsec.write(cmd_CalcXsec+'\n')
 
