@@ -25,9 +25,15 @@ CalcXsecConfigDir = f'{WD}/configs/CalcXsec'
 os.system(f'mkdir -p {FitterConfigDir}')
 os.system(f'mkdir -p {CalcXsecConfigDir}')
 
+# Number of thread
+NThread = 8
+
 # Logging
 WriteLog = False
 LogBasedir = f'{WD}/logs'
+
+# Run on background
+RunOnBackground = False
 
 # Define output directories
 GUNDAMOutputBasedir = f'{WD}/output/{JobName}'
@@ -41,20 +47,20 @@ os.system(f'mkdir -p {RunScriptDir}')
 
 ######################
 ParamSetNames = [
-    # 'NoSyst',
-    # 'Detector',
-    # 'xsec',
+    'NoSyst',
+    'Detector',
+    'xsec',
     'Flux',
-    # 'GEANT4',
-    # 'BackgroundFit',
+    'GEANT4',
+    'BackgroundFit',
 ]
 ######################
 
 IndvFit_XsecVariables = [
     'MuonCos',
-    # 'MuonProtonCos',
-    # 'deltaPT',
-    # 'deltaalphaT',
+    'MuonProtonCos',
+    'deltaPT',
+    'deltaalphaT',
 ]
 LLH_METHOD_ForIndvFit = 'BarlowLLH'
 
@@ -159,10 +165,12 @@ for IndvFit_XsecVariable in IndvFit_XsecVariables:
         Fitter_LogFile = f'{LogBasedir}/log_Fitter_{DataEntry}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.log'
         cmd_Fitter = f'''gundamFitter -c {outname_Fitter} \\
 -o {Fitter_OutputFile} \\
--t 8 --pca \\
+-t {NThread} --pca \\
 --use-data-entry {DataEntry}'''
         if WriteLog:
-            cmd_Fitter += f''' &> {Fitter_LogFile}\n'''
+            cmd_Fitter += f''' &> {Fitter_LogFile}'''
+        if RunOnBackground:
+            cmd_Fitter += ' &'
         out_RunScript_Fitter.write(f'# Fitter, {DataEntry}, {IndvFit_XsecVariable}\n')
         out_RunScript_Fitter.write(cmd_Fitter+'\n')
 
@@ -172,7 +180,7 @@ for IndvFit_XsecVariable in IndvFit_XsecVariables:
         cmd_CalcXsec = f'''gundamCalcXsec -c {outname_CalcXsec} \\
 -f {Fitter_OutputFile} \\
 -o {CalcXsec_OutputFile} \\
--s 1 -t 8 \\
+-s 1 -t {NThread} \\
 --TurnRecoOnlyOff \\
 --fitsample-config {FitSampleSetConfig_True} \\
 --plot-config {PlotGeneratorConfig_True} \\
@@ -182,7 +190,9 @@ for IndvFit_XsecVariable in IndvFit_XsecVariables:
             cmd_CalcXsec += ' \\\n--use-bf-as-xsec'
         
         if WriteLog:
-            cmd_CalcXsec += f''' &> {CalcXsec_LogFile}\n'''
+            cmd_CalcXsec += f''' &> {CalcXsec_LogFile}'''
+        if RunOnBackground:
+            cmd_CalcXsec += ' &'
         out_RunScript_CalcXsec.write(f'# CalcXsec, {DataEntry}, {IndvFit_XsecVariable}\n')
         out_RunScript_CalcXsec.write(cmd_CalcXsec+'\n')
 
