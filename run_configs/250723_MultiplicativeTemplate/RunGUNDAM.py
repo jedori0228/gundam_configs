@@ -156,6 +156,11 @@ if DoIndvFit:
                 this_line = l.replace('<FITSAMPLESET_CONFIG>', FitSampleSetConfig_Reco)
             elif '<PLOTGENERATOR_CONFIG>' in l:
                 this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_Reco)
+            elif '<TOY_THROW_CONFIG>' in l:
+                this_line = '''    enableStatThrowINToys: true
+    enableEventMcThrow: false
+    throwAsimovFitParameters: true
+'''
             else:
                 this_line = l
             
@@ -195,11 +200,6 @@ statThrowConfig:
                 this_line = l.replace('<FITSAMPLESET_CONFIG>', FitSampleSetConfig_True)
             elif '<PLOTGENERATOR_CONFIG>' in l:
                 this_line = l.replace('<PLOTGENERATOR_CONFIG>', PlotGeneratorConfig_True)
-            elif '<TOY_THROW_CONFIG>' in l:
-                this_line = '''    enableStatThrowINToys: true
-    enableEventMcThrow: false
-    throwAsimovFitParameters: true
-'''
             else:
                 this_line = l
             
