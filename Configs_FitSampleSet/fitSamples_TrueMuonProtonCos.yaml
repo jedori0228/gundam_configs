@@ -1,5 +1,5 @@
 fitSampleList:
-  - name: "TrueSignal_TrueMuonProtonCos"
+  - name: "TrueSignal_AllSignal_TrueMuonProtonCos"
     isEnabled: true
     binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_TrueMuonProtonCos.txt"
 

@@ -1,5 +1,5 @@
 fitSampleList:
-  - name: "TrueSignal_TruedeltaalphaT"
+  - name: "TrueSignal_AllSignal_TruedeltaalphaT"
     isEnabled: true
     binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaalphaT.txt"
 
@@ -48,4 +48,29 @@ fitSampleList:
         meanValue: 4.6079073E+30
         stdDev: 9.2158147E+27
 
+  - name: "TrueSignal_MuonPLT0p8_TruedeltaalphaT"
+    isEnabled: true
+    binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaalphaT.txt"
 
+    selectionCuts: "TrueMuonP<0.8"
+
+    dataSets: ["ICARUSNuMI_1muNp0pi_True_Dataset1"]
+    parameterSetName: "Template Parameter deltaalphaT"
+    yAxis: "#frac{d #sigma}{d #delta #alpha_{T}} #frac{cm^{2}}{(GeV/c) Ar}"
+    normaliseParameterList:
+      - name: "Constant flux"
+        isEnabled: true
+        
+        # FOR 250528_BeamWidthCorrection
+        # but with the addendum, uncertainty has been updated
+        # - Hadron production: 11.01%
+        # - Beam focusing: 1.72%
+        # -> sum = 11.14%
+        meanValue: 7.9752884e+11 # (numu+numubar)/cm^2, G3Chase+G4Update+BeamWidthCorrection applied, POT = 1.0900766e+21
+        stdDev: 8.8844712e+10 # 11.14%
+
+      - name: "Number of targets"
+      
+        # With bad region rejeciton
+        meanValue: 4.6079073E+30
+        stdDev: 9.2158147E+27
