@@ -60,6 +60,14 @@ IndvFit_XsecVariables = [
 # LLH_METHOD_ForIndvFit = 'PoissonLLH'
 LLH_METHOD_ForIndvFit = 'BarlowLLH'
 
+######################
+# 1) Require pmu<0.8 for reco in the fit
+# - Need to pick separate fitsample
+# - Need to pick separate plot config to use IsSignalWithMuonP
+ApplyRecoMuonPLT0p8 = True 
+######################
+
+
 # Do Sim fit?
 DoSimFit = False
 SimFit_XsecVariablePairs = [
@@ -120,7 +128,14 @@ if DoIndvFit:
 
     LLH_METHOD = LLH_METHOD_ForIndvFit
 
+    FitSampleName = ''
+    PlotConfigName = ''
+
     FitConfigName = 'IndvFit'
+    if ApplyRecoMuonPLT0p8:
+        FitConfigName += '_MuonPLT0p8'
+        FitSampleName = 'MuonPLT0p8'
+        PlotConfigName = 'MuonPLT0p8'
 
     # Run scripts
     print('# Now writing run scripts to:')
@@ -142,8 +157,8 @@ if DoIndvFit:
         outname_Fitter = f'{FitterConfigDir}/config_Fitter_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
         out_Fitter = open(outname_Fitter, 'w')
         ParameterSetListConfig = ConfigHelper.GetParametersetList_IndvFit(IndvFit_XsecVariable)
-        FitSampleSetConfig_Reco = ConfigHelper.GetFitSampleSet_IndvFit(IndvFit_XsecVariable, IsReco=True)
-        PlotGeneratorConfig_Reco = ConfigHelper.GetPlotGenerator_IndvFit(IndvFit_XsecVariable, IsReco=True)
+        FitSampleSetConfig_Reco = ConfigHelper.GetRecoFitSampleSet_IndvFit(IndvFit_XsecVariable, FitSampleName=FitSampleName)
+        PlotGeneratorConfig_Reco = ConfigHelper.GetRecoPlotGenerator_IndvFit(IndvFit_XsecVariable, PlotConfigName=PlotConfigName)
         for l in open(BaseConfig_Fitter):
             this_line = l
             if '<LLH_METHOD>' in l:
@@ -185,8 +200,8 @@ statThrowConfig:
         # - CalcXsec
         outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
         out_CalcXsec = open(outname_CalcXsec, 'w')
-        FitSampleSetConfig_True = ConfigHelper.GetFitSampleSet_IndvFit(IndvFit_XsecVariable, IsReco=False)
-        PlotGeneratorConfig_True = ConfigHelper.GetPlotGenerator_IndvFit(IndvFit_XsecVariable, IsReco=False)
+        FitSampleSetConfig_True = ConfigHelper.GetTrueFitSampleSet_IndvFit(IndvFit_XsecVariable)
+        PlotGeneratorConfig_True = ConfigHelper.GetTruePlotGenerator_IndvFit(IndvFit_XsecVariable)
 
         for l in open(BaseConfig_CalcXsec):
             this_line = l

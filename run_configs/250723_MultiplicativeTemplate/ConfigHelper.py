@@ -19,16 +19,26 @@ def GetParametersetList_IndvFit(IndvFit_XsecVariable, PSetName=''):
         return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_ParameterSetList/parameterSetList_{IndvFit_XsecVariable}.yaml"'''
     else:
         return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_ParameterSetList/{PSetName}/parameterSetList_{IndvFit_XsecVariable}.yaml"'''
-def GetFitSampleSet_IndvFit(IndvFit_XsecVariable, IsReco):
-    if IsReco:
+def GetRecoFitSampleSet_IndvFit(IndvFit_XsecVariable, FitSampleName=''):
+    if FitSampleName=='':
         return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/fitSamples_Reco{IndvFit_XsecVariable}.yaml"'''
     else:
+        return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/{FitSampleName}/fitSamples_Reco{IndvFit_XsecVariable}.yaml"'''
+def GetTrueFitSampleSet_IndvFit(IndvFit_XsecVariable, FitSampleName=''):
+    if FitSampleName=='':
         return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/fitSamples_True{IndvFit_XsecVariable}.yaml"'''
-def GetPlotGenerator_IndvFit(IndvFit_XsecVariable, IsReco):
-    if IsReco:
+    else:
+        return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/{FitSampleName}/fitSamples_True{IndvFit_XsecVariable}.yaml"'''
+def GetRecoPlotGenerator_IndvFit(IndvFit_XsecVariable, PlotConfigName=''):
+    if PlotConfigName=='':
         return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_PlotGenerator/plotConfigs_Reco{IndvFit_XsecVariable}.yaml"'''
     else:
+        return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_PlotGenerator/{PlotConfigName}/plotConfigs_Reco{IndvFit_XsecVariable}.yaml"'''
+def GetTruePlotGenerator_IndvFit(IndvFit_XsecVariable, PlotConfigName=''):
+    if PlotConfigName=='':
         return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_PlotGenerator/plotConfigs_True{IndvFit_XsecVariable}.yaml"'''
+    else:
+        return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_PlotGenerator/{PlotConfigName}/plotConfigs_True{IndvFit_XsecVariable}.yaml"'''
 
 # SimFit
 def GetParametersetList_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, PSetName=''):
