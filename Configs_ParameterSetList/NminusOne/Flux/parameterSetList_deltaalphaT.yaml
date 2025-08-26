@@ -1,0 +1,31 @@
+# Template
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/parameterSet_deltaalphaT.yaml"
+
+# x-sec
+# - FSI included here
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GENIEDials/parameterSet_GENIEDials.yaml"
+
+# detector syst
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/DetectorSyst/parameterSet_DetectorSyst.yaml"
+
+# # Flux Hadron Production
+# # - Using Splines from PCs
+# - "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/parameterSet_FluxHP_PCA.yaml"
+
+# # Flux Beamline
+# - "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/parameterSet_Beamline.yaml"
+
+# G4 Proton
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Proton.yaml"
+
+# G4 Piplus
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Piplus.yaml"
+
+# G4 Piminus
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Piminus.yaml"
+
+# Background fit
+- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/parameterSet_BackgroundFit.yaml"
+
+# # Cosmic Slice
+# - "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/parameterSet_CosmicSlice.yaml"
