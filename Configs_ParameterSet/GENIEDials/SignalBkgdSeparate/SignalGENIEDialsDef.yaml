@@ -1,0 +1,186 @@
+- parameterName: "ZExpPCAB1"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "ZExpPCAB1"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "ZExpPCAB2"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "ZExpPCAB2"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "ZExpPCAB3"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "ZExpPCAB3"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "ZExpPCAB4"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "ZExpPCAB4"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "RPA_CCQE"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "RPA_CCQE"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "CoulombCCQE"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "CoulombCCQE"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NormCCMEC"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "NormCCMEC"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "NormNCMEC"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "NormNCMEC"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "MFP_pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "MFP_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrCEx_pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "FrCEx_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrInel_pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "FrInel_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrAbs_pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "FrAbs_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrPiProd_pi"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "FrPiProd_pi"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "MFP_N"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "MFP_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrCEx_N"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "FrCEx_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrInel_N"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "FrInel_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrAbs_N"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "FrAbs_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "FrPiProd_N"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "FrPiProd_N"
+      applyCondition: "[IsData]==0"
+
+- parameterName: "VecFFCCQEshape"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "VecFFCCQEshape"
+      useMirrorDial: true
+      mirrorLowEdge: -1
+      mirrorHighEdge: 1
+      applyCondition: "[IsData]==0"
+
+- parameterName: "DecayAngMEC"
+  isEnabled: true
+  dialSetDefinitions:
+    - dialType: Spline
+      minDialResponse: 0
+      maxDialResponse: 10
+      dialLeafName: "DecayAngMEC"
+      useMirrorDial: true
+      mirrorLowEdge: -1
+      mirrorHighEdge: 1
+      applyCondition: "[IsData]==0"
+
