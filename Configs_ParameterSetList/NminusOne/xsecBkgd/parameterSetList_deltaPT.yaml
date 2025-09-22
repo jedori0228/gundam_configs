@@ -25,7 +25,7 @@
 - "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GEANT4/parameterSet_GEANT4_Piminus.yaml"
 
 # Background fit
-- "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/parameterSet_BackgroundFit.yaml"
+# - "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/parameterSet_BackgroundFit.yaml"
 
 # Cosmic Slice
 - "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/parameterSet_CosmicSlice.yaml"
