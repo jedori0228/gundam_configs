@@ -50,12 +50,11 @@ os.system(f'mkdir -p {RunScriptDir}')
 # - X will not be included
 # - For the CalcXsec, flux should not be smeared when X=Flux
 ParamSetNames = [
-    # 'FullSyst',
-    'Detector',
-    'xsec',
+    'FullSyst',
+    'DetectorAndGEANT4',
+    'xsecBkgd',
+    'xsecSignal',
     'Flux',
-    'GEANT4',
-    'BackgroundFit',
 ]
 ######################
 
