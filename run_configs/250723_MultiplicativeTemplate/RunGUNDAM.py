@@ -28,7 +28,7 @@ os.system(f'mkdir -p {ToyGeneratorConfigDir}')
 os.system(f'mkdir -p {CalcXsecConfigDir}')
 
 # Number of thread
-NThread = 1
+NThread = 8
 
 # Logging
 WriteLog = False
@@ -49,6 +49,13 @@ os.system(f'mkdir -p {ToyGeneratorOutputDir}')
 os.system(f'mkdir -p {CalcXsecOutputDir}')
 os.system(f'mkdir -p {RunScriptDir}')
 
+######################
+# 1) Require pmu<0.8 for reco in the fit
+# - Need to pick separate fitsample
+# - Need to pick separate plot config to use IsSignalWithMuonP
+ApplyRecoMuonPLT0p8 = False 
+######################
+
 # Do Indv fit?
 DoIndvFit = True
 IndvFit_XsecVariables = [
@@ -57,19 +64,11 @@ IndvFit_XsecVariables = [
     'deltaPT',
     'deltaalphaT',
 ]
-# LLH_METHOD_ForIndvFit = 'PoissonLLH'
 LLH_METHOD_ForIndvFit = 'BarlowLLH'
-
-######################
-# 1) Require pmu<0.8 for reco in the fit
-# - Need to pick separate fitsample
-# - Need to pick separate plot config to use IsSignalWithMuonP
-ApplyRecoMuonPLT0p8 = True 
-######################
-
+# LLH_METHOD_ForIndvFit = 'PoissonLLH'
 
 # Do Sim fit?
-DoSimFit = False
+DoSimFit = True
 SimFit_XsecVariablePairs = [
     ['MuonCos', 'MuonProtonCos'],
     ['deltaPT', 'deltaalphaT'],
@@ -78,7 +77,6 @@ LLH_METHOD_ForSimFit = 'StatCovariance'
 
 ######################
 ForSimFitToy = False
-StatCovDiagOnly = False
 ######################
 
 # Datasets
@@ -130,7 +128,6 @@ if DoIndvFit:
 
     FitSampleName = ''
     PlotConfigName = ''
-
     FitConfigName = 'IndvFit'
     if ApplyRecoMuonPLT0p8:
         FitConfigName += '_MuonPLT0p8'
@@ -200,7 +197,7 @@ statThrowConfig:
         # - CalcXsec
         outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
         out_CalcXsec = open(outname_CalcXsec, 'w')
-        FitSampleSetConfig_True = ConfigHelper.GetTrueFitSampleSet_IndvFit(IndvFit_XsecVariable)
+        FitSampleSetConfig_True = ConfigHelper.GetTrueFitSampleSet_IndvFit(IndvFit_XsecVariable, FitSampleName)
         PlotGeneratorConfig_True = ConfigHelper.GetTruePlotGenerator_IndvFit(IndvFit_XsecVariable)
 
         for l in open(BaseConfig_CalcXsec):
@@ -323,8 +320,18 @@ if DoSimFit:
     LLH_METHOD = LLH_METHOD_ForSimFit
 
     FitConfigName = 'SimFit'
-    if StatCovDiagOnly:
-        FitConfigName = 'StatCovDiagOnly_'+FitConfigName
+    FitSampleName = ''
+    PlotConfigName = ''
+
+    if ApplyRecoMuonPLT0p8:
+        FitConfigName += '_MuonPLT0p8'
+        FitSampleName = 'MuonPLT0p8'
+        PlotConfigName = 'MuonPLT0p8'
+
+
+    ## TODO
+    # FitConfigName += '_'+'TemplateSumReg_Strength5.00'
+    # FitConfigName += '_'+'NoTemplateSumReg'
 
     # Run scripts
     print('# Now writing run scripts to:')
@@ -350,7 +357,7 @@ if DoSimFit:
         outname_Fitter = f'{FitterConfigDir}/config_Fitter_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
         out_Fitter = open(outname_Fitter, 'w')
         ParameterSetListConfig = ConfigHelper.GetParametersetList_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y)
-        FitSampleSetConfig_Reco = ConfigHelper.GetFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=True)
+        FitSampleSetConfig_Reco = ConfigHelper.GetRecoFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, FitSampleName)
         PlotGeneratorConfig_Reco = ConfigHelper.GetPlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=True)
         for l in open(BaseConfig_Fitter):
             this_line = l
@@ -374,8 +381,6 @@ if DoSimFit:
                 else:
                     this_line = '\n'
 
-                if StatCovDiagOnly:
-                    this_line += '\n    StatCovDiagOnly: true\n'
             else:
                 this_line = l
             
@@ -401,7 +406,7 @@ statThrowConfig:
 
         outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
         out_CalcXsec = open(outname_CalcXsec, 'w')
-        FitSampleSetConfig_True = ConfigHelper.GetFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=False)
+        FitSampleSetConfig_True = ConfigHelper.GetTrueFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, FitSampleName)
         PlotGeneratorConfig_True = ConfigHelper.GetPlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=False)
 
         for l in open(BaseConfig_CalcXsec):

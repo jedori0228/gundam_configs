@@ -51,6 +51,19 @@ def GetFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco)
         return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/fitSamples_Reco{SimFit_XsecVariable_X}_and_Reco{SimFit_XsecVariable_Y}.yaml"'''
     else:
         return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/fitSamples_True{SimFit_XsecVariable_X}_and_True{SimFit_XsecVariable_Y}.yaml"'''
+
+def GetRecoFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, FitSampleName=''):
+    if FitSampleName=='':
+        return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/fitSamples_Reco{SimFit_XsecVariable_X}_and_Reco{SimFit_XsecVariable_Y}.yaml"'''
+    else:
+        return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/{FitSampleName}/fitSamples_Reco{SimFit_XsecVariable_X}_and_Reco{SimFit_XsecVariable_Y}.yaml"'''
+def GetTrueFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, FitSampleName=''):
+    if FitSampleName=='':
+        return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/fitSamples_True{SimFit_XsecVariable_X}_and_True{SimFit_XsecVariable_Y}.yaml"'''
+    else:
+        return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/{FitSampleName}/fitSamples_True{SimFit_XsecVariable_X}_and_True{SimFit_XsecVariable_Y}.yaml"'''
+
+
 def GetPlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco):
     if IsReco:
         return f'''"${{GUNDAM_CONFIG_DIR}}/Configs_PlotGenerator/plotConfigs_Reco{SimFit_XsecVariable_X}_and_Reco{SimFit_XsecVariable_Y}.yaml"'''
