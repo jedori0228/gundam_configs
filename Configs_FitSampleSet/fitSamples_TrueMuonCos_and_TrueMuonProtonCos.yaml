@@ -1,5 +1,5 @@
 fitSampleList:
-  - name: "TrueSignal_TrueMuonCos"
+  - name: "TrueSignal_AllSignal_TrueMuonCos"
     isEnabled: true
     binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_TrueMuonCos.txt"
 
@@ -48,7 +48,7 @@ fitSampleList:
         meanValue: 4.6079073E+30
         stdDev: 9.2158147E+27
 
-  - name: "TrueSignal_TrueMuonProtonCos"
+  - name: "TrueSignal_AllSignal_TrueMuonProtonCos"
     isEnabled: true
     binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_TrueMuonProtonCos.txt"
 
