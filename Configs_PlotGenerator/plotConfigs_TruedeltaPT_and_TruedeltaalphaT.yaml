@@ -9,6 +9,13 @@ varDictionnaries:
       - { value: -1, title: "Cosmic", color: 617 } # Purplish
 
 histogramsDefinition:
+  - varToPlot: "TruedeltaPT"
+    splitVars: ["TrueMode"]
+    useSampleBinning: true
+    rescaleAsBinWidth: true
+    xMax: 10000.
+    xTitle: "True #delta p_{T} (GeV/c)"
+    yTitle: "#frac{d #sigma}{d #delta p_{T}} cm^{2} / (GeV/c)"
   - varToPlot: "TruedeltaalphaT"
     splitVars: ["TrueMode"]
     useSampleBinning: true

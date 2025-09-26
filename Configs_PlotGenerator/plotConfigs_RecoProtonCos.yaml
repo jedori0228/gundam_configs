@@ -8,17 +8,11 @@ varDictionnaries:
       - { value: 1, title: "signal", color: 855 } # kOrange
 
 histogramsDefinition:
-  - varToPlot: "RecoMuonCos"
+  - varToPlot: "RecoProtonCos"
     splitVars: ["IsSignal"]
-    useSampleBinning: true
+    binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_RecoProtonCos.txt"
     rescaleAsBinWidth: false
-    xTitle: "cos(#theta_{#mu})"
-    yTitle: "Slices"
-  - varToPlot: "RecoMuonProtonCos"
-    splitVars: ["IsSignal"]
-    useSampleBinning: true
-    rescaleAsBinWidth: false
-    xTitle: "cos(#theta_{#mu,p})"
+    xTitle: "cos(#theta_{p})"
     yTitle: "Slices"
 
 canvasParameters:

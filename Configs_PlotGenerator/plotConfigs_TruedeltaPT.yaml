@@ -10,7 +10,7 @@ varDictionnaries:
 
 histogramsDefinition:
   - varToPlot: "TruedeltaPT"
-    splitVars: ["", "TrueMode"]
+    splitVars: ["TrueMode"]
     useSampleBinning: true
     rescaleAsBinWidth: true
     xMax: 10000.

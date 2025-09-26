@@ -1,5 +1,5 @@
 varDictionnaries:
-  - name: "IsSignal"
+  - name: "IsSignalWithMuonP"
     dictionary:
       - { value: 5, title: "Cosmic", color: 805 } # kMagenta
       - { value: 4, title: "NuNC", color: 866 } # kRed
@@ -8,17 +8,17 @@ varDictionnaries:
       - { value: 1, title: "signal", color: 855 } # kOrange
 
 histogramsDefinition:
-  - varToPlot: "RecoMuonCos"
-    splitVars: ["IsSignal"]
+  - varToPlot: "RecodeltaPT"
+    splitVars: ["IsSignalWithMuonP"]
     useSampleBinning: true
     rescaleAsBinWidth: false
-    xTitle: "cos(#theta_{#mu})"
+    xTitle: "#delta p_{T}"
     yTitle: "Slices"
-  - varToPlot: "RecoMuonProtonCos"
-    splitVars: ["IsSignal"]
+  - varToPlot: "RecodeltaalphaT"
+    splitVars: ["IsSignalWithMuonP"]
     useSampleBinning: true
     rescaleAsBinWidth: false
-    xTitle: "cos(#theta_{#mu,p})"
+    xTitle: "#delta #alpha_{T}"
     yTitle: "Slices"
 
 canvasParameters:

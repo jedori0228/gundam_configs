@@ -14,7 +14,6 @@ histogramsDefinition:
     rescaleAsBinWidth: false
     xTitle: "#delta p_{T}"
     yTitle: "Slices"
-    #xMax: 0.81
 
 canvasParameters:
   height: 800

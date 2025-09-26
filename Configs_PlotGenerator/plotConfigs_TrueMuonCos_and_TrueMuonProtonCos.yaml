@@ -9,13 +9,20 @@ varDictionnaries:
       - { value: -1, title: "Cosmic", color: 617 } # Purplish
 
 histogramsDefinition:
-  - varToPlot: "TruedeltaalphaT"
+  - varToPlot: "TrueMuonCos"
     splitVars: ["TrueMode"]
     useSampleBinning: true
     rescaleAsBinWidth: true
     xMax: 10000.
-    xTitle: "True #delta p_{T} (GeV/c)"
-    yTitle: "#frac{d #sigma}{d #delta p_{T}} cm^{2} / (GeV/c)"
+    xTitle: "True cos(#theta_{#mu}) (GeV/c)"
+    yTitle: "#frac{d #sigma}{d cos(#theta_{#mu})} cm^{2} / (GeV/c)"
+  - varToPlot: "TrueMuonProtonCos"
+    splitVars: ["TrueMode"]
+    useSampleBinning: true
+    rescaleAsBinWidth: true
+    xMax: 10000.
+    xTitle: "True cos(#theta_{#mu,p}) (GeV/c)"
+    yTitle: "#frac{d #sigma}{d cos(#theta_{#mu,p})} cm^{2} / (GeV/c)"
 
 canvasParameters:
   height: 700

@@ -8,15 +8,12 @@ varDictionnaries:
       - { value: 1, title: "signal", color: 855 } # kOrange
 
 histogramsDefinition:
-  - varToPlot: "Raw"
-    splitVars: ["", "IsSignal"]
   - varToPlot: "RecodeltaPT"
-    splitVars: ["", "IsSignal"]
+    splitVars: ["IsSignal"]
     useSampleBinning: true
     rescaleAsBinWidth: false
     xTitle: "#delta p_{T}"
     yTitle: "Slices"
-    #xMax: 0.81
 
 canvasParameters:
   height: 800
