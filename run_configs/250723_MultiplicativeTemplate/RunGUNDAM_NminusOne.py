@@ -17,7 +17,7 @@ UseBestFit = True
 ###########################################
 
 # Number of toys
-NToys = 1000
+NToys = 100000
 
 # Config directory
 FitterConfigDir = f'{WD}/configs/Fitter'
@@ -45,6 +45,14 @@ os.system(f'mkdir -p {FitterOutputDir}')
 os.system(f'mkdir -p {CalcXsecOutputDir}')
 os.system(f'mkdir -p {RunScriptDir}')
 
+
+######################
+# 1) Require pmu<0.8 for reco in the fit
+# - Need to pick separate fitsample
+# - Need to pick separate plot config to use IsSignalWithMuonP
+ApplyRecoMuonPLT0p8 = False 
+######################
+
 ######################
 # Here, this corresponds to X in N-X
 # - X will not be included
@@ -55,6 +63,7 @@ ParamSetNames = [
     'xsecBkgd',
     'xsecSignal',
     'Flux',
+    'NoSyst',
 ]
 ######################
 
@@ -83,6 +92,12 @@ BaseConfig_CalcXsec = f'{WD}/base_configs/config_CalcXsec.yaml'
 
 LLH_METHOD = LLH_METHOD_ForIndvFit
 
+FitSampleName = ''
+PlotConfigName = ''
+if ApplyRecoMuonPLT0p8:
+    FitSampleName = 'MuonPLT0p8'
+    PlotConfigName = 'MuonPLT0p8'
+
 # Run scripts
 print('# Now writing run scripts to:')
 
@@ -99,6 +114,11 @@ for IndvFit_XsecVariable in IndvFit_XsecVariables:
         FitConfigName = f'Nminus{ParamSetName}_IndvFit'
         if ParamSetName=='FullSyst':
             FitConfigName = ParamSetName+'_IndvFit'
+        if ParamSetName=='NoSyst':
+            FitConfigName = ParamSetName+'_IndvFit'
+
+        if ApplyRecoMuonPLT0p8:
+            FitConfigName += '_MuonPLT0p8'
 
         # Writting config yamls
 
@@ -106,8 +126,8 @@ for IndvFit_XsecVariable in IndvFit_XsecVariables:
         outname_Fitter = f'{FitterConfigDir}/config_Fitter_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
         out_Fitter = open(outname_Fitter, 'w')
         ParameterSetListConfig = ConfigHelper.GetParametersetList_IndvFit(IndvFit_XsecVariable, 'NminusOne/'+ParamSetName)
-        FitSampleSetConfig_Reco = ConfigHelper.GetRecoFitSampleSet_IndvFit(IndvFit_XsecVariable)
-        PlotGeneratorConfig_Reco = ConfigHelper.GetRecoPlotGenerator_IndvFit(IndvFit_XsecVariable)
+        FitSampleSetConfig_Reco = ConfigHelper.GetRecoFitSampleSet_IndvFit(IndvFit_XsecVariable, FitSampleName)
+        PlotGeneratorConfig_Reco = ConfigHelper.GetRecoPlotGenerator_IndvFit(IndvFit_XsecVariable, PlotConfigName)
         for l in open(BaseConfig_Fitter):
             this_line = l
             if '<LLH_METHOD>' in l:
@@ -130,9 +150,11 @@ for IndvFit_XsecVariable in IndvFit_XsecVariables:
         # - CalcXsec
         outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
         out_CalcXsec = open(outname_CalcXsec, 'w')
-        FitSampleSetConfig_True = f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/PerSourceStudy/SmearFlux/fitSamples_True{IndvFit_XsecVariable}.yaml"'''
-        if ParamSetName=='Flux':
-            FitSampleSetConfig_True = f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/PerSourceStudy/NoNormSmearing/fitSamples_True{IndvFit_XsecVariable}.yaml"'''
+
+        TruthFitSampleDir = 'NoNormSmearing' if ParamSetName=='Flux' else 'SmearFlux'
+        if ApplyRecoMuonPLT0p8:
+            TruthFitSampleDir += '/MuonPLT0p8'
+        FitSampleSetConfig_True = f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/PerSourceStudy/{TruthFitSampleDir}/fitSamples_True{IndvFit_XsecVariable}.yaml"'''
         PlotGeneratorConfig_True = ConfigHelper.GetTruePlotGenerator_IndvFit(IndvFit_XsecVariable)
 
         for l in open(BaseConfig_CalcXsec):
