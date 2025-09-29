@@ -13,6 +13,9 @@ dialSetDefinitions:
     applyCondition: "[IsSignal] == 1"
     printDialsSummary: true
 
-parameterLimits:
-  minValue: 0.
-  maxValue: 3.0
+# parameterLimits:
+#   minValue: 0.
+#   maxValue: 3.0
+
+covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/SumRegCovMat_MuonProtonCos.root"
+covarianceMatrixTMatrixD: "SumRegCovMat_Strength0.10"

@@ -17,12 +17,7 @@ dialSetDefinitions:
 #   minValue: 0.
 #   maxValue: 3.0
 
-# example
-# covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/RegCovs/RegCov_Bins3Plus3_StrengthTenToThe-1.12_Prior1.0.root"
-# covarianceMatrixTMatrixD: "RegCov_Bins3Plus3_StrengthTenToThe-1.12_Prior1.0"
-
-# Optimized
-# covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/RegCovs/RegCov_Bins3Plus3_StrengthTenToThe0.53_Prior1.0.root"
-# covarianceMatrixTMatrixD: "RegCov_Bins3Plus3_StrengthTenToThe0.53_Prior1.0"
+covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/SumRegCovMat_deltaalphaT.root"
+covarianceMatrixTMatrixD: "SumRegCovMat_Strength0.10"
 
 
