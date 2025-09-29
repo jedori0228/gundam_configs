@@ -1,5 +1,5 @@
 fitSampleList:
-  - name: "TrueSignal_TruedeltaalphaT"
+  - name: "TrueSignal_AllSignal_TruedeltaalphaT"
     isEnabled: true
     binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaalphaT.txt"
 
@@ -13,19 +13,6 @@ fitSampleList:
     normaliseParameterList:
       - name: "Constant flux"
         isEnabled: true
-        
-        # USED FOR 240729_NuMIReproc_TrackSplitShift
-        # meanValue: 8.4726301e+11 # (numu+numubar)/cm^2, G3Chase applied, POT = 1.0900766e+21
-        # stdDev: 1.0667041e+11 # sqrt(9.2^2 + 8.6^2) = 12.59%
-
-        # FOR 241111_PreparingSignalUnboxing
-        # - G4Updated ppfx is now used
-        # meanValue: 8.3525537e+11 # (numu+numubar)/cm^2, G3Chase+G4Update applied, POT = 1.0900766e+21
-        # stdDev: 1.0515865e+11 # sqrt(9.2^2 + 8.6^2) = 12.59%
-
-        # FOR 250528_BeamWidthCorrection
-        # meanValue: 7.9752883e+11 # (numu+numubar)/cm^2, G3Chase+G4Update+BeamWidthCorrection applied, POT = 1.0900766e+21
-        # stdDev: 7.3372652e+10 # 9.2%
 
         # FOR 250528_BeamWidthCorrection
         # but with the addendum, uncertainty has been updated
@@ -39,13 +26,9 @@ fitSampleList:
         ### Using MC value assumed from sbn-doc-33224, converted to N NUCLEONS instead of N Nuclei
         # USING N Ar NUCLEI
         # Let's assume a 0.2% uncertainty for now... (NOTE: **if** my math is right we may need to scale up by 0.2% in data...)
-
-        # Without bad region
-        # meanValue: 4.714056E30
-        # stdDev: 9.4281120e+27
-
+        
         # With bad region rejeciton
-        meanValue: 4.6079073E+30
+        meanValue: 4.6283415E+30
         stdDev: 0
 
 
