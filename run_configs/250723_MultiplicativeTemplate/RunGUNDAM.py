@@ -53,11 +53,11 @@ os.system(f'mkdir -p {RunScriptDir}')
 # 1) Require pmu<0.8 for reco in the fit
 # - Need to pick separate fitsample
 # - Need to pick separate plot config to use IsSignalWithMuonP
-ApplyRecoMuonPLT0p8 = False 
+ApplyRecoMuonPLT0p8 = False
 ######################
 
 # Do Indv fit?
-DoIndvFit = True
+DoIndvFit = False
 IndvFit_XsecVariables = [
     'MuonCos',
     'MuonProtonCos',
@@ -330,7 +330,7 @@ if DoSimFit:
 
 
     ## TODO
-    # FitConfigName += '_'+'TemplateSumReg_Strength5.00'
+    # FitConfigName += '_'+'TemplateSumReg_Strength0.10'
     # FitConfigName += '_'+'NoTemplateSumReg'
 
     # Run scripts
@@ -358,7 +358,7 @@ if DoSimFit:
         out_Fitter = open(outname_Fitter, 'w')
         ParameterSetListConfig = ConfigHelper.GetParametersetList_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y)
         FitSampleSetConfig_Reco = ConfigHelper.GetRecoFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, FitSampleName)
-        PlotGeneratorConfig_Reco = ConfigHelper.GetPlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=True)
+        PlotGeneratorConfig_Reco = ConfigHelper.GetRecoPlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, FitSampleName)
         for l in open(BaseConfig_Fitter):
             this_line = l
             if '<LLH_METHOD>' in l:
@@ -407,7 +407,7 @@ statThrowConfig:
         outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
         out_CalcXsec = open(outname_CalcXsec, 'w')
         FitSampleSetConfig_True = ConfigHelper.GetTrueFitSampleSet_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, FitSampleName)
-        PlotGeneratorConfig_True = ConfigHelper.GetPlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y, IsReco=False)
+        PlotGeneratorConfig_True = ConfigHelper.GetTruePlotGenerator_SimFit(SimFit_XsecVariable_X, SimFit_XsecVariable_Y)
 
         for l in open(BaseConfig_CalcXsec):
             this_line = l
