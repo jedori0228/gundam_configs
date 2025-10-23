@@ -330,7 +330,7 @@ if DoSimFit:
 
 
     ## TODO
-    # FitConfigName += '_'+'TemplateSumReg_Strength0.10'
+    # FitConfigName += '_'+'TemplateSumReg_Strength0.10_ToyNoStatThrow'
     # FitConfigName += '_'+'NoTemplateSumReg'
 
     # Run scripts
@@ -378,9 +378,11 @@ if DoSimFit:
     throwAsimovFitParameters: true
     IsSimFitToy: true
 '''
+            elif '<DoNotThrowSignalTemplateParameter>' in l:
+                if ForSimFitToy:
+                    this_line = '''        DoNotThrowSignalTemplateParameter: true\n'''
                 else:
                     this_line = '\n'
-
             else:
                 this_line = l
             
