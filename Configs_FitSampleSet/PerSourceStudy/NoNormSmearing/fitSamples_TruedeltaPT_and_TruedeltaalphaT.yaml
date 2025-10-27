@@ -1,0 +1,64 @@
+fitSampleList:
+  - name: "TrueSignal_AllSignal_TruedeltaPT"
+    isEnabled: true
+    binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaPT_NoOverFlow.txt"
+
+    selectionCuts: "" # (numu+numubar)
+    #selectionCuts: "TrueE>0.3" # (numu+numubar) but Enu>0.3 GeV
+    #selectionCuts: "TrueE>0.3 && TruePDG>0." # (numu) but Enu>0.3 GeV
+
+    dataSets: ["ICARUSNuMI_1muNp0pi_True_Dataset0"]
+    parameterSetName: "Template Parameter deltaPT"
+    yAxis: "#frac{d #sigma}{d #delta p_{T}} #frac{cm^{2}}{(GeV/c) Ar}"
+    normaliseParameterList:
+      - name: "Constant flux"
+        isEnabled: true
+
+        # FOR 250528_BeamWidthCorrection
+        # but with the addendum, uncertainty has been updated
+        # - Hadron production: 11.01%
+        # - Beam focusing: 1.72%
+        # -> sum = 11.14%
+        meanValue: 7.9752884e+11 # (numu+numubar)/cm^2, G3Chase+G4Update+BeamWidthCorrection applied, POT = 1.0900766e+21
+        stdDev: 0
+
+      - name: "Number of targets"
+        ### Using MC value assumed from sbn-doc-33224, converted to N NUCLEONS instead of N Nuclei
+        # USING N Ar NUCLEI
+        # Let's assume a 0.2% uncertainty for now... (NOTE: **if** my math is right we may need to scale up by 0.2% in data...)
+        
+        # With bad region rejeciton
+        meanValue: 4.6283415E+30
+        stdDev: 0
+
+  - name: "TrueSignal_AllSignal_TruedeltaalphaT"
+    isEnabled: true
+    binning: "${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaalphaT.txt"
+
+    selectionCuts: "" # (numu+numubar)
+    #selectionCuts: "TrueE>0.3" # (numu+numubar) but Enu>0.3 GeV
+    #selectionCuts: "TrueE>0.3 && TruePDG>0." # (numu) but Enu>0.3 GeV
+
+    dataSets: ["ICARUSNuMI_1muNp0pi_True_Dataset1"]
+    parameterSetName: "Template Parameter deltaalphaT"
+    yAxis: "#frac{d #sigma}{d #delta #alpha_{T}} #frac{cm^{2}}{(GeV/c) Ar}"
+    normaliseParameterList:
+      - name: "Constant flux"
+        isEnabled: true
+
+        # FOR 250528_BeamWidthCorrection
+        # but with the addendum, uncertainty has been updated
+        # - Hadron production: 11.01%
+        # - Beam focusing: 1.72%
+        # -> sum = 11.14%
+        meanValue: 7.9752884e+11 # (numu+numubar)/cm^2, G3Chase+G4Update+BeamWidthCorrection applied, POT = 1.0900766e+21
+        stdDev: 0
+
+      - name: "Number of targets"
+        ### Using MC value assumed from sbn-doc-33224, converted to N NUCLEONS instead of N Nuclei
+        # USING N Ar NUCLEI
+        # Let's assume a 0.2% uncertainty for now... (NOTE: **if** my math is right we may need to scale up by 0.2% in data...)
+        
+        # With bad region rejeciton
+        meanValue: 4.6283415E+30
+        stdDev: 0
