@@ -18,4 +18,4 @@ dialSetDefinitions:
 #   maxValue: 3.0
 
 covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/SumRegCovMat_deltaPT.root"
-covarianceMatrixTMatrixD: "SumRegCovMat_Log10Strength-1.088"
+covarianceMatrixTMatrixD: "SumRegCovMat_Log10Strength-1.113"
