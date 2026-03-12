@@ -15,6 +15,9 @@ useOnlyOneParameterPerEvent: true
 
 dialSetDefinitions:
   - name: BackgroundFit dialSetDefinitions
+
+    dialType: "lnN"
+
     applyOnDataSets: ["*"]
 
     # Using (W,Q2)
@@ -31,9 +34,14 @@ dialSetDefinitions:
 # covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.4_NSet2.root"
 # covarianceMatrixTMatrixD: "RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.4_NSet2"
 # - Prior = (40, 60) for (LoW,HiW)
-covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.6_NSet2.root"
-covarianceMatrixTMatrixD: "RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.6_NSet2"
+# covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.6_NSet2.root"
+# covarianceMatrixTMatrixD: "RegCov_Bins0Plus8_StrengthTenToThe0.00_PriorLoW0.4_PriorHiW0.6_NSet2"
 # - Prior = bin-by-bin
 # covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/Cov_PriorLoWHiWBinByBin.root"
 # covarianceMatrixTMatrixD: "Cov_PriorLoWHiWBinByBin"
 
+# - Prior = (40, 60) for (LoW,HiW)
+# LogNormal
+covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/RegCov_LogNormal_PriorLoW0.4_PriorHiW0.6.root"
+covarianceMatrixTMatrixD: "RegCov_LogNormal_PriorLoW0.4_PriorHiW0.6"
+parameterPriorTVectorD: "PriorVals"
