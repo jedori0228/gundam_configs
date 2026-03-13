@@ -1,0 +1,967 @@
+fitterEngineConfig:
+  enablePca: true
+  enablePostFitScan: false
+  enablePreFitScan: false
+  likelihoodInterfaceConfig:
+    dataSetList:
+    - data:
+      - filePathList:
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run1.root
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run2.root
+        name: RealData
+        nominalWeightFormula: (1.)
+        tree: AllSamples_FillTree/selectedEvents
+      isEnabled: true
+      mc:
+        filePathList:
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root
+        nominalWeightFormula: '( IsData ? (Run<9300 ? 1.26862061947009 : 0.984613145608233)
+          : (2.500616E+20/1.0900766e+21) *  ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection
+          * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight ) )'
+        tree: AllSamples_FillTree/selectedEvents_NSigmas
+      name: ICARUSNuMI_1muNp0pi_Reco_Dataset0
+      selectedDataEntry: RealData
+      showSelectedEventCount: true
+    - data:
+      - filePathList:
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run1.root
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_Data_NuMIMAJORITY_2023ANuMIReproc_Run2.root
+        name: RealData
+        nominalWeightFormula: (1.)
+        tree: AllSamples_FillTree/selectedEvents
+      isEnabled: true
+      mc:
+        filePathList:
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/MakeTree_NuMI_MC_Nu_Phase2_2023ANuMIReproc_CAFTypeCommonRemerge_ReNuSyst250403_WithTrackSplit_BNBFixedProb.root
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run1.root
+        - ${GUNDAM_TREE_DIR}/${GUNDAM_INPUT_JOBNAME}/Originals/MakeTree_Data_OffBeamNUMIMAJORITY_2023ANuMIReproc_Run2.root
+        nominalWeightFormula: '( IsData ? (Run<9300 ? 1.26862061947009 : 0.984613145608233)
+          : (2.500616E+20/1.0900766e+21) *  ( (IsSignal==5 ? 0.67937750173924 : FluxWeightWithBeamWidthCorrection
+          * SPPQ2RW * SPPTpiMINERvAFittedReweight) * POTWeightedTriggerWeight ) )'
+        tree: AllSamples_FillTree/selectedEvents_NSigmas
+      name: ICARUSNuMI_1muNp0pi_Reco_Dataset1
+      selectedDataEntry: RealData
+      showSelectedEventCount: true
+    jointProbabilityConfig:
+      type: StatCovariance
+    plotGeneratorConfig:
+      canvasParameters:
+        height: 800
+        nbXplots: 1
+        nbYplots: 1
+        width: 1000
+      histogramsDefinition:
+      - rescaleAsBinWidth: false
+        splitVars:
+        - IsSignalWithMuonP
+        useSampleBinning: true
+        varToPlot: RecodeltaPT
+        xTitle: '#delta p_{T}'
+        yTitle: Slices
+      - rescaleAsBinWidth: false
+        splitVars:
+        - IsSignalWithMuonP
+        useSampleBinning: true
+        varToPlot: RecodeltaalphaT
+        xTitle: '#delta #alpha_{T}'
+        yTitle: Slices
+      varDictionnaries:
+      - dictionary:
+        - color: 805
+          title: Cosmic
+          value: 5
+        - color: 866
+          title: NuNC
+          value: 4
+        - color: 842
+          title: NuCCOther
+          value: 3
+        - color: 800
+          title: OOPS
+          value: 2
+        - color: 855
+          title: signal
+          value: 1
+        name: IsSignalWithMuonP
+    propagatorConfig:
+      debugPrintLoadedEvents: true
+      fitSampleSetConfig:
+        fitSampleList:
+        - binning: ${GUNDAM_CONFIG_DIR}/binnings/binning_RecodeltaPT.txt
+          dataSets:
+          - ICARUSNuMI_1muNp0pi_Reco_Dataset0
+          isEnabled: true
+          name: SignalSelection_Contained_MuonPLT0p8_RecodeltaPT
+          selectionCuts: CutType==1 && MuonTrackType==1 && RecoMuonP<0.8
+        - binning: ${GUNDAM_CONFIG_DIR}/binnings/binning_RecodeltaPT.txt
+          dataSets:
+          - ICARUSNuMI_1muNp0pi_Reco_Dataset0
+          isEnabled: true
+          name: Sideband_Contained_MuonPLT0p8_RecodeltaPT
+          selectionCuts: CutType==2 && MuonTrackType==1 && LeadingChargedPionCandidateLength>=10.
+            && RecoMuonP<0.8
+        - binning: ${GUNDAM_CONFIG_DIR}/binnings/binning_RecodeltaalphaT.txt
+          dataSets:
+          - ICARUSNuMI_1muNp0pi_Reco_Dataset1
+          isEnabled: true
+          name: SignalSelection_Contained_MuonPLT0p8_RecodeltaalphaT
+          selectionCuts: CutType==1 && MuonTrackType==1 && RecoMuonP<0.8
+        - binning: ${GUNDAM_CONFIG_DIR}/binnings/binning_RecodeltaalphaT.txt
+          dataSets:
+          - ICARUSNuMI_1muNp0pi_Reco_Dataset1
+          isEnabled: true
+          name: Sideband_Contained_MuonPLT0p8_RecodeltaalphaT
+          selectionCuts: CutType==2 && MuonTrackType==1 && LeadingChargedPionCandidateLength>=10.
+            && RecoMuonP<0.8
+      parametersManagerConfig:
+        parameterSetList:
+        - covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/run_configs/260311_LogNormal/TemplateSumRegCov_LCurve/SumRegCovMat_deltaPT.root
+          covarianceMatrixTMatrixD: <TemplateSumRegCov_LCurve_COVMAT_NAME>
+          dialSetDefinitions:
+          - applyCondition: '[IsSignal] == 1'
+            applyOnDataSets:
+            - '*'
+            dialType: lnN
+            name: Template Parameter deltaPT dialSetDefinitions
+            parametersBinningPath: ${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaPT.txt
+            printDialsSummary: true
+          isEnabled: true
+          name: Template Parameter deltaPT
+          nominalStepSize: 0.1
+          parameterPriorTVectorD: PriorVals
+          printDialSetsSummary: true
+          useOnlyOneParameterPerEvent: true
+        - covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/run_configs/260311_LogNormal/TemplateSumRegCov_LCurve/SumRegCovMat_deltaalphaT.root
+          covarianceMatrixTMatrixD: <TemplateSumRegCov_LCurve_COVMAT_NAME>
+          dialSetDefinitions:
+          - applyCondition: '[IsSignal] == 1'
+            applyOnDataSets:
+            - '*'
+            dialType: lnN
+            minDialResponse: -10.0
+            name: Template Parameter deltaalphaT dialSetDefinitions
+            parametersBinningPath: ${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaalphaT.txt
+            printDialsSummary: true
+          isEnabled: true
+          name: Template Parameter deltaalphaT
+          nominalStepSize: 0.1
+          parameterPriorTVectorD: PriorVals
+          printDialSetsSummary: true
+          useOnlyOneParameterPerEvent: true
+        - covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/GENIEDials/gundaminput_geniesyst.root
+          covarianceMatrixTMatrixD: xsec_cov
+          isEnabled: true
+          name: Cross section Systematics
+          parameterDefinitions:
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: ZExpPCAB1
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: ZExpPCAB1
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: ZExpPCAB2
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: ZExpPCAB2
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: ZExpPCAB3
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: ZExpPCAB3
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: ZExpPCAB4
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: ZExpPCAB4
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: RPA_CCQE
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: RPA_CCQE
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: CoulombCCQE
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: CoulombCCQE
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NormCCMEC
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NormCCMEC
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NormNCMEC
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NormNCMEC
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: MaNCEL
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: MaNCEL
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: EtaNCEL
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: EtaNCEL
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: MaCCRES
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: MaCCRES
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: MvCCRES
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: MvCCRES
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: MaNCRES
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: MaNCRES
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: MvNCRES
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: MvNCRES
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvpCC1pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvpCC1pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvpCC2pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvpCC2pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvpNC1pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvpNC1pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvpNC2pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvpNC2pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvnCC1pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvnCC1pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvnCC2pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvnCC2pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvnNC1pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvnNC1pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvnNC2pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvnNC2pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvbarpCC1pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvbarpCC1pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvbarpCC2pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvbarpCC2pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvbarpNC1pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvbarpNC1pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvbarpNC2pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvbarpNC2pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvbarnCC1pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvbarnCC1pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvbarnCC2pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvbarnCC2pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvbarnNC1pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvbarnNC1pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NonRESBGvbarnNC2pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NonRESBGvbarnNC2pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: RDecBR1gamma
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: RDecBR1gamma
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: RDecBR1eta
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: RDecBR1eta
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NormCCCOH
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NormCCCOH
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NormNCCOH
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: NormNCCOH
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: AhtBY
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: AhtBY
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: BhtBY
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: BhtBY
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: CV1uBY
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: CV1uBY
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: CV2uBY
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: CV2uBY
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: MFP_pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: MFP_pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: FrCEx_pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: FrCEx_pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: FrInel_pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: FrInel_pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: FrAbs_pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: FrAbs_pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: FrPiProd_pi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: FrPiProd_pi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: MFP_N
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: MFP_N
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: FrCEx_N
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: FrCEx_N
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: FrInel_N
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: FrInel_N
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: FrAbs_N
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: FrAbs_N
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: FrPiProd_N
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: FrPiProd_N
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: CC1piTPi_Q2Only
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: CC1piTPi_Q2Only
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: CC1piTPi_TpiOnly
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+            isEnabled: true
+            parameterName: CC1piTPi_TpiOnly
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: VecFFCCQEshape
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+              mirrorHighEdge: 1
+              mirrorLowEdge: -1.0
+              useMirrorDial: true
+            isEnabled: true
+            parameterName: VecFFCCQEshape
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: DecayAngMEC
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+              mirrorHighEdge: 1
+              mirrorLowEdge: -1.0
+              useMirrorDial: true
+            isEnabled: true
+            parameterName: DecayAngMEC
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: Theta_Delta2Npi
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+              mirrorHighEdge: 1
+              mirrorLowEdge: -1.0
+              useMirrorDial: true
+            isEnabled: true
+            parameterName: Theta_Delta2Npi
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: ThetaDelta2NRad
+              dialType: Spline
+              maxDialResponse: 10
+              minDialResponse: 0
+              mirrorHighEdge: 1
+              mirrorLowEdge: -1.0
+              useMirrorDial: true
+            isEnabled: true
+            parameterName: ThetaDelta2NRad
+          parameterLowerBoundsTVectorD: xsec_param_lb
+          parameterNameTObjArray: xsec_param_names
+          parameterPriorTVectorD: xsec_param_prior
+          parameterUpperBoundsTVectorD: xsec_param_ub
+          printDialSetsSummary: true
+          releaseFixedParametersOnHesse: true
+        - covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/DetectorSyst/gundaminput_detsyst.root
+          covarianceMatrixTMatrixD: detsyst_cov
+          isEnabled: true
+          name: Detector Systematics
+          parameterDefinitions:
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NuMIXSecFrontIndPlaneGainSyst
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: NuMIXSecFrontIndPlaneGainSyst
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NuMIXSecFrontIndPlaneNoiseSyst
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: NuMIXSecFrontIndPlaneNoiseSyst
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NuMIXSecFrontIndPlaneSignalShapeFittedSyst
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: NuMIXSecFrontIndPlaneSignalShapeFittedSyst
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NuMIXSecMiddleIndPlaneTransparencySyst
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: NuMIXSecMiddleIndPlaneTransparencySyst
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NuMIXSecCaloGainSyst
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: NuMIXSecCaloGainSyst
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NuMIXSecLifetimeSyst
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: NuMIXSecLifetimeSyst
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NuMIXSecTrackSplitSyst
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: NuMIXSecTrackSplitSyst
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: NuMIXSecProtonEffSyst
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: NuMIXSecProtonEffSyst
+          parameterLowerBoundsTVectorD: detsyst_param_lb
+          parameterNameTObjArray: detsyst_param_names
+          parameterPriorTVectorD: detsyst_param_prior
+          parameterUpperBoundsTVectorD: detsyst_param_ub
+          printDialSetsSummary: true
+          releaseFixedParametersOnHesse: true
+        - covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/gundaminput_numihppcasyst.root
+          covarianceMatrixTMatrixD: numihppcasyst_cov
+          isEnabled: true
+          name: Flux Systematics HP
+          parameterDefinitions:
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_0
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_0
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_1
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_1
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_2
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_2
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_3
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_3
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_4
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_4
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_5
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_5
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_6
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_6
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_7
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_7
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_8
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_8
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_9
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_9
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_10
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_10
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_11
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_11
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_12
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_12
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_13
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_13
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_pc_14
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_pc_14
+          parameterLowerBoundsTVectorD: numihppcasyst_param_lb
+          parameterNameTObjArray: numihppcasyst_param_names
+          parameterPriorTVectorD: numihppcasyst_param_prior
+          parameterUpperBoundsTVectorD: numihppcasyst_param_ub
+          printDialSetsSummary: true
+          releaseFixedParametersOnHesse: true
+        - covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/gundaminput_numibeamlinesyst.root
+          covarianceMatrixTMatrixD: numibeamlinesyst_cov
+          isEnabled: true
+          name: Flux Systematics Beamline
+          parameterDefinitions:
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_HornCurr
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_HornCurr
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_Horn1_x
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_Horn1_x
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_Horn1_y
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_Horn1_y
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_Beam_spot
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_Beam_spot
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_Horn2_x
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_Horn2_x
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_Horn2_y
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_Horn2_y
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_Horns_water
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_Horns_water
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_Beam_shift_x
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_Beam_shift_x
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_Beam_shift_y
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_Beam_shift_y
+          - dialSetDefinitions:
+            - applyCondition: '[IsData]==0'
+              dialLeafName: numi_Target_z
+              dialType: Spline
+              minimumSplineResponse: 0
+            isEnabled: true
+            parameterName: numi_Target_z
+          parameterLowerBoundsTVectorD: numibeamlinesyst_param_lb
+          parameterNameTObjArray: numibeamlinesyst_param_names
+          parameterPriorTVectorD: numibeamlinesyst_param_prior
+          parameterUpperBoundsTVectorD: numibeamlinesyst_param_ub
+          printDialSetsSummary: true
+          releaseFixedParametersOnHesse: true
+        - allowPca: true
+          covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/CovMat/outputs/output_CovMat_G4ProtonFate.root
+          covarianceMatrixTMatrixD: G4ProtonFate/G4ProtonFate_covariance
+          dialSetDefinitions:
+          - applyCondition: '[IsData]==0'
+            applyOnDataSets:
+            - '*'
+            name: G4 Proton Fate dialSetDefinitions
+            parametersBinningPath: ${GUNDAM_CONFIG_DIR}/binnings/binning_G4ProtonFate.txt
+            printDialsSummary: true
+          isEnabled: true
+          name: G4 Proton Fate
+          printDialSetsSummary: true
+          useOnlyOneParameterPerEvent: true
+        - allowPca: true
+          covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/CovMat/outputs/output_CovMat_G4PipFate.root
+          covarianceMatrixTMatrixD: G4PipFate/G4PipFate_covariance
+          dialSetDefinitions:
+          - applyCondition: '[IsData]==0'
+            applyOnDataSets:
+            - '*'
+            name: G4 Piplus Fate dialSetDefinitions
+            parametersBinningPath: ${GUNDAM_CONFIG_DIR}/binnings/binning_G4PipFate.txt
+            printDialsSummary: true
+          isEnabled: true
+          name: G4 Piplus Fate
+          printDialSetsSummary: true
+          useOnlyOneParameterPerEvent: true
+        - allowPca: true
+          covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/CovMat/outputs/output_CovMat_G4PimFate.root
+          covarianceMatrixTMatrixD: G4PimFate/G4PimFate_covariance
+          dialSetDefinitions:
+          - applyCondition: '[IsData]==0'
+            applyOnDataSets:
+            - '*'
+            name: G4 Piminus Fate dialSetDefinitions
+            parametersBinningPath: ${GUNDAM_CONFIG_DIR}/binnings/binning_G4PimFate.txt
+            printDialsSummary: true
+          isEnabled: true
+          name: G4 Piminus Fate
+          printDialSetsSummary: true
+          useOnlyOneParameterPerEvent: true
+        - covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/BackgroundFit/RegCov_LogNormal_PriorLoW0.4_PriorHiW0.6.root
+          covarianceMatrixTMatrixD: RegCov_LogNormal_PriorLoW0.4_PriorHiW0.6
+          dialSetDefinitions:
+          - applyCondition: '[IsSignal] == 3'
+            applyOnDataSets:
+            - '*'
+            dialType: lnN
+            name: BackgroundFit dialSetDefinitions
+            parametersBinningPath: ${GUNDAM_CONFIG_DIR}/binnings/binning_BackgroundFit_TrueQ2_0p1.txt
+            printDialsSummary: true
+          isEnabled: true
+          name: BackgroundFit
+          nominalStepSize: 0.1
+          parameterPriorTVectorD: PriorVals
+          printDialSetsSummary: true
+          useOnlyOneParameterPerEvent: true
+        - covarianceMatrixFilePath: ${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/Flux/gundaminput_cosmicslicesyst.root
+          covarianceMatrixTMatrixD: cosmicslicesyst_cov
+          dialSetDefinitions:
+          - applyCondition: '[IsData]==0 && [IsSignal]==5'
+            applyOnDataSets:
+            - '*'
+            dialType: Norm
+            name: Cosmic Slice dialSetDefinitions
+            printDialsSummary: true
+          isEnabled: true
+          name: Cosmic Slice
+          nominalStepSize: 0.1
+          printDialSetsSummary: true
+          useOnlyOneParameterPerEvent: true
+      showEventBreakdown: true
+  minimizerConfig:
+    algorithm: Migrad
+    enablePostFitErrorFit: true
+    enableSimplexBeforeMinimize: true
+    errors: Hesse
+    maxNbParametersPerLineOnMonitor: 15
+    max_fcn: 1000000000.0
+    max_iter: 100000
+    minimizer: Minuit2
+    monitorGradientDescent: false
+    monitorRefreshRateInMs: 5000
+    print_level: 0
+    showParametersOnFitMonitor: false
+    simplexMaxFcnCalls: 20000
+    simplexStrategy: 1
+    simplexToleranceLoose: 10000
+    strategy: 1
+    tolerance: 0.01
+    type: RootMinimizer
+    useNormalizedFitSpace: true
+  pcaDeltaChi2Threshold: 0.0001
+minGundamVersion: 1.9.0
+outputFolder: ${GUNDAM_CONFIG_DIR}/output/
