@@ -8,6 +8,7 @@ useOnlyOneParameterPerEvent: true
 
 dialSetDefinitions:
   - name: Template Parameter MuonProtonCos dialSetDefinitions
+    dialType: "lnN"
     applyOnDataSets: ["*"]
     parametersBinningPath: "${GUNDAM_CONFIG_DIR}/binnings/binning_TrueMuonProtonCos.txt"
     applyCondition: "[IsSignal] == 1"
@@ -18,4 +19,5 @@ dialSetDefinitions:
 #   maxValue: 3.0
 
 covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/SumRegCovMat_MuonProtonCos.root"
-covarianceMatrixTMatrixD: "SumRegCovMat_Log10Strength-1.188"
+covarianceMatrixTMatrixD: "SumRegCovMat_Log10Strength-1.022"
+parameterPriorTVectorD: "PriorVals"

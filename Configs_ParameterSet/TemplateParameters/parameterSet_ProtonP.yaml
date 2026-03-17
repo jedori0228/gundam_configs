@@ -1,0 +1,22 @@
+name: Template Parameter ProtonP
+isEnabled: true
+
+printDialSetsSummary: true
+
+nominalStepSize: 0.1
+useOnlyOneParameterPerEvent: true
+
+dialSetDefinitions:
+  - name: Template Parameter ProtonP dialSetDefinitions
+    dialType: "lnN"
+    applyOnDataSets: ["*"]
+    parametersBinningPath: "${GUNDAM_CONFIG_DIR}/binnings/binning_TrueProtonP.txt"
+    applyCondition: "[IsSignal] == 1"
+    printDialsSummary: true
+
+# parameterLimits:
+#   minValue: 0.
+#   maxValue: 3.0
+
+# covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/SumRegCovMat_ProtonP.root"
+# covarianceMatrixTMatrixD: "SumRegCovMat_Log10Strength-1.188"

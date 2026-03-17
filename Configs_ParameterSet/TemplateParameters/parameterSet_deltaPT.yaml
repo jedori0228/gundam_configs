@@ -8,6 +8,7 @@ useOnlyOneParameterPerEvent: true
 
 dialSetDefinitions:
   - name: Template Parameter deltaPT dialSetDefinitions
+    dialType: "lnN"
     applyOnDataSets: ["*"]
     parametersBinningPath: "${GUNDAM_CONFIG_DIR}/binnings/binning_TruedeltaPT.txt"
     applyCondition: "[IsSignal] == 1"
@@ -18,4 +19,5 @@ dialSetDefinitions:
 #   maxValue: 3.0
 
 covarianceMatrixFilePath: "${GUNDAM_CONFIG_DIR}/Configs_ParameterSet/TemplateParameters/SumRegCovMat_deltaPT.root"
-covarianceMatrixTMatrixD: "SumRegCovMat_Log10Strength-1.113"
+covarianceMatrixTMatrixD: "SumRegCovMat_Log10Strength-1.149"
+parameterPriorTVectorD: "PriorVals"
