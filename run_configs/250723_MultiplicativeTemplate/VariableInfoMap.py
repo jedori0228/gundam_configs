@@ -45,6 +45,26 @@ VariableInfos['TrueMuonProtonCos'] = VariableInfo(
     Unit = '',
 )
 
+VariableInfos['RecoProtonP'] = VariableInfo(
+    Name = 'RecoProtonP',
+    Expr = 'RecoProtonP',
+    Latex = r'Proton momentum',
+    xMin = 0.4,
+    xMax = 1.0,
+    dx = 0.05,
+    BinNormWidth=1.0,
+    Unit = 'GeV/c',
+)
+VariableInfos['TrueProtonP'] = VariableInfo(
+    Name = 'TrueProtonP',
+    Expr = 'TrueProtonP',
+    Latex = r'Proton momentum',
+    xMin = 0.4,
+    xMax = 1.0,
+    dx = 0.05,
+    Unit = 'GeV/c',
+)
+
 VariableInfos['RecodeltaPT'] = VariableInfo(
     Name = 'RecodeltaPT',
     Latex = r'$\delta p_{T}$',
@@ -72,7 +92,7 @@ VariableInfos['RecodeltaalphaT'] = VariableInfo(
     dx = 1.,
     Unit = 'degree',
     BinNormWidth = 1.,
-    # ytitle = 'Events/degree',
+    ytitle = 'Events/degree',
 )
 VariableInfos['TruedeltaalphaT'] = VariableInfo(
     Name = 'TruedeltaalphaT',

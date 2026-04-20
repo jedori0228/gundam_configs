@@ -23,6 +23,44 @@ DataEntryInfoMap['FakeDataLQCDZExpFit'] = DataEntryInfo(
     POT = 2.5006160e+20,
 )
 
+# Fake data from 30% MC + LQCD fit
+DataEntryInfoMap['FakeDataLQCDParkZExpFit'] = DataEntryInfo(
+    Name = 'FakeDataLQCDParkZExpFit',
+    Latex = 'Subset of MC, LQCD (Park) Z-exp fit',
+    POT = 2.5006160e+20,
+)
+
+# Fake data from 30% MC + LQCD fit
+DataEntryInfoMap['FakeDataMINERvAZExpFit'] = DataEntryInfo(
+    Name = 'FakeDataMINERvAZExpFit',
+    Latex = 'Subset of MC, MINERvA Z-exp fit',
+    POT = 2.5006160e+20,
+)
+
+# Fake data from 30% MC + LQCD fit
+DataEntryInfoMap['FakeDataQEBugFix'] = DataEntryInfo(
+    Name = 'FakeDataQEBugFix',
+    Latex = 'Subset of MC, QE bug fix',
+    POT = 2.5006160e+20,
+)
+
+
+# Fake data from 30% MC + Signal doubled
+DataEntryInfoMap['FakeData_SignalDoubled'] = DataEntryInfo(
+    Name = 'FakeData_SignalDoubled',
+    Latex = 'Subset of MC, signal doubled',
+    POT = 2.5006160e+20,
+)
+
+# Fake data from 30% MC + Signal doubled
+DataEntryInfoMap['FakeData_Signal1p5'] = DataEntryInfo(
+    Name = 'FakeData_Signal1p5',
+    Latex = 'Subset of MC, signal 1.5',
+    POT = 2.5006160e+20,
+)
+
+
+
 # - Sideband: 15% data
 # - Signal: Fake data from 30% MC
 DataEntryInfoMap['Random15PercentRealDataForSideband_FakeDataForSignal'] = DataEntryInfo(
