@@ -162,7 +162,9 @@ if DoIndvFit:
             outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{IndvFit_XsecVariable}.yaml'
             out_CalcXsec = open(outname_CalcXsec, 'w')
 
-            TruthFitSampleDir = 'NoNormSmearing' if ParamSetName=='Flux' else 'SmearFlux'
+            # For "NminusFlux", we should not smear FluxIntegral
+            # Also for "NoSyst", we should not
+            TruthFitSampleDir = 'NoNormSmearing' if ( (ParamSetName=='Flux') or (ParamSetName=='NoSyst') ) else 'SmearFlux'
             if ApplyRecoMuonPLT0p8:
                 TruthFitSampleDir += '/MuonPLT0p8'
             FitSampleSetConfig_True = f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/PerSourceStudy/{TruthFitSampleDir}/fitSamples_True{IndvFit_XsecVariable}.yaml"'''
@@ -319,7 +321,9 @@ if DoSimFit:
             outname_CalcXsec = f'{CalcXsecConfigDir}/config_CalcXsec_{DatasetType}_{FitConfigName}_{LLH_METHOD}_{SimFit_XsecVariable_X}_and_{SimFit_XsecVariable_Y}.yaml'
             out_CalcXsec = open(outname_CalcXsec, 'w')
 
-            TruthFitSampleDir = 'NoNormSmearing' if ParamSetName=='Flux' else 'SmearFlux'
+            # For "NminusFlux", we should not smear FluxIntegral
+            # Also for "NoSyst", we should not
+            TruthFitSampleDir = 'NoNormSmearing' if ( (ParamSetName=='Flux') or (ParamSetName=='NoSyst') ) else 'SmearFlux'
             if ApplyRecoMuonPLT0p8:
                 TruthFitSampleDir += '/MuonPLT0p8'
             FitSampleSetConfig_True = f'''"${{GUNDAM_CONFIG_DIR}}/Configs_FitSampleSet/PerSourceStudy/{TruthFitSampleDir}/fitSamples_True{SimFit_XsecVariable_X}_and_True{SimFit_XsecVariable_Y}.yaml"'''
