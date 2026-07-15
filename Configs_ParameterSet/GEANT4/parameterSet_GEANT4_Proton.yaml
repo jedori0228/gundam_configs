@@ -3,7 +3,7 @@ isEnabled: true
 
 printDialSetsSummary: true
 
-allowPca: true
+allowPca: false
 
 # useEigenDecompInFit: true
 # allowEigenDecompWithBounds: true # ignore bounds in real parameter space
