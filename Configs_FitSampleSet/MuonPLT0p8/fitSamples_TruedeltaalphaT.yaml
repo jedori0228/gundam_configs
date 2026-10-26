@@ -18,7 +18,9 @@ fitSampleList:
         # - Beam focusing: 1.72%
         # -> sum = 11.14%
         meanValue: 7.9752884e+11 # (numu+numubar)/cm^2, G3Chase+G4Update+BeamWidthCorrection applied, POT = 1.0900766e+21
-        stdDev: 8.8844712e+10 # 11.14%
+        # stdDev: 8.8844712e+10 # 11.14%
+        # Smear later
+        stdDev: 0
 
       - name: "Number of targets"
         ### Using MC value assumed from sbn-doc-33224, converted to N NUCLEONS instead of N Nuclei
