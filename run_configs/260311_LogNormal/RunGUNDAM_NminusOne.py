@@ -5,7 +5,7 @@ import ConfigHelper
 JobName = '250627_BadRegionRejection'
 
 
-ConfigType = '250723_MultiplicativeTemplate'
+ConfigType = '260311_LogNormal'
 
 # Base directories
 GUNDAMDIR = os.environ['GUNDAM_CONFIG_DIR']
@@ -58,11 +58,11 @@ ApplyRecoMuonPLT0p8 = True
 # - X will not be included
 # - For the CalcXsec, flux should not be smeared when X=Flux
 ParamSetNames = [
-    'FullSyst',
-    'DetectorAndGEANT4',
-    'xsecBkgd',
-    'xsecSignal',
-    'Flux',
+    # 'FullSyst',
+    # 'DetectorAndGEANT4',
+    # 'xsecBkgd',
+    # 'xsecSignal',
+    # 'Flux',
     'NoSyst',
 ]
 ######################
@@ -70,17 +70,17 @@ ParamSetNames = [
 # Do Indv fit?
 DoIndvFit = False
 IndvFit_XsecVariables = [
-    'MuonCos',
-    'MuonProtonCos',
-    # 'deltaPT',
-    # 'deltaalphaT',
+    # 'MuonCos',
+    # 'MuonProtonCos',
+    'deltaPT',
+    'deltaalphaT',
 ]
 LLH_METHOD_ForIndvFit = 'BarlowLLH'
 
 # Do Sim fit?
 DoSimFit = True
 SimFit_XsecVariablePairs = [
-    #['MuonCos', 'MuonProtonCos'],
+    # ['MuonCos', 'MuonProtonCos'],
     ['deltaPT', 'deltaalphaT'],
 ]
 LLH_METHOD_ForSimFit = 'StatCovariance'

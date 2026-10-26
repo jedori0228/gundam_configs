@@ -53,7 +53,7 @@ os.system(f'mkdir -p {RunScriptDir}')
 # 1) Require pmu<0.8 for reco in the fit
 # - Need to pick separate fitsample
 # - Need to pick separate plot config to use IsSignalWithMuonP
-ApplyRecoMuonPLT0p8 = True
+ApplyRecoMuonPLT0p8 = False
 ######################
 
 # Do Indv fit?
@@ -71,8 +71,8 @@ LLH_METHOD_ForIndvFit = 'BarlowLLH'
 # Do Sim fit?
 DoSimFit = True
 SimFit_XsecVariablePairs = [
-    # ['MuonCos', 'MuonProtonCos'],
-    ['deltaPT', 'deltaalphaT'],
+    ['MuonCos', 'MuonProtonCos'],
+    # ['deltaPT', 'deltaalphaT'],
 ]
 LLH_METHOD_ForSimFit = 'StatCovariance'
 
@@ -85,14 +85,17 @@ ForSimFitToy = False
 # - Fake data
 # DatasetType = 'FakeData'
 # DataEntries = [
-#     # 'Asimov',
-#     'FakeDataFromMCSubset',
+#     'Asimov',
+#     # 'FakeDataFromMCSubset',
 #     # 'FakeDataLQCDZExpFit',
 #     # 'FakeDataLQCDParkZExpFit',
 #     # 'FakeDataMINERvAZExpFit',
 #     # 'FakeData_SignalDoubled',
 #     # 'FakeData_Signal1p5',
 #     # 'FakeDataQEBugFix',
+#     # 'FakeData_FSI_hN',
+#     # 'FakeData_FSI_INCL',
+#     # 'FakeData_FSI_G4BC',
 # ]
 
 # - Real data, 15%
@@ -116,8 +119,8 @@ ForSimFitToy = False
 # - Real data, 100%
 DatasetType = 'RealData'
 DataEntries = [
-    # 'RealData',
-    'Asimov',
+    'RealData',
+    # 'Asimov',
 ]
 
 RunScripts = []
